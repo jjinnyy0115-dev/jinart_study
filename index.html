@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>지나트 외국어 · 실전 회화</title>
+<meta name="description" content="지나트뷰티 손님 응대 중국어·일본어 실전 회화, 발음 듣기, 플래시카드, 퀴즈">
+<meta name="theme-color" content="#7B2D43">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="지나트 외국어">
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="icon" href="./icon-192.png">
+<style>
+:root{
+  --wine:#7B2D43; --wine-d:#5A1E30; --wine-soft:#FBF0F2;
+  --rose:#C89B9B; --gold:#D9B48F;
+  --ink:#2B2124; --muted:#8C7C80; --line:#F1E6E0;
+  --bg:#FFFCF8; --card:#FFFFFF;
+  --green:#2F7D5C; --green-bg:#EAF5EF;
+  --red:#B23B45; --red-bg:#FBEBEC;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",system-ui,sans-serif;
+  background:var(--bg); color:var(--ink); font-size:15px; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.app{max-width:430px;margin:0 auto;min-height:100vh;position:relative;background:
+  radial-gradient(120% 60% at 50% 0%, #FFF6F3 0%, rgba(255,252,248,0) 60%), var(--bg);}
+@media(min-width:520px){
+  .app{border-left:1px solid var(--line);border-right:1px solid var(--line);box-shadow:0 0 60px rgba(123,45,67,.07)}
+}
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:40;
+  padding:calc(10px + env(safe-area-inset-top)) 16px 11px;
+  background:rgba(255,252,248,.95);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.hd-top{display:flex;align-items:flex-end;justify-content:space-between;gap:8px}
+.hd-title{font-size:19px;font-weight:800;letter-spacing:-.4px;color:var(--wine-d);line-height:1.15}
+.hd-title span{display:block;font-size:9px;font-weight:700;letter-spacing:2.2px;color:var(--rose);margin-top:3px}
+.hd-mark{width:26px;height:26px;border-radius:9px;background:linear-gradient(150deg,var(--wine-d),var(--wine));color:#F7E7DC;
+  display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;box-shadow:0 3px 8px rgba(123,45,67,.22)}
+.lang-switch{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:#F7EDE9;padding:4px;border-radius:15px;margin-top:10px}
+.lang-switch button{
+  height:42px;border-radius:12px;font-size:15px;font-weight:700;color:#9A8388;letter-spacing:-.2px;
+  display:flex;align-items:center;justify-content:center;gap:6px;transition:.18s;
+}
+.lang-switch button.on{background:var(--wine);color:#fff;box-shadow:0 3px 10px rgba(123,45,67,.25)}
+.lang-switch button .flag{font-size:16px}
+.hd-search{margin-top:9px;position:relative}
+.hd-search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:#B2A0A4}
+.hd-search input{
+  width:100%;height:40px;border-radius:12px;border:1px solid var(--line);background:#fff;
+  padding:0 38px 0 34px;font-size:14px;color:var(--ink);outline:none;
+}
+.hd-search input:focus{border-color:#E2C2C8;box-shadow:0 0 0 3px rgba(123,45,67,.06)}
+.hd-search .clear{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;color:#B2A0A4;font-size:15px;display:none;align-items:center;justify-content:center}
+.hd-search .clear.show{display:flex}
+.hd-low{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:8px}
+.speed{display:flex;gap:4px;background:#F7EDE9;border-radius:10px;padding:3px}
+.speed button{height:26px;padding:0 9px;border-radius:8px;font-size:11px;font-weight:700;color:#9A8388;letter-spacing:-.1px}
+.speed button.on{background:#fff;color:var(--wine);box-shadow:0 1px 4px rgba(123,45,67,.14)}
+.hd-stat{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:-.1px;white-space:nowrap}
+/* ---------- layout ---------- */
+main{padding:13px 16px calc(92px + env(safe-area-inset-bottom))}
+section{display:none}
+section.on{display:block;animation:fade .22s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+/* ---------- chips ---------- */
+.chips{display:flex;gap:7px;overflow-x:auto;padding:1px 0 11px;scrollbar-width:none;-ms-overflow-style:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto;height:33px;padding:0 13px;border-radius:999px;border:1px solid var(--line);background:#fff;
+  font-size:12.5px;font-weight:600;color:#7C6A6E;display:flex;align-items:center;gap:4px;white-space:nowrap;transition:.16s;
+}
+.chip.on{background:var(--wine);border-color:var(--wine);color:#fff;box-shadow:0 3px 9px rgba(123,45,67,.2)}
+.chip.accent{border-color:#E7C9A6;background:#FFF9F0;color:#9A6B33}
+.chip.accent.on{background:linear-gradient(135deg,#8B3350,#B4703F);border-color:#B4703F;color:#fff}
+.chip .new{font-size:8.5px;font-weight:800;letter-spacing:.3px;background:#D9B48F;color:#4B2A16;border-radius:4px;padding:1px 3px}
+.chip.on .new{background:#F4DFC8;color:#6B3B1F}
+.list-head{display:flex;align-items:baseline;justify-content:space-between;margin:0 2px 9px}
+.list-head h2{font-size:12px;font-weight:800;letter-spacing:.2px;color:var(--muted);margin:0}
+.list-head .n{font-size:11px;color:var(--rose);font-weight:700}
+/* ---------- card ---------- */
+.card{
+  background:var(--card);border:1px solid #F3E8E3;border-radius:18px;padding:13px 14px 12px;margin-bottom:10px;
+  box-shadow:0 2px 10px rgba(90,30,48,.045);transition:.18s;
+}
+.card.done{background:#FFFDFB;border-color:#EADFD9}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:7px}
+.chipcat{font-size:10.5px;font-weight:700;color:#A97C86;background:#FCF2F3;border-radius:6px;padding:3px 7px;letter-spacing:-.1px}
+.cbtns{display:flex;gap:2px}
+.iconbtn{width:27px;height:27px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#CDBFC2;transition:.16s}
+.iconbtn.star.on{color:#D9A441;background:#FDF6E7}
+.iconbtn.tick.on{color:var(--green);background:var(--green-bg)}
+.iconbtn:active{transform:scale(.92)}
+.mean{font-size:14px;font-weight:700;color:#3B2C30;margin:0 0 6px;letter-spacing:-.25px}
+.target{font-size:22px;line-height:1.42;font-weight:600;color:var(--wine-d);margin:0 0 7px;letter-spacing:-.2px;word-break:keep-all}
+.target.ja{font-size:21px}
+.ku,.read,.pron{margin:0 0 2px;display:flex;gap:6px;align-items:baseline;font-size:12.5px;line-height:1.45}
+.ku{color:#9A858A}
+.read{color:var(--wine);font-style:italic;letter-spacing:.1px}
+.pron{color:#7E6C71}
+.rl{flex:0 0 32px;font-size:9px;font-weight:800;font-style:normal;letter-spacing:.2px;color:#C0AFB3;padding-top:2px}
+.cacts{display:flex;gap:7px;margin-top:11px}
+.btn{height:37px;border-radius:11px;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:5px;transition:.15s;letter-spacing:-.1px}
+.btn:active{transform:scale(.98)}
+.btn.soft{flex:0 0 44%;background:var(--wine-soft);color:var(--wine);border:1px solid #F2DEE2}
+.btn.solid{flex:1;background:var(--wine);color:#fff;box-shadow:0 3px 10px rgba(123,45,67,.18)}
+.empty{background:#fff;border:1px dashed #E7D8D2;border-radius:16px;padding:26px 18px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7}
+.tip{margin:14px 2px 0;font-size:11px;line-height:1.7;color:#A79699}
+.tip b{color:#8A7378}
+/* ---------- flashcards ---------- */
+.fc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.fc-top .meta{font-size:11.5px;font-weight:700;color:var(--muted)}
+.fc-filter{display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:#A08A8F;background:#fff;border:1px solid var(--line);height:30px;padding:0 10px;border-radius:999px}
+.fc-filter.on{background:#FDF6E7;border-color:#EFD9AE;color:#A6762A}
+.fc-stage{perspective:1200px;margin:2px 0 12px}
+.fc-inner{position:relative;width:100%;min-height:300px;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,.2,.2,1)}
+.fc-inner.flip{transform:rotateY(180deg)}
+.fc-face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  background:#fff;border:1px solid #F1E3DE;border-radius:22px;padding:22px 18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  box-shadow:0 10px 28px rgba(90,30,48,.08);overflow:hidden;
+}
+.fc-face.back{transform:rotateY(180deg);background:linear-gradient(160deg,#FFF9F6,#FDF1F2)}
+.fc-face .q{font-size:10.5px;font-weight:800;letter-spacing:1.4px;color:var(--rose);margin-bottom:14px}
+.fc-face .big{font-size:26px;line-height:1.45;font-weight:600;color:var(--wine-d);letter-spacing:-.2px}
+.fc-face .big.ko{font-size:23px;color:#3B2C30;font-weight:700}
+.fc-face .big.sm{font-size:21px;line-height:1.5}
+.fc-face .big.ko.sm2{font-size:19px;line-height:1.55}
+.fc-spk{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#FBF0F2;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(123,45,67,.08)}
+.fc-face .sub{margin-top:12px;font-size:13px;color:var(--wine);font-style:italic}
+.fc-face .sub2{margin-top:5px;font-size:12.5px;color:#8C777B}
+.fc-face .hint{position:absolute;bottom:14px;font-size:10.5px;color:#CBB9BC;letter-spacing:.2px}
+.fc-nav{display:flex;align-items:center;gap:8px}
+.fc-nav button{height:46px;border-radius:13px;font-size:13px;font-weight:800}
+.fc-nav .nav{flex:0 0 74px;background:#fff;border:1px solid var(--line);color:#7C6A6E}
+.fc-nav .flipbtn{flex:1;background:var(--wine);color:#fff;box-shadow:0 4px 12px rgba(123,45,67,.18)}
+.fc-nav .fav{flex:0 0 46px;background:#fff;border:1px solid var(--line);color:#CDBFC2;font-size:17px}
+.fc-nav .fav.on{color:#D9A441;background:#FDF6E7;border-color:#EFD9AE}
+.fc-empty{background:#fff;border:1px dashed #E7D8D2;border-radius:16px;padding:34px 20px;text-align:center;color:var(--muted);font-size:13px;line-height:1.8}
+/* ---------- quiz ---------- */
+.quiz-card{background:#fff;border:1px solid #F3E8E3;border-radius:18px;padding:16px;box-shadow:0 2px 10px rgba(90,30,48,.045)}
+.quiz-intro{text-align:center;padding:8px 4px 4px}
+.quiz-intro .ico{font-size:34px}
+.quiz-intro h3{margin:8px 0 6px;font-size:17px;color:var(--wine-d);letter-spacing:-.3px}
+.quiz-intro p{margin:0 0 14px;font-size:12.5px;color:var(--muted);line-height:1.7}
+.quiz-intro .best{font-size:12px;font-weight:700;color:#A6762A;background:#FDF6E7;border-radius:9px;padding:7px 10px;display:inline-block;margin-bottom:14px}
+.qbar{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:10px}
+.qbar .prog{flex:1;height:5px;background:#F3E7E2;border-radius:99px;margin:0 10px;overflow:hidden}
+.qbar .prog i{display:block;height:100%;background:linear-gradient(90deg,var(--wine),#B4703F);border-radius:99px;transition:.3s}
+.qtext{text-align:center;margin:6px 0 16px}
+.qtext .lab{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--rose)}
+.qtext .big{font-size:23px;font-weight:600;color:var(--wine-d);line-height:1.4;margin-top:8px}
+.qtext .sub{font-size:12.5px;color:var(--wine);font-style:italic;margin-top:6px}
+.qlisten{display:flex;flex-direction:column;align-items:center;gap:9px;margin:4px 0 16px}
+.qlisten button{width:96px;height:96px;border-radius:50%;background:linear-gradient(150deg,#8B3350,var(--wine-d));color:#fff;font-size:34px;box-shadow:0 8px 22px rgba(123,45,67,.25)}
+.qlisten span{font-size:11.5px;color:var(--muted);font-weight:600}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{
+  text-align:left;padding:13px 14px;border-radius:13px;border:1px solid #EFE2DC;background:#FFFDFB;
+  font-size:13.5px;font-weight:600;color:#4A3A3E;line-height:1.45;display:flex;gap:9px;align-items:flex-start;transition:.15s;
+}
+.opt .k{flex:0 0 18px;height:18px;border-radius:6px;background:#F7EDE9;color:#A98D93;font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.opt.correct{background:var(--green-bg);border-color:#BFE0CE;color:#265E46}
+.opt.correct .k{background:#CFE9DA;color:#265E46}
+.opt.wrong{background:var(--red-bg);border-color:#EFC7CA;color:#973039}
+.opt.wrong .k{background:#F3D3D5;color:#973039}
+.opt:disabled{opacity:1}
+.opt.dim{opacity:.5}
+.qfoot{margin-top:12px}
+.qfoot .btn{width:100%;height:44px;border-radius:13px;background:var(--wine);color:#fff;font-size:13.5px;box-shadow:0 4px 12px rgba(123,45,67,.18)}
+.result-score{text-align:center;padding:14px 0 4px}
+.result-score .score{font-size:40px;font-weight:800;color:var(--wine);letter-spacing:-1px}
+.result-score .score small{font-size:16px;color:var(--muted);font-weight:700}
+.result-score p{font-size:12.5px;color:var(--muted);margin:6px 0 16px}
+.wrong-list{margin:6px 0 14px;border-top:1px solid var(--line);padding-top:10px}
+.wrong-list h4{font-size:11px;font-weight:800;color:var(--muted);margin:0 0 8px;letter-spacing:.3px}
+.wrong-item{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed #F3E7E2;font-size:12.5px}
+.wrong-item:last-child{border-bottom:0}
+.wrong-item .a{color:#4A3A3E;font-weight:600}
+.wrong-item .b{color:var(--wine);text-align:right;flex:0 0 48%}
+.result-btns{display:flex;gap:8px}
+.result-btns .btn{flex:1;height:44px;border-radius:13px;font-size:13px}
+.result-btns .again{background:var(--wine);color:#fff}
+.result-btns .fresh{background:#fff;border:1px solid var(--line);color:#7C6A6E}
+/* ---------- favorites ---------- */
+.sec-h{display:flex;align-items:center;justify-content:space-between;margin:0 2px 10px}
+.sec-h h2{font-size:14px;font-weight:800;color:var(--wine-d);margin:0;letter-spacing:-.2px}
+.sec-h .n{font-size:11px;font-weight:700;color:var(--muted)}
+.words{background:#fff;border:1px solid #F3E8E3;border-radius:16px;padding:4px 14px;box-shadow:0 2px 10px rgba(90,30,48,.04)}
+.word{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #F7EFEB}
+.word:last-child{border-bottom:0}
+.word .w{font-size:17px;font-weight:600;color:var(--wine-d);display:flex;align-items:baseline;gap:7px}
+.word .w .py{font-size:11.5px;color:var(--wine);font-style:italic;font-weight:500}
+.word .w .kd{font-size:11px;color:#B7A5A8;font-weight:500}
+.word .m{font-size:12.5px;color:#7E6C71;text-align:right;flex:0 0 40%}
+.sec-gap{height:18px}
+.study-note{font-size:10.5px;color:#B2A0A4;line-height:1.7;margin:8px 2px 0}
+/* ---------- tabbar ---------- */
+nav.tabbar{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:430px;z-index:60;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+  background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);padding:6px 6px calc(5px + env(safe-area-inset-bottom));
+}
+nav.tabbar button{padding:6px 0 4px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:3px;color:#B5A4A8;transition:.16s}
+nav.tabbar button .i{font-size:19px;line-height:1;filter:grayscale(.4);opacity:.75}
+nav.tabbar button .t{font-size:10px;font-weight:700;letter-spacing:-.2px}
+nav.tabbar button.on{color:var(--wine);background:var(--wine-soft)}
+nav.tabbar button.on .i{filter:none;opacity:1}
+/* ---------- guest modal ---------- */
+.guest{
+  position:fixed;inset:0;z-index:120;display:flex;flex-direction:column;
+  background:linear-gradient(165deg,#4E1828 0%,var(--wine) 55%,#8E3A52 100%);
+  color:#fff;opacity:0;pointer-events:none;transition:opacity .22s ease;
+  padding:calc(14px + env(safe-area-inset-top)) 22px calc(20px + env(safe-area-inset-bottom));
+}
+.guest.open{opacity:1;pointer-events:auto}
+.g-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.g-badge{font-size:10px;font-weight:800;letter-spacing:1.4px;color:#F0D6C8;border:1px solid rgba(240,214,200,.45);border-radius:999px;padding:5px 11px}
+.g-close{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:17px;display:flex;align-items:center;justify-content:center}
+.g-body{flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:10px 0}
+.g-ko{font-size:13px;color:#EBC8C6;letter-spacing:-.2px;margin-bottom:18px;line-height:1.6}
+.g-main{font-size:clamp(25px,7.6vw,38px);line-height:1.5;font-weight:600;letter-spacing:-.2px;word-break:keep-all;overflow-wrap:anywhere}
+.g-kana{margin-top:16px;font-size:15px;color:#EBC8C6;line-height:1.6}
+.g-rom{margin-top:6px;font-size:14px;color:#F2DBCF;font-style:italic;line-height:1.55}
+.g-pron{margin-top:12px;font-size:14px;color:#F7E6DE;line-height:1.6}
+.g-pron b{font-weight:700;color:#fff}
+.g-foot{display:flex;gap:9px}
+.g-foot button{flex:1;height:52px;border-radius:15px;font-size:14px;font-weight:800}
+.g-foot .say{background:#F7E7DC;color:var(--wine-d)}
+.g-foot .done{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.28)}
+/* ---------- toast ---------- */
+.toast{
+  position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,12px);
+  background:rgba(43,33,36,.94);color:#fff;font-size:12.5px;font-weight:600;line-height:1.5;
+  padding:10px 15px;border-radius:12px;max-width:330px;width:max-content;z-index:200;
+  opacity:0;pointer-events:none;transition:.22s;text-align:center;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:360px){
+  .target{font-size:20px}
+  .btn.soft{flex:0 0 46%}
+  .btn{font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="hd-top">
+      <div class="hd-title">지나트 외국어<span>JINART BEAUTY · SALON PHRASEBOOK</span></div>
+      <div class="hd-mark">語</div>
+    </div>
+    <div class="lang-switch" id="langSwitch">
+      <button data-lang="zh" class="on"><span class="flag">🇨🇳</span>중국어</button>
+      <button data-lang="ja"><span class="flag">🇯🇵</span>일본어</button>
+    </div>
+    <div class="hd-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+      <input id="search" type="search" placeholder="한국어·중국어·병음 검색" autocomplete="off" enterkeyhint="search">
+      <button class="clear" id="clearBtn" aria-label="검색 지우기">✕</button>
+    </div>
+    <div class="hd-low">
+      <div class="speed" id="speed">
+        <button data-rate="0.75">0.75x 느리게</button>
+        <button data-rate="1" class="on">1.0x 보통</button>
+      </div>
+      <div class="hd-stat" id="stat"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. 회화장 -->
+    <section id="tab-talk" class="on">
+      <div class="chips" id="chips"></div>
+      <div class="list-head"><h2 id="listTitle">전체 표현</h2><span class="n" id="listCount"></span></div>
+      <div id="cards"></div>
+      <p class="tip"><b>💡 팁</b> 말이 막히면 <b>📱 손님께 보여주기</b>를 누르세요. 큰 글씨로 손님께 바로 보여 줄 수 있어요.<br>
+      아이폰 <b>Safari → 공유 → 홈 화면에 추가</b>하면 앱처럼 열려요. 발음이 안 나오면 설정 › 접근성 › 콘텐츠 말하기에서 중국어·일본어 음성을 추가해 주세요.</p>
+    </section>
+
+    <!-- 2. 플래시카드 -->
+    <section id="tab-flash">
+      <div class="fc-top">
+        <span class="meta" id="fcMeta">1 / 1</span>
+        <button class="fc-filter" id="fcFav">★ 즐겨찾기만</button>
+      </div>
+      <div class="fc-stage">
+        <div class="fc-inner" id="fcInner">
+          <div class="fc-face front" id="fcFront">
+            <button class="fc-spk" id="fcSpeak" aria-label="발음 듣기">🔊</button>
+            <div class="q" id="fcQ">CHINESE</div>
+            <div class="big" id="fcTarget"></div>
+            <div class="sub" id="fcRead"></div>
+            <div class="sub2" id="fcRead2"></div>
+            <div class="hint">카드를 탭하면 뜻이 보여요</div>
+          </div>
+          <div class="fc-face back">
+            <div class="q">MEANING</div>
+            <div class="big ko" id="fcMean"></div>
+            <div class="sub2" id="fcPron"></div>
+            <div class="hint">한 번 더 탭하면 원문으로</div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-nav">
+        <button class="nav" id="fcPrev">← 이전</button>
+        <button class="flipbtn" id="fcFlip">카드 뒤집기</button>
+        <button class="fav" id="fcStar" aria-label="즐겨찾기">★</button>
+      </div>
+      <p class="tip"><b>학습법</b> 앞면의 문장을 소리 내어 읽고, 뒤집어 뜻을 확인하세요. ★는 즐겨찾기와 함께 저장돼요.</p>
+    </section>
+
+    <!-- 3. 퀴즈 -->
+    <section id="tab-quiz">
+      <div id="quizWrap"></div>
+    </section>
+
+    <!-- 4. 즐겨찾기 -->
+    <section id="tab-fav">
+      <div class="sec-h"><h2>★ 즐겨찾기</h2><span class="n" id="favCount">0개</span></div>
+      <div id="favList"></div>
+      <div class="sec-gap"></div>
+      <div class="sec-h"><h2>📚 아침 복습 단어</h2><span class="n" id="studyDay">Day 1~3</span></div>
+      <div class="words" id="words"></div>
+      <p class="study-note" id="studyNote"></p>
+    </section>
+  </main>
+
+  <nav class="tabbar" id="tabbar">
+    <button data-tab="talk" class="on"><span class="i">📖</span><span class="t">회화장</span></button>
+    <button data-tab="flash"><span class="i">🃏</span><span class="t">플래시카드</span></button>
+    <button data-tab="quiz"><span class="i">🎯</span><span class="t">퀴즈</span></button>
+    <button data-tab="fav"><span class="i">★</span><span class="t">즐겨찾기</span></button>
+  </nav>
+</div>
+
+<!-- 손님께 보여주기 -->
+<div class="guest" id="guest" role="dialog" aria-modal="true" aria-label="손님께 보여주기">
+  <div class="g-top">
+    <span class="g-badge" id="gBadge">CHINESE</span>
+    <button class="g-close" id="gClose" aria-label="닫기">✕</button>
+  </div>
+  <div class="g-body">
+    <div class="g-ko" id="gKo"></div>
+    <div class="g-main" id="gMain"></div>
+    <div class="g-kana" id="gKana"></div>
+    <div class="g-rom" id="gRom"></div>
+    <div class="g-pron" id="gPron"></div>
+  </div>
+  <div class="g-foot">
+    <button class="say" id="gSay">🔊 다시 듣기</button>
+    <button class="done" id="gDone">닫기</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+   데이터 — 문장마다 중국어·일본어를 함께 담고, 모드에 따라 보여줍니다.
+   [카테고리, 한국어 뜻, 중국어, 병음, 한국어 발음,
+    일본어, 후리가나(かな), 로마자, 한국어 발음]
+   ========================================================= */
+const RAW = [
+/* 👋 인사 · 예약 확인 */
+["greet","어서 오세요! 지나트뷰티입니다.","欢迎光临，这里是JINART BEAUTY。","Huānyíng guānglín, zhèlǐ shì JINART BEAUTY.","환잉 광린, 쪄리 스 진아트 뷰티","いらっしゃいませ。JINART BEAUTYです。","いらっしゃいませ。じなーとびゅーてぃーです","Irasshaimase. JINART BEAUTY desu.","이랏샤이마세. 지나트 뷰티 데스"],
+["greet","예약하셨나요?","请问您有预约吗？","Qǐngwèn nín yǒu yùyuē ma?","칭원 닌 요우 위웨 마","ご予約はございますか？","ごよやくはございますか","Goyoyaku wa gozaimasu ka","고요야쿠 와 고자이마스 카"],
+["greet","성함이 어떻게 되세요?","请问您贵姓？","Qǐngwèn nín guìxìng?","칭원 닌 꾸이싱","お名前をお伺いしてもよろしいですか？","おなまえをおうかがいしてもよろしいですか","Onamae o oukagai shite mo yoroshii desu ka","오나마에 오 오우카가이 시테 모 요로시이 데스 카"],
+["greet","예약 시간 확인해 드릴게요.","我帮您查一下预约时间。","Wǒ bāng nín chá yíxià yùyuē shíjiān.","워 방 닌 차 이샤 위웨 스쟈","ご予約のお時間を確認いたします。","ごよやくのおじかんをかくにんいたします","Goyoyaku no ojikan o kakunin itashimasu","고요야쿠 노 오지칸 오 카쿠닌 이타시마스"],
+["greet","이쪽에 앉으세요.","请这边坐。","Qǐng zhèbiān zuò.","칭 쪄삥 쭤","こちらにおかけください。","こちらにおかけください","Kochira ni okake kudasai","코치라 니 오카케 쿠다사이"],
+["greet","물이나 차 드릴까요?","您要喝水还是茶？","Nín yào hē shuǐ háishì chá?","닌 야오 허 슈웨이 하이스 차","お水かお茶はいかがですか？","おみずかおちゃはいかがですか","Omizu ka ocha wa ikaga desu ka","오미즈 카 오차 와 이카가 데스 카"],
+["greet","짐은 여기 두세요.","东西放这里就可以了。","Dōngxi fàng zhèlǐ jiù kěyǐ le.","똥시 팡 쪄리 지우 커이 러","お荷物はこちらに置いてください。","おにもつはこちらにおいてください","Onimotsu wa kochira ni oite kudasai","오니모쓰 와 코치라 니 오이테 쿠다사이"],
+["greet","잠시만 기다려 주세요.","请稍等一下。","Qǐng shāo děng yíxià.","칭 샤오 덩 이샤","少々お待ちください。","しょうしょうおまちください","Shōshō omachi kudasai","쇼쇼 오마치 쿠다사이"],
+["greet","저를 따라오세요.","请跟我来。","Qǐng gēn wǒ lái.","칭 껀 워 라이","こちらへどうぞ。","こちらへどうぞ","Kochira e dōzo","코치라 에 도조"],
+["greet","죄송해요, 오래 기다리셨어요.","不好意思，让您久等了。","Bù hǎoyìsi, ràng nín jiǔ děng le.","뿌 하오이스, 랑 닌 지우 덩 러","お待たせいたしました。","おまたせいたしました","Omatase itashimashita","오마타세 이타시마시타"],
+/* 💬 상담 · 디자인 */
+["consult","어떤 시술을 원하세요?","您今天想做什么项目？","Nín jīntiān xiǎng zuò shénme xiàngmù?","닌 진티엔 샹 쭤 션머 샹무","今日はどのメニューになさいますか？","きょうはどのめにゅーになさいますか","Kyō wa dono menyū ni nasaimasu ka","쿄 와 도노 메뉴 니 나사이마스 카"],
+["consult","점막 아이라인","美瞳线","Měitóngxiàn","메이통시엔","粘膜アイライン","ねんまくあいらいん","Nenmaku airain","넨마쿠 아이라인"],
+["consult","디자인 아이라인","半永久眼线","Bànyǒngjiǔ yǎnxiàn","반융지우 옌시엔","デザインアイライン（アートメイク）","でざいんあいらいん（あーとめいく）","Dezain airain (ātomeiku)","데자인 아이라인 (아토메이쿠)"],
+["consult","자연눈썹","自然眉毛","Zìrán méimáo","쯔란 메이마오","ナチュラルな眉","なちゅらるなまゆ","Nachuraru na mayu","나추라루 나 마유"],
+["consult","속눈썹펌","睫毛烫","Jiémáo tàng","지에마오 탕","まつ毛パーマ","まつげぱーま","Matsuge pāma","마쓰게 파아마"],
+["consult","미인점(복점)","美人痣","Měirén zhì","메이런 쯔","福ほくろ","ふくほくろ","Fuku hokuro","후쿠 호쿠로"],
+["consult","자연스러운 느낌, 또렷한 느낌 중에 어느 쪽이 좋으세요?","您想要自然一点的还是明显一点的？","Nín xiǎng yào zìrán yìdiǎn de háishì míngxiǎn yìdiǎn de?","닌 샹 야오 쯔란 이디엔 더 하이스 씨 밍시엔 이디엔 더","ナチュラルな感じと、はっきりした感じ、どちらがお好みですか？","なちゅらるなかんじと、はっきりしたかんじ、どちらがおこのみですか","Nachuraru na kanji to, hakkiri shita kanji, dochira ga okonomi desu ka","나추라루 나 칸지 토, 핫키리 시타 칸지, 도치라 가 오코노미 데스 카"],
+["consult","먼저 디자인을 그려 드릴게요.","我先帮您画一下设计。","Wǒ xiān bāng nín huà yíxià shèjì.","워 시엔 방 닌 화 이샤 써지","先にデザインを描きますね。","さきにでざいんをえがきますね","Saki ni dezain o egakimasu ne","사키 니 데자인 오 에가키마스 네"],
+["consult","거울 보시고 모양 괜찮으신지 확인해 주세요.","请您看一下镜子，这样可以吗？","Qǐng nín kàn yíxià jìngzi, zhèyàng kěyǐ ma?","칭 닌 칸 이샤 징쯔, 쪄양 커이 마","鏡を見て、この形でよろしいですか？","かがみをみて、このかたちでよろしいですか","Kagami o mite, kono katachi de yoroshii desu ka","카가미 오 미테, 코노 카타치 데 요로시이 데스 카"],
+["consult","이쪽이 조금 더 올라갔으면 좋겠어요?","这边再往上一点可以吗？","Zhèbiān zài wǎng shàng yìdiǎn kěyǐ ma?","쪄삥 짜이 왕 상 이디엔 커이 마","こちらをもう少し上げてもいいですか？","こちらをもうすこしあげてもいいですか","Kochira o mō sukoshi agete mo ii desu ka","코치라 오 모 스코시 아게테 모 이이 데스 카"],
+["consult","수정할 부분 있으면 편하게 말씀해 주세요.","有想修改的地方请随便说。","Yǒu xiǎng xiūgǎi de dìfang qǐng suíbiàn shuō.","요우 샹 시우개이 더 디팡 칭 수이비엔 슈어","直したいところがあったら、遠慮なくおっしゃってください。","なおしたいところがあったら、えんりょなくおっしゃってください","Naoshitai tokoro ga attara, enryo naku osshatte kudasai","나오시타이 토코로 가 앗타라, 엔료 나쿠 옷샤테 쿠다사이"],
+["consult","전에 반영구 시술 받아보셨나요?","您以前做过半永久吗？","Nín yǐqián zuò guo bànyǒngjiǔ ma?","닌 이치엔 쭤 궈 반융지우 마","アートメイクは経験がありますか？","あーとめいくはけいけんがありますか","Ātomeiku wa keiken ga arimasu ka","아토메이쿠 와 케이켄 가 아리마스 카"],
+/* 💆‍♀️ 시술 중 안내 */
+["during","편하게 누우세요.","请躺好，放轻松。","Qǐng tǎng hǎo, fàng qīngsōng.","칭 탕 하오, 팡 칭쏭","楽な姿勢で横になってください。","らくなしせいでよこになってください","Raku na shisei de yoko ni natte kudasai","라쿠 나 시세이 데 요코 니 낫테 쿠다사이"],
+["during","마취 크림 먼저 발라 드릴게요. 20분 정도 기다립니다.","我先帮您涂麻药，大概要等二十分钟。","Wǒ xiān bāng nín tú máyào, dàgài yào děng èrshí fēnzhōng.","워 시엔 방 닌 투 마야오, 다가이 야오 덩 얼스 펀종","先に麻酔クリームを塗ります。20分ほどお待ちください。","さきにますいくりーむをぬります。にじゅっぷんほどおまちください","Saki ni masui kurīmu o nurimasu. Nijuppun hodo omachi kudasai.","사키 니 마스이 쿠리무 오 누리마스. 니줏푼 호도 오마치 쿠다사이"],
+["during","눈 감고 힘 빼세요.","请把眼睛闭上，放松。","Qǐng bǎ yǎnjing bì shàng, fàngsōng.","칭 바 옌징 비 상, 팡쏭","目を閉じて、力を抜いてください。","めをとじて、ちからをぬいてください","Me o tojite, chikara o nuite kudasai","메 오 토지테, 치카라 오 누이테 쿠다사이"],
+["during","조금 따끔할 수 있어요.","可能会有点疼。","Kěnéng huì yǒudiǎn téng.","커넝 훼이 요우디엔 텅","少しチクチクするかもしれません。","すこしちくちくするかもしれません","Sukoshi chikuchiku suru kamo shiremasen","스코시 치쿠치쿠 스루 카모 시레마센"],
+["during","아프시면 바로 말씀해 주세요.","如果疼请马上告诉我。","Rúguǒ téng qǐng mǎshàng gàosu wǒ.","루궈 텅 칭 마샹 까오쑤 워","痛かったらすぐに教えてください。","いたかったらすぐにおしえてください","Itakattara sugu ni oshiete kudasai","이타캇타라 스구 니 오시에테 쿠다사이"],
+["during","고개 움직이지 마세요.","头请不要动。","Tóu qǐng búyào dòng.","토우 칭 뿌야오 똥","頭を動かさないでください。","あたまをうごかさないでください","Atama o ugokasanaide kudasai","아타마 오 우고카사나이데 쿠다사이"],
+["during","눈 깜빡이지 마세요.","请不要眨眼睛。","Qǐng búyào zhǎ yǎnjing.","칭 뿌야오 자 옌징","まばたきしないでください。","まばたきしないでください","Mabataki shinaide kudasai","마바타키 시나이데 쿠다사이"],
+["during","거의 다 끝났어요.","马上就好了。","Mǎshàng jiù hǎo le.","마샹 지우 하오 러","もうすぐ終わります。","もうすぐおわります","Mō sugu owarimasu","모 스구 오와리마스"],
+["during","이제 눈 뜨셔도 됩니다.","现在可以睁开眼睛了。","Xiànzài kěyǐ zhēng kāi yǎnjing le.","시엔짜이 커이 쯩 카이 옌징 러","目を開けても大丈夫です。","めをあけてもだいじょうぶです","Me o akete mo daijōbu desu","메 오 아케테 모 다이조오부 데스"],
+["during","거울 한번 보실래요?","您看一下镜子吧。","Nín kàn yíxià jìngzi ba.","닌 칸 이샤 징쯔 바","鏡を見てみてください。","かがみをみてみてください","Kagami o mite mite kudasai","카가미 오 미테 미테 쿠다사이"],
+["during","필요하면 색을 조금 더 채워 드릴게요.","需要的话我再补一下颜色。","Xūyào de huà wǒ zài bǔ yíxià yánsè.","쉬야오 더 화 워 짜이 뿌 이샤 옌써","必要なら色をもう一度入れますね。","ひつようならいろをもういちどいれますね","Hitsuyō nara iro o mō ichido iremasu ne","히쓰요 나라 이로 오 모 이치도 이레마스 네"],
+["during","심호흡 한 번 하세요, 곧 끝나요.","深呼吸一下，马上就结束了。","Shēnhūxī yíxià, mǎshàng jiù jiéshù le.","션후시 이샤, 마샹 지우 지에수 러","深呼吸してください。もうすぐ終わりますよ。","しんこきゅうしてください。もうすぐおわりますよ","Shinkokyū shite kudasai. Mō sugu owarimasu yo.","신코큐 시테 쿠다사이. 모 스구 오와리마스 요"],
+/* 💰 가격 · 결제 */
+["price","속눈썹펌은 4만 원이에요.","睫毛烫是四万韩元。","Jiémáo tàng shì sì wàn Hányuán.","지에마오 탕 스 쓰 완 한위엔","まつ毛パーマは4万ウォンです。","まつげぱーまはよんまんうぉんです","Matsuge pāma wa yon man won desu","마쓰게 파아마 와 욘 만 원 데스"],
+["price","눈썹 염색은 3만 5천 원이에요.","眉毛染色是三万五千韩元。","Méimáo rǎnsè shì sān wàn wǔqiān Hányuán.","메이마오 란써 스 싼 완 우치엔 한위엔","眉の染色は3万5千ウォンです。","まゆのせんしょくはさんまんごせんうぉんです","Mayu no senshoku wa san man gosen won desu","마유 노 센쇼쿠 와 산 만 고센 원 데스"],
+["price","미인점은 4만 원이에요.","美人痣是四万韩元。","Měirén zhì shì sì wàn Hányuán.","메이런 쯔 스 쓰 완 한위엔","福ほくろは4万ウォンです。","ふくほくろはよんまんうぉんです","Fuku hokuro wa yon man won desu","후쿠 호쿠로 와 욘 만 원 데스"],
+["price","아이라인 가격은 디자인 상담 후에 안내해 드려요.","眼线的价格，咨询设计后再告诉您。","Yǎnxiàn de jiàgé, zīxún shèjì hòu zài gàosu nín.","옌시엔 더 지아거, 쯔쉰 써지 허우 짜이 까오쑤 닌","アイラインの料金は、デザインのカウンセリングの後にご案内します。","あいらいんのりょうきんは、でざいんのかうんせりんぐのあとでごあんないします","Airain no ryōkin wa, dezain no kaunseringu no ato de goannai shimasu","아이라인 노 료킨 와, 데자인 노 카운세링구 노 아토 데 고안나이 시마스"],
+["price","눈썹도 디자인에 따라 달라서 상담 후에 정확히 알려 드릴게요.","眉毛的价格也要看设计，咨询后再告诉您。","Méimáo de jiàgé yě yào kàn shèjì, zīxún hòu zài gàosu nín.","메이마오 더 지아거 예 야오 칸 써지, 쯔쉰 허우 짜이 까오쑤 닌","眉の料金もデザインによって変わりますので、カウンセリングの後にご案内します。","まゆのりょうきんもでざいんによってかわりますので、かうんせりんぐのあとにごあんないします","Mayu no ryōkin mo dezain ni yotte kawarimasu node, kaunseringu no ato ni goannai shimasu","마유 노 료킨 모 데자인 니 욧테 카와리마스 노데, 카운세링구 노 아토 니 고안나이 시마스"],
+["price","예약금은 3만 원이에요.","预约需要先付三万韩元定金。","Yùyuē xūyào xiān fù sān wàn Hányuán dìngjīn.","위웨 쉬야오 시엔 푸 싼 완 한위엔 딩진","ご予約には3万ウォンの予約金が必要です。","ごよやくにはさんまんうぉんのよやくきんがひつようです","Goyoyaku ni wa san man won no yoyakukin ga hitsuyō desu","고요야쿠 니 와 산 만 원 노 요야쿠킨 가 히쓰요 데스"],
+["price","카드도 현금도 다 됩니다.","刷卡和现金都可以。","Shuākǎ hé xiànjīn dōu kěyǐ.","솨카 허 시엔진 또우 커이","カードも現金も使えます。","かーどもげんきんもつかえます","Kādo mo genkin mo tsukaemasu","카도 모 겐킨 모 쓰카에마스"],
+["price","카드로 하시겠어요, 현금으로 하시겠어요?","您要刷卡还是付现金？","Nín yào shuākǎ háishì fù xiànjīn?","닌 야오 솨카 하이스 씨 푸 시엔진","カードと現金、どちらになさいますか？","かーどとげんきん、どちらになさいますか","Kādo to genkin, dochira ni nasaimasu ka","카도 토 겐킨, 도치라 니 나사이마스 카"],
+["price","영수증 필요하세요?","需要收据吗？","Xūyào shōujù ma?","쉬야오 쇼우쥐 마","領収書は必要ですか？","りょうしゅうしょはひつようですか","Ryōshūsho wa hitsuyō desu ka","료슈쇼 와 히쓰요 데스 카"],
+["price","여기 서명해 주세요.","请在这里签字。","Qǐng zài zhèlǐ qiānzì.","칭 짜이 쪄리 치엔쯔","こちらにご署名をお願いします。","こちらにごしょめいをおねがいします","Kochira ni goshomei o onegai shimasu","코치라 니 고쇼메이 오 오네가이 시마스"],
+/* ⚠️ 시술 후 주의사항 */
+["after","오늘은 시술 부위에 물이 닿지 않게 해 주세요.","今天施术部位不要沾水。","Jīntiān shīshù bùwèi búyào zhān shuǐ.","진티엔 스수 뿌웨이 뿌야오 쨘 슈웨이","今日は施術した部分に水がつかないようにしてください。","きょうはしじゅつしたぶぶんにみずがつかないようにしてください","Kyō wa shijutsu shita bubun ni mizu ga tsukanai yō ni shite kudasai","쿄 와 시주쓰 시타 부분 니 미즈 가 쓰카나이 요오 니 시테 쿠다사이"],
+["after","일주일 동안 사우나·수영장·격한 운동은 피해 주세요.","一周内不要去桑拿、游泳池，也不要剧烈运动。","Yì zhōu nèi búyào qù sāngná, yóuyǒngchí, yě búyào jùliè yùndòng.","이 저우 네이 뿌야오 취 상나, 요우용츠, 예 뿌야오 쥐리에 윈똥","一週間はサウナ・プール・激しい運動は避けてください。","いっしゅうかんはさうな・ぷーる・はげしいうんどうはさけてください","Isshūkan wa sauna, pūru, hageshii undō wa sakete kudasai","잇슈칸 와 사우나, 푸루, 하게시이 운도오 와 사케테 쿠다사이"],
+["after","눈을 손으로 비비지 마세요.","不要用手揉眼睛。","Búyào yòng shǒu róu yǎnjing.","뿌야오 융 쇼우 로우 옌징","目を手でこすらないでください。","めをてでこすらないでください","Me o te de kosuranaide kudasai","메 오 테 데 코스라나이데 쿠다사이"],
+["after","딱지가 생겨도 억지로 떼지 마세요.","结痂的时候不要用手抠。","Jiējiā de shíhou búyào yòng shǒu kōu.","지에지아 더 스허우 뿌야오 융 쇼우 코우","かさぶたができても、無理にはがさないでください。","かさぶたができても、むりにはがさないでください","Kasabuta ga kite mo, muri ni hagasanaide kudasai","카사부타 가 키테 모, 무리 니 하가사나이데 쿠다사이"],
+["after","재생 크림을 얇게 발라 주세요.","请薄薄地涂一层修复霜。","Qǐng báobáo de tú yì céng xiūfù shuāng.","칭 빠오빠오 더 투 이 청 시우푸 솽","再生クリームを薄く塗ってください。","さいせいくりーむをうすくぬってください","Saisei kurīmu o usuku nutte kudasai","사이세이 쿠리무 오 우스쿠 눗테 쿠다사이"],
+["after","리터치는 1~2달 안에 오시면 됩니다.","一个月到两个月内来补色就可以了。","Yí ge yuè dào liǎng ge yuè nèi lái bǔsè jiù kěyǐ le.","이 거 위에 따오 량 거 위에 네이 라이 뿌써 지우 커이 러","リタッチは1〜2か月以内にいらしてください。","りたっちはいちにかげついないにいらしてください","Ritatchi wa ichi ni kagetsu inai ni irashite kudasai","리탓치 와 이치 니 카게쓰 이나이 니 이라시테 쿠다사이"],
+["after","궁금한 점 있으면 언제든 위챗으로 연락 주세요.","有不明白的地方，随时微信联系我。","Yǒu bù míngbai de dìfang, suíshí Wēixìn liánxì wǒ.","요우 뿌 밍바이 더 디팡, 수이스 웨이신 리엔시 워","何かわからないことがあったら、いつでもLINEで連絡してください。","なにかわからないことがあったら、いつでもらいんでれんらくしてください","Nanika wakaranai koto ga attara, itsudemo LINE de renraku shite kudasai","나니카 와카라나이 코토 가 앗타라, 이쓰데모 라인 데 렌라쿠 시테 쿠다사이"],
+["after","세안할 때는 눈 주변을 피해 주세요.","洗脸的时候请避开眼睛。","Xǐliǎn de shíhou qǐng bìkāi yǎnjing.","시리엔 더 스허우 칭 비카이 옌징","洗顔のときは目の周りを避けてください。","せんがんのときはめのまわりをさけてください","Sengan no toki wa me no mawari o sakete kudasai","센간 노 토키 와 메 노 마와리 오 사케테 쿠다사이"],
+["after","3일 동안은 화장하지 마세요.","三天内不要化妆。","Sān tiān nèi búyào huàzhuāng.","산 티엔 네이 뿌야오 화좡","三日間はメイクをしないでください。","みっかかんはめいくをしないでください","Mikkakan wa meiku o shinaide kudasai","밋카칸 와 메이쿠 오 시나이데 쿠다사이"],
+["after","이게 주의사항이에요, 사진으로 찍어 가세요.","这是注意事项，请拍照留着。","Zhè shì zhùyì shìxiàng, qǐng pāi zhào liú zhe.","쪄 스 주이 스샹, 칭 파이 이샤 자오","こちらが注意事項です。写真に撮っておいてください。","こちらがちゅういじこうです。しゃしんにとっておいてください","Kochira ga chūi jikō desu. Shashin ni totte oite kudasai","코치라 가 추이 지코 데스. 샤신 니 톳테 오이테 쿠다사이"],
+/* 📚 복습 · 패턴 */
+["review","모양을 조금 수정해 드릴게요.","我帮您把形状改一下。","Wǒ bāng nín bǎ xíngzhuàng gǎi yíxià.","워 방 닌 바 싱좡 까이 이샤","形を少し直しますね。","かたちをすこしなおしますね","Katachi o sukoshi naoshimasu ne","카타치 오 스코시 나오시마스 네"],
+["review","머리카락을 뒤로 정리해 주세요.","请您把头发往后拢一下。","Qǐng nín bǎ tóufa wǎng hòu lǒng yíxià.","칭 닌 바 토우파 왕 허우 롱 이샤","髪を後ろにまとめてください。","かみをうしろにまとめてください","Kami o ushiro ni matomete kudasai","카미 오 우시로 니 마토메테 쿠다사이"],
+["review","주의사항을 보내 드릴게요.","我把注意事项发给您。","Wǒ bǎ zhùyì shìxiàng fā gěi nín.","워 바 주이 스샹 파 게이 닌","注意事項をお送りします。","ちゅういじこうをおおくりします","Chūi jikō o ookuri shimasu","추이 지코 오 오쿠리 시마스"],
+["review","준비되면 알려 주세요.","您准备好以后告诉我。","Nín zhǔnbèi hǎo yǐhòu gàosu wǒ.","닌 쭌베이 하오 이허우 까오쑤 워","準備ができたら教えてください。","じゅんびができたらおしえてください","Junbi ga dekitara oshiete kudasai","준비 가 데키타라 오시에테 쿠다사이"],
+["review","취소하실 때는 하루 전에 알려 주세요.","预约如果要取消，请提前一天告诉我。","Yùyuē rúguǒ yào qǔxiāo, qǐng tíqián yì tiān gàosu wǒ.","위에 루궈 야오 취샤오, 칭 티치엔 이 티엔 까오쑤 워","キャンセルの場合は前日までにご連絡ください。","きゃんせるのばあいはぜんじつまでにごれんらくください","Kyanseru no baai wa zenjitsu made ni gorenraku kudasai","캰세루 노 바아이 와 젠지쓰 마데 니 고렌라쿠 쿠다사이"],
+["review","거울 갖다 드릴게요.","我帮您把镜子拿过来。","Wǒ bāng nín bǎ jìngzi ná guòlái.","워 방 닌 바 징쯔 나 궈라이","鏡をお持ちしますね。","かがみをおもちしますね","Kagami o omochi shimasu ne","카가미 오 오모치 시마스 네"],
+/* 🗣️ 실생활 필수 회화 */
+["daily","이거 하나 주세요.","请给我这个，一个。","Qǐng gěi wǒ zhège, yí ge.","칭 게이 워 쪄거, 이 거","これを一つください。","これをひとつください","Kore o hitotsu kudasai","코레 오 히토쓰 쿠다사이"],
+["daily","메뉴판 있어요?","有菜单吗？","Yǒu càidān ma?","요우 차이단 마","メニューはありますか？","めにゅーはありますか","Menyū wa arimasu ka","메뉴 와 아리마스 카"],
+["daily","덜 달게 해 주세요.","请少放糖。","Qǐng shǎo fàng táng.","칭 샤오 팡 탕","甘さを控えめにしてください。","あまさをひかえめにしてください","Amasa o hikaeme ni shite kudasai","아마사 오 히카에메 니 시테 쿠다사이"],
+["daily","얼음 적게 넣어 주세요.","请少放冰块。","Qǐng shǎo fàng bīngkuài.","칭 샤오 팡 삥콰이","氷は少なめにしてください。","こおりはすくなめにしてください","Kōri wa sukuname ni shite kudasai","코오리 와 스쿠나메 니 시테 쿠다사이"],
+["daily","계산할게요.","我要结账。","Wǒ yào jiézhàng.","워 야오 지에장","お会計をお願いします。","おかいけいをおねがいします","Okaikei o onegai shimasu","오카이케이 오 오네가이 시마스"],
+["daily","여기가 어디예요?","请问这里是哪里？","Qǐngwèn zhèlǐ shì nǎlǐ?","칭원 쪄리 스 나리","ここはどこですか？","ここはどこですか","Koko wa doko desu ka","코코 와 도코 데스 카"],
+["daily","여기서 멀어요?","离这里远吗？","Lí zhèlǐ yuǎn ma?","리 쪄리 위엔 마","ここから遠いですか？","ここからとおいですか","Koko kara tōi desu ka","코코 카라 토오이 데스 카"],
+["daily","여기로 가 주세요.","请带我去这个地方。","Qǐng dài wǒ qù zhège dìfang.","칭 다이 워 취 쪄거 디팡","ここまでお願いします。","ここまでおねがいします","Koko made onegai shimasu","코코 마데 오네가이 시마스"],
+["daily","이거 얼마예요?","这个多少钱？","Zhège duōshao qián?","쪄거 뚜어샤오 치엔","これはいくらですか？","これはいくらですか","Kore wa ikura desu ka","코레 와 이쿠라 데스 카"],
+["daily","다른 색 있어요?","有别的颜色吗？","Yǒu bié de yánsè ma?","요우 비에 더 옌써 마","ほかの色はありますか？","ほかのいろはありますか","Hoka no iro wa arimasu ka","호카 노 이로 와 아리마스 카"],
+["daily","진짜요?","真的吗？","Zhēn de ma?","쩐 더 마","本当ですか？","ほんとうですか","Hontō desu ka","혼토오 데스 카"],
+["daily","괜찮아요.","没关系。","Méi guānxi.","메이 꽌시","大丈夫です。","だいじょうぶです","Daijōbu desu","다이조오부 데스"],
+["daily","감사합니다, 수고하셨어요.","谢谢，辛苦了。","Xièxie, xīnkǔ le.","시에시에, 신쿠 러","ありがとうございました。お疲れさまでした。","ありがとうございました。おつかれさまでした","Arigatō gozaimashita. Otsukaresama deshita.","아리가토오 고자이마시타. 오쓰카레사마 데시타"],
+["daily","잠깐만요.","请等一下。","Qǐng děng yíxià.","칭 덩 이샤","ちょっと待ってください。","ちょっとまってください","Chotto matte kudasai","춋토 맛테 쿠다사이"],
+["daily","맛있어요.","好吃。","Hǎochī.","하오츠","おいしいです。","おいしいです","Oishii desu","오이시이 데스"],
+["daily","화장실이 어디예요?","洗手间在哪里？","Xǐshǒujiān zài nǎlǐ?","시쇼우지엔 짜이 나리","お手洗いはどこですか？","おてあらいはどこですか","Otearai wa doko desu ka","오테아라이 와 도코 데스 카"]
+];
+
+const CATS = [
+  {id:"all", label:"전체"},
+  {id:"greet", label:"👋 인사 · 예약", full:"👋 인사 · 예약 확인"},
+  {id:"consult", label:"💬 상담 · 디자인", full:"💬 상담 · 디자인"},
+  {id:"during", label:"💆 시술 중", full:"💆 시술 중 안내"},
+  {id:"price", label:"💰 가격 · 결제", full:"💰 가격 · 결제 · 안내"},
+  {id:"after", label:"⚠️ 시술 후 주의", full:"⚠️ 시술 후 주의사항"},
+  {id:"review", label:"📚 복습 · 패턴", full:"📚 아침 복습 · 패턴"},
+  {id:"daily", label:"🗣️ 실생활", full:"🗣️ 실생활 필수 회화", accent:true, isNew:true}
+];
+
+const WORDS = {
+  zh:[
+    ["发","fā","파","보내다"],
+    ["改","gǎi","까이","고치다, 수정하다"],
+    ["准备","zhǔnbèi","쭌베이","준비하다"],
+    ["取消","qǔxiāo","취샤오","취소하다"],
+    ["把","bǎ","바","~을/를 (목적어를 앞으로)"]
+  ],
+  ja:[
+    ["送る","おくる","오쿠루","보내다"],
+    ["直す","なおす","나오스","고치다, 수정하다"],
+    ["準備","じゅんび","준비","준비"],
+    ["キャンセル","きゃんせる","캰세루","취소"],
+    ["〜てください","〜てください","〜테 쿠다사이","~해 주세요"]
+  ]
+};
+const STUDY_NOTE = {
+  zh:"Day 1~3 아침 공부(把자문 + 发·改·准备·取消)를 매장에서 쓰는 문장으로 바꿨습니다. 把는 '그것을 ~해 두다'라는 어순을 만들어요.",
+  ja:"Day 1~3 아침 공부를 일본어 매장 문장으로 바꿨습니다. 〜てください(해 주세요), 〜ないでください(하지 마세요) 두 패턴만 익혀도 응대가 됩니다."
+};
+
+/* ========================================================= */
+const PHRASES = RAW.map((r, i) => ({
+  id:"p" + i, cat:r[0], ko:r[1], zh:r[2], py:r[3], zkr:r[4], ja:r[5], jrd:r[6], jrm:r[7], jkr:r[8]
+}));
+function catOf(id){ return CATS.find(c => c.id === id) || CATS[0]; }
+PHRASES.forEach(p => {
+  p.h = [p.ko, p.zh, p.py, p.zkr, p.ja, p.jrd, p.jrm, p.jkr, catOf(p.cat).full || ""].join(" ").toLowerCase();
+});
+
+const LS_KEY = "jinart-foreign-v1";
+const DEF = { lang:"zh", tab:"talk", cat:"all", speed:1, fav:[], learned:[], fcFav:false, best:{zh:0, ja:0} };
+let state = load();
+function load(){
+  try{ const raw = localStorage.getItem(LS_KEY); if(raw) return Object.assign({}, DEF, JSON.parse(raw)); }catch(e){}
+  return Object.assign({}, DEF);
+}
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){} }
+
+const $ = s => document.querySelector(s);
+const $$ = s => Array.prototype.slice.call(document.querySelectorAll(s));
+const isZh = () => state.lang === "zh";
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+/* ---------- 발음 (Web Speech API) ---------- */
+let voices = [];
+function loadVoices(){
+  if(!("speechSynthesis" in window)) return;
+  voices = window.speechSynthesis.getVoices() || [];
+}
+loadVoices();
+if("speechSynthesis" in window){
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+  setTimeout(loadVoices, 400);
+}
+function pickVoice(){
+  const lang = isZh() ? "zh" : "ja";
+  const pref = isZh() ? ["zh-cn","zh_cn","cmn","zh"] : ["ja-jp","ja_jp","ja"];
+  for(const key of pref){
+    const v = voices.find(v => (v.lang || "").toLowerCase().replace("_","-").indexOf(key) === 0);
+    if(v) return v;
+  }
+  return voices.find(v => (v.lang || "").toLowerCase().indexOf(lang) === 0) || null;
+}
+let voiceWarned = false;
+function speak(text){
+  if(!("speechSynthesis" in window)){ toast("이 브라우저는 발음 재생을 지원하지 않아요."); return; }
+  loadVoices();
+  try{
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = isZh() ? "zh-CN" : "ja-JP";
+    const v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = state.speed;
+    u.pitch = 1;
+    u.onerror = function(){
+      if(!voiceWarned){
+        voiceWarned = true;
+        toast((isZh() ? "중국어" : "일본어") + " 음성이 아직 준비되지 않았어요. 잠시 뒤 다시 눌러 주세요.");
+      }
+    };
+    window.speechSynthesis.speak(u);
+    if(!v && !voiceWarned){
+      voiceWarned = true;
+      setTimeout(() => {
+        if(!pickVoice()) toast("아이폰 설정 › 접근성 › 콘텐츠 말하기에서 " + (isZh() ? "중국어" : "일본어") + " 음성을 추가하면 더 정확해요.");
+      }, 900);
+    }
+  }catch(e){ toast("발음을 재생하지 못했어요. 다시 시도해 주세요."); }
+}
+function say(p){
+  const t = isZh() ? p.zh : p.ja;
+  speak(t);
+}
+
+/* ---------- toast ---------- */
+let toastTimer = null;
+function toast(msg){
+  const el = $("#toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 2600);
+}
+
+/* ---------- 공통 렌더 ---------- */
+function applyMode(){
+  $("#langSwitch").querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.lang === state.lang));
+  $("#speed").querySelectorAll("button").forEach(b => b.classList.toggle("on", Number(b.dataset.rate) === Number(state.speed)));
+  $("#search").placeholder = isZh() ? "한국어·중국어·병음 검색" : "한국어·일본어·로마자 검색";
+  document.documentElement.lang = "ko";
+  $("#stat").textContent = "★ " + state.fav.length + "  ·  ✓ " + state.learned.length;
+  renderChips();
+  renderTalk();
+  renderFlash();
+  renderQuizHome();
+  renderFav();
+}
+function setTab(tab){
+  state.tab = tab; save();
+  $$("section").forEach(s => s.classList.remove("on"));
+  $("#tab-" + tab).classList.add("on");
+  $("#tabbar").querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
+  if(tab === "flash") renderFlash();
+  if(tab === "quiz" && !quiz) renderQuizHome();
+  if(tab === "fav") renderFav();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ---------- 1. 회화장 ---------- */
+function renderChips(){
+  $("#chips").innerHTML = CATS.map(c =>
+    '<button class="chip' + (c.accent ? " accent" : "") + (state.cat === c.id ? " on" : "") + '" data-cat="' + c.id + '">' +
+      esc(c.label) + (c.isNew ? '<span class="new">NEW</span>' : "") + '</button>'
+  ).join("");
+}
+function filtered(){
+  const q = ($("#search").value || "").trim().toLowerCase();
+  if(q) return PHRASES.filter(p => p.h.indexOf(q) !== -1);
+  return PHRASES.filter(p => state.cat === "all" || p.cat === state.cat);
+}
+function renderTalk(){
+  const list = filtered();
+  const q = ($("#search").value || "").trim();
+  const title = state.cat === "all" ? (q ? "검색 결과" : "전체 표현") : catOf(state.cat).full;
+  $("#listTitle").textContent = title;
+  $("#listCount").textContent = list.length + "문장";
+  if(!list.length){
+    $("#cards").innerHTML = '<div class="empty">' + (q ? '“' + esc(q) + '”에 맞는 표현이 없어요.<br>다른 단어로 찾아보세요.' : "이 카테고리는 아직 비어 있어요.") + '</div>';
+    return;
+  }
+  $("#cards").innerHTML = list.map(cardHTML).join("");
+}
+function cardHTML(p){
+  const c = catOf(p.cat);
+  const fav = state.fav.indexOf(p.id) !== -1;
+  const done = state.learned.indexOf(p.id) !== -1;
+  const zh = isZh();
+  const readBlock = zh
+    ? '<p class="read"><span class="rl">병음</span>' + esc(p.py) + '</p><p class="pron"><span class="rl">발음</span>' + esc(p.zkr) + '</p>'
+    : '<p class="ku"><span class="rl">かな</span>' + esc(p.jrd) + '</p><p class="read"><span class="rl">로마자</span>' + esc(p.jrm) + '</p><p class="pron"><span class="rl">발음</span>' + esc(p.jkr) + '</p>';
+  return '<article class="card' + (done ? " done" : "") + '" data-id="' + p.id + '">' +
+    '<div class="card-head"><span class="chipcat">' + esc(c.label) + '</span>' +
+      '<div class="cbtns">' +
+        '<button class="iconbtn star' + (fav ? " on" : "") + '" data-act="fav" aria-label="즐겨찾기">★</button>' +
+        '<button class="iconbtn tick' + (done ? " on" : "") + '" data-act="done" aria-label="학습 완료">✓</button>' +
+      '</div></div>' +
+    '<p class="mean">' + esc(p.ko) + '</p>' +
+    '<p class="target' + (zh ? "" : " ja") + '">' + esc(zh ? p.zh : p.ja) + '</p>' +
+    readBlock +
+    '<div class="cacts">' +
+      '<button class="btn soft" data-act="speak">🔊 발음 듣기</button>' +
+      '<button class="btn solid" data-act="guest">📱 손님께 보여주기</button>' +
+    '</div></article>';
+}
+
+/* ---------- 2. 플래시카드 ---------- */
+let fc = { i:0, flip:false };
+function fcList(){
+  return state.fcFav ? PHRASES.filter(p => state.fav.indexOf(p.id) !== -1) : PHRASES;
+}
+function renderFlash(){
+  const list = fcList();
+  $("#fcFav").classList.toggle("on", state.fcFav);
+  if(!list.length){
+    $("#fcMeta").textContent = "0 / 0";
+    $("#fcQ").textContent = "FLASHCARD";
+    $("#fcTarget").textContent = "즐겨찾기한 표현이 없어요";
+    $("#fcRead").textContent = "";
+    $("#fcRead2").textContent = "카드의 ★를 누르면 여기에 모여요";
+    $("#fcMean").textContent = "";
+    $("#fcPron").textContent = "";
+    $("#fcStar").classList.remove("on");
+    return;
+  }
+  $("#fcInner").style.visibility = "visible";
+  if(fc.i >= list.length) fc.i = 0;
+  const p = list[fc.i];
+  const target = isZh() ? p.zh : p.ja;
+  $("#fcQ").textContent = isZh() ? "CHINESE" : "JAPANESE";
+  $("#fcTarget").textContent = target;
+  $("#fcTarget").classList.toggle("sm", target.length > 22);
+  $("#fcRead").textContent = isZh() ? p.py : p.jrd;
+  $("#fcRead2").textContent = isZh() ? p.zkr : p.jrm;
+  $("#fcMean").textContent = p.ko;
+  $("#fcMean").classList.toggle("sm2", p.ko.length > 24);
+  $("#fcPron").textContent = (isZh() ? "발음 " : "발음 ") + (isZh() ? p.zkr : p.jkr);
+  $("#fcMeta").textContent = (fc.i + 1) + " / " + list.length;
+  $("#fcStar").classList.toggle("on", state.fav.indexOf(p.id) !== -1);
+  $("#fcInner").classList.toggle("flip", fc.flip);
+}
+function fcMove(d){
+  const list = fcList();
+  if(!list.length) return;
+  fc.i = (fc.i + d + list.length) % list.length;
+  fc.flip = false;
+  renderFlash();
+}
+
+/* ---------- 3. 퀴즈 ---------- */
+let quiz = null;
+function shuffle(a){
+  const r = a.slice();
+  for(let i = r.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); const t = r[i]; r[i] = r[j]; r[j] = t; }
+  return r;
+}
+function buildQuestions(ids){
+  const pool = PHRASES;
+  return ids.map(id => {
+    const p = pool.find(x => x.id === id);
+    const kind = Math.random() < 0.5 ? "meaning" : "listen";
+    const others = shuffle(pool.filter(x => x.id !== id && x.ko !== p.ko)).slice(0, 3);
+    const opts = shuffle([p].concat(others).map(x => ({ id:x.id, text:x.ko })));
+    return { id:id, kind:kind, opts:opts };
+  });
+}
+function renderQuizHome(){
+  const best = state.best[state.lang] || 0;
+  $("#quizWrap").innerHTML =
+    '<div class="quiz-card"><div class="quiz-intro">' +
+      '<div class="ico">🎯</div>' +
+      '<h3>' + (isZh() ? "중국어" : "일본어") + ' 실전 퀴즈</h3>' +
+      '<p>10문제 · 뜻 고르기와 듣기 문제가 섞여 나와요.<br>틀린 문제는 마지막에 다시 풀 수 있어요.</p>' +
+      (best ? '<div class="best">최고 점수 ' + best + ' / 10</div>' : '') +
+      '<div class="qfoot"><button class="btn" id="quizStart">퀴즈 시작하기</button></div>' +
+    '</div></div>';
+}
+function startQuiz(ids){
+  const use = ids && ids.length ? ids : shuffle(PHRASES.map(p => p.id)).slice(0, 10);
+  quiz = { ids:use, qs:buildQuestions(use), i:0, score:0, wrong:[], answered:false, picked:null, fromWrong:!!(ids && ids.length) };
+  renderQuiz();
+}
+function renderQuiz(){
+  if(!quiz){ renderQuizHome(); return; }
+  if(quiz.i >= quiz.qs.length){ renderQuizResult(); return; }
+  const q = quiz.qs[quiz.i];
+  const p = PHRASES.find(x => x.id === q.id);
+  const zh = isZh();
+  const pct = Math.round((quiz.i / quiz.qs.length) * 100);
+  let stage = "";
+  if(q.kind === "meaning"){
+    stage = '<div class="qtext"><div class="lab">이 표현의 뜻은?</div>' +
+      '<div class="big">' + esc(zh ? p.zh : p.ja) + '</div>' +
+      '<div class="sub">' + esc(zh ? p.py : p.jrd) + '</div></div>';
+  }else{
+    stage = '<div class="qlisten"><button id="qPlay" aria-label="발음 듣기">🔊</button><span>잘 듣고 뜻을 고르세요 (다시 누르면 재생)</span></div>';
+  }
+  const opts = q.opts.map((o, idx) => {
+    let cls = "opt";
+    if(quiz.answered){
+      if(o.id === q.id) cls += " correct";
+      else if(o.id === quiz.picked) cls += " wrong";
+      else cls += " dim";
+    }
+    return '<button class="' + cls + '" data-opt="' + o.id + '"' + (quiz.answered ? " disabled" : "") + '>' +
+      '<span class="k">' + "ABCD"[idx] + '</span><span>' + esc(o.text) + '</span></button>';
+  }).join("");
+  $("#quizWrap").innerHTML =
+    '<div class="quiz-card">' +
+      '<div class="qbar"><span>' + (quiz.i + 1) + ' / ' + quiz.qs.length + '</span><div class="prog"><i style="width:' + pct + '%"></i></div><span>' + quiz.score + '점</span></div>' +
+      stage +
+      '<div class="opts">' + opts + '</div>' +
+      (quiz.answered ? '<div class="qfoot"><button class="btn" id="qNext">' + (quiz.i + 1 === quiz.qs.length ? "결과 보기" : "다음 문제 →") + '</button></div>' : '') +
+    '</div>';
+  if(q.kind === "listen" && !quiz.answered){
+    setTimeout(() => { if(quiz && quiz.i === quiz.qs.indexOf(q)) speak(zh ? p.zh : p.ja); }, 220);
+  }
+}
+function answer(id){
+  if(!quiz || quiz.answered) return;
+  const q = quiz.qs[quiz.i];
+  quiz.answered = true;
+  quiz.picked = id;
+  if(id === q.id) quiz.score++;
+  else quiz.wrong.push(q.id);
+  renderQuiz();
+}
+function nextQ(){ quiz.i++; quiz.answered = false; quiz.picked = null; renderQuiz(); }
+function renderQuizResult(){
+  const total = quiz.qs.length;
+  const best = Math.max(state.best[state.lang] || 0, quiz.score);
+  state.best[state.lang] = best; save();
+  const wrong = quiz.wrong.slice();
+  const items = wrong.map(id => {
+    const p = PHRASES.find(x => x.id === id);
+    return '<div class="wrong-item"><span class="a">' + esc(p.ko) + '</span><span class="b">' + esc(isZh() ? p.zh : p.ja) + '</span></div>';
+  }).join("");
+  $("#quizWrap").innerHTML =
+    '<div class="quiz-card"><div class="result-score">' +
+      '<div class="score">' + quiz.score + '<small> / ' + total + '</small></div>' +
+      '<p>' + (quiz.score === total ? "완벽해요! 오늘 손님 앞에서 바로 써 보세요 👏" : quiz.score >= total * 0.7 ? "잘하고 있어요. 틀린 문장만 한 번 더 보면 돼요." : "괜찮아요. 틀린 문장을 다시 풀면 금방 붙어요.") + '</p>' +
+    '</div>' +
+    (wrong.length ? '<div class="wrong-list"><h4>틀린 문제 ' + wrong.length + '개</h4>' + items + '</div>' : '') +
+    '<div class="result-btns">' +
+      (wrong.length ? '<button class="btn again" id="quizAgain">틀린 문제 다시 풀기</button>' : '') +
+      '<button class="btn ' + (wrong.length ? "fresh" : "again") + '" id="quizNew">새 퀴즈</button>' +
+    '</div></div>';
+}
+
+/* ---------- 4. 즐겨찾기 ---------- */
+function renderFav(){
+  const favs = PHRASES.filter(p => state.fav.indexOf(p.id) !== -1);
+  $("#favCount").textContent = favs.length + "개";
+  $("#favList").innerHTML = favs.length
+    ? favs.map(cardHTML).join("")
+    : '<div class="empty">아직 즐겨찾기한 표현이 없어요.<br>카드 오른쪽 위 <b>★</b>를 누르면 여기에 모여요.</div>';
+  const list = WORDS[state.lang];
+  $("#words").innerHTML = list.map(w =>
+    '<div class="word"><div class="w">' + esc(w[0]) +
+      '<span class="py">' + esc(w[1]) + '</span><span class="kd">' + esc(w[2]) + '</span></div>' +
+      '<div class="m">' + esc(w[3]) + '</div></div>'
+  ).join("");
+  $("#studyNote").textContent = STUDY_NOTE[state.lang];
+  $("#studyDay").textContent = isZh() ? "Day 1~3" : "Day 1~3";
+}
+
+/* ---------- 손님께 보여주기 ---------- */
+let guestId = null;
+function openGuest(id){
+  const p = PHRASES.find(x => x.id === id);
+  if(!p) return;
+  guestId = id;
+  const zh = isZh();
+  $("#gBadge").textContent = zh ? "CHINESE · 中文" : "JAPANESE · 日本語";
+  $("#gKo").textContent = p.ko;
+  $("#gMain").textContent = zh ? p.zh : p.ja;
+  $("#gKana").textContent = zh ? "" : p.jrd;
+  $("#gRom").textContent = zh ? p.py : p.jrm;
+  $("#gPron").innerHTML = "<b>" + (zh ? "발음" : "발음") + "</b> " + esc(zh ? p.zkr : p.jkr);
+  $("#guest").classList.add("open");
+  document.body.style.overflow = "hidden";
+  speak(zh ? p.zh : p.ja);
+}
+function closeGuest(){
+  $("#guest").classList.remove("open");
+  document.body.style.overflow = "";
+  if("speechSynthesis" in window) window.speechSynthesis.cancel();
+}
+
+/* ---------- 이벤트 ---------- */
+document.addEventListener("click", function(e){
+  const t = e.target.closest ? e.target.closest("[data-act],[data-cat],[data-lang],[data-rate],[data-tab],[data-opt]") : null;
+  if(!t) return;
+
+  if(t.dataset.lang){ state.lang = t.dataset.lang; save(); fc.flip = false; fc.i = 0; quiz = null; applyMode(); return; }
+  if(t.dataset.rate){ state.speed = Number(t.dataset.rate); save(); applyMode(); toast(state.speed === 1 ? "보통 속도로 재생해요." : "느리게(0.75x) 재생해요."); return; }
+  if(t.dataset.tab){ setTab(t.dataset.tab); return; }
+  if(t.dataset.cat){ state.cat = t.dataset.cat; save(); renderChips(); renderTalk(); window.scrollTo({top:0, behavior:"smooth"}); return; }
+
+  const card = t.closest(".card");
+  const id = card ? card.dataset.id : null;
+  if(t.dataset.act && id){
+    const p = PHRASES.find(x => x.id === id);
+    if(t.dataset.act === "fav"){
+      const i = state.fav.indexOf(id);
+      if(i === -1){ state.fav.push(id); toast("★ 즐겨찾기에 저장했어요."); } else { state.fav.splice(i, 1); toast("즐겨찾기에서 뺐어요."); }
+      save(); renderTalk(); renderFav(); if(state.tab === "flash") renderFlash(); return;
+    }
+    if(t.dataset.act === "done"){
+      const i = state.learned.indexOf(id);
+      if(i === -1){ state.learned.push(id); toast("✓ 학습 완료로 표시했어요."); } else { state.learned.splice(i, 1); }
+      save(); renderTalk(); return;
+    }
+    if(t.dataset.act === "speak"){ say(p); return; }
+    if(t.dataset.act === "guest"){ openGuest(id); return; }
+  }
+  if(t.dataset.opt){ answer(t.dataset.opt); return; }
+});
+
+/* 검색 */
+$("#search").addEventListener("input", function(){
+  $("#clearBtn").classList.toggle("show", !!this.value);
+  if(state.tab !== "talk") setTab("talk"); else renderTalk();
+});
+$("#search").addEventListener("keydown", function(e){ if(e.key === "Enter") this.blur(); });
+$("#clearBtn").addEventListener("click", function(){
+  $("#search").value = ""; this.classList.remove("show"); renderTalk(); $("#search").focus();
+});
+
+/* 플래시카드 */
+$("#fcInner").addEventListener("click", function(){ fc.flip = !fc.flip; this.classList.toggle("flip", fc.flip); });
+$("#fcFlip").addEventListener("click", function(){ fc.flip = !fc.flip; $("#fcInner").classList.toggle("flip", fc.flip); });
+$("#fcPrev").addEventListener("click", function(){ fcMove(-1); });
+$("#fcSpeak").addEventListener("click", function(e){
+  e.stopPropagation();
+  const list = fcList(); if(!list.length) return;
+  say(list[fc.i]);
+});
+$("#fcFav").addEventListener("click", function(){
+  state.fcFav = !state.fcFav; save(); fc.i = 0; fc.flip = false;
+  if(state.fcFav && !state.fav.length) toast("먼저 카드에서 ★를 눌러 즐겨찾기를 만들어 주세요.");
+  renderFlash();
+});
+$("#fcStar").addEventListener("click", function(){
+  const list = fcList(); if(!list.length) return;
+  const p = list[fc.i];
+  const i = state.fav.indexOf(p.id);
+  if(i === -1){ state.fav.push(p.id); toast("★ 즐겨찾기에 저장했어요."); } else { state.fav.splice(i, 1); toast("즐겨찾기에서 뺐어요."); }
+  save(); renderFlash(); renderFav();
+  if(state.fcFav && !fcList().length) renderFlash();
+});
+/* 퀴즈 */
+document.addEventListener("click", function(e){
+  if(e.target.id === "quizStart"){ e.stopPropagation(); startQuiz(); return; }
+  if(e.target.id === "qPlay"){
+    const q = quiz && quiz.qs[quiz.i];
+    if(q){ const p = PHRASES.find(x => x.id === q.id); if(p) say(p); }
+    return;
+  }
+  if(e.target.id === "qNext"){ nextQ(); return; }
+  if(e.target.id === "quizAgain"){ startQuiz(quiz.wrong.slice()); return; }
+  if(e.target.id === "quizNew"){ startQuiz(); return; }
+}, true);
+
+/* 손님 모달 */
+$("#gClose").addEventListener("click", closeGuest);
+$("#gDone").addEventListener("click", closeGuest);
+$("#gSay").addEventListener("click", function(){ if(guestId){ const p = PHRASES.find(x => x.id === guestId); if(p) say(p); } });
+document.addEventListener("keydown", function(e){ if(e.key === "Escape" && $("#guest").classList.contains("open")) closeGuest(); });
+$("#guest").addEventListener("click", function(e){
+  if(e.target === this) closeGuest();
+  if(e.target.classList.contains("g-body") || e.target.classList.contains("g-main")){
+    if(guestId){ const p = PHRASES.find(x => x.id === guestId); if(p) say(p); }
+  }
+});
+
+/* 시작 */
+applyMode();
+setTab(state.tab || "talk");
+
+/* PWA */
+if("serviceWorker" in navigator){
+  window.addEventListener("load", function(){
+    navigator.serviceWorker.register("./sw.js").catch(function(){});
+  });
+}
+</script>
+</body>
+</html>
