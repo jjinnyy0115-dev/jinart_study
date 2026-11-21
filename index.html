@@ -220,7 +220,7 @@ nav.tabbar button.on{color:var(--wine);background:var(--wine-soft)}
 nav.tabbar button.on .i{filter:none;opacity:1}
 /* ---------- guest modal ---------- */
 .guest{
-  position:fixed;inset:0;z-index:120;display:flex;flex-direction:column;
+  position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:120;display:flex;flex-direction:column;
   background:linear-gradient(165deg,#4E1828 0%,var(--wine) 55%,#8E3A52 100%);
   color:#fff;opacity:0;pointer-events:none;transition:opacity .22s ease;
   padding:calc(14px + env(safe-area-inset-top)) 22px calc(20px + env(safe-area-inset-bottom));
@@ -497,7 +497,7 @@ const PHRASES = RAW.map((r, i) => ({
 }));
 function catOf(id){ return CATS.find(c => c.id === id) || CATS[0]; }
 PHRASES.forEach(p => {
-  p.h = [p.ko, p.zh, p.py, p.zkr, p.ja, p.jrd, p.jrm, p.jkr, catOf(p.cat).full || ""].join(" ").toLowerCase();
+  p.h = [p.ko, p.zh, p.py, p.zkr, p.ja, p.jrd, p.jrm, p.jkr].join(" ").toLowerCase();
 });
 
 const LS_KEY = "jinart-foreign-v1";
