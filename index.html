@@ -577,16 +577,17 @@ function toast(msg){
 }
 
 /* ---------- 공통 렌더 ---------- */
+function updateStat(){ $("#stat").textContent = "★ " + state.fav.length + "  ·  ✓ " + state.learned.length; }
 function applyMode(){
   $("#langSwitch").querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.lang === state.lang));
   $("#speed").querySelectorAll("button").forEach(b => b.classList.toggle("on", Number(b.dataset.rate) === Number(state.speed)));
   $("#search").placeholder = isZh() ? "한국어·중국어·병음 검색" : "한국어·일본어·로마자 검색";
   document.documentElement.lang = "ko";
-  $("#stat").textContent = "★ " + state.fav.length + "  ·  ✓ " + state.learned.length;
+  updateStat();
   renderChips();
   renderTalk();
   renderFlash();
-  renderQuizHome();
+  if(!quiz) renderQuizHome();
   renderFav();
 }
 function setTab(tab){
@@ -847,12 +848,12 @@ document.addEventListener("click", function(e){
     if(t.dataset.act === "fav"){
       const i = state.fav.indexOf(id);
       if(i === -1){ state.fav.push(id); toast("★ 즐겨찾기에 저장했어요."); } else { state.fav.splice(i, 1); toast("즐겨찾기에서 뺐어요."); }
-      save(); renderTalk(); renderFav(); if(state.tab === "flash") renderFlash(); return;
+      save(); renderTalk(); renderFav(); updateStat(); if(state.tab === "flash") renderFlash(); return;
     }
     if(t.dataset.act === "done"){
       const i = state.learned.indexOf(id);
       if(i === -1){ state.learned.push(id); toast("✓ 학습 완료로 표시했어요."); } else { state.learned.splice(i, 1); }
-      save(); renderTalk(); return;
+      save(); renderTalk(); if(state.tab === "fav") renderFav(); updateStat(); return;
     }
     if(t.dataset.act === "speak"){ say(p); return; }
     if(t.dataset.act === "guest"){ openGuest(id); return; }
@@ -889,7 +890,7 @@ $("#fcStar").addEventListener("click", function(){
   const p = list[fc.i];
   const i = state.fav.indexOf(p.id);
   if(i === -1){ state.fav.push(p.id); toast("★ 즐겨찾기에 저장했어요."); } else { state.fav.splice(i, 1); toast("즐겨찾기에서 뺐어요."); }
-  save(); renderFlash(); renderFav();
+  save(); renderFlash(); renderFav(); updateStat();
   if(state.fcFav && !fcList().length) renderFlash();
 });
 /* 퀴즈 */
