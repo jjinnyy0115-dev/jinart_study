@@ -78,10 +78,10 @@ section.on{display:block;animation:fade .2s ease}
 .hj:active{transform:scale(.95)}
 .hj .han{font-size:27px;font-weight:600;line-height:1.05;letter-spacing:0}
 .hj .sub{font-size:9px;font-weight:700;letter-spacing:-.2px;opacity:.85;white-space:nowrap}
-.hj .st{font-size:8.5px;font-weight:700;opacity:.75;letter-spacing:-.3px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
-.pl.mine .hj{box-shadow:0 0 0 2px rgba(168,126,70,.5), 0 4px 12px rgba(168,126,70,.12)}
-.pl.mine .pl-lab{color:var(--brass)}
-.pl.mine .pl-lab b{color:var(--brass)}
+.hj .sj{font-size:8.5px;font-weight:700;opacity:.75;letter-spacing:-.3px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.pl.is-me .hj{box-shadow:0 0 0 2px rgba(168,126,70,.5), 0 4px 12px rgba(168,126,70,.12)}
+.pl.is-me .pl-lab{color:var(--brass)}
+.pl.is-me .pl-lab b{color:var(--brass)}
 .e-mok{background:#EAF4EF;border-color:#CBE3D8;color:#1F6B4E}
 .e-hwa{background:#FBEBE8;border-color:#F2CFC9;color:#A5352D}
 .e-to{background:#F8F0E0;border-color:#EBD9B6;color:#8E6726}
@@ -868,12 +868,12 @@ function elClass(k){ return { "목":"e-mok","화":"e-hwa","토":"e-to","금":"e-
   const box = document.getElementById("pillars");
   box.innerHTML = PILLARS.map(function(p){
     const g = CHAR[p.gan+"|"+p.key+"|gan"], j = CHAR[p.ji+"|"+p.key+"|ji"];
-    return '<div class="pl'+(p.mine?' mine':'')+'">'
+    return '<div class="pl'+(p.mine?' is-me':'')+'">'
       + '<div class="pl-lab"><b>'+p.label+'</b><br>'+p.meaning+'</div>'
       + '<button class="hj '+elClass(g.el)+'" data-t="'+p.gan+'|'+p.key+'|gan">'
-      + '<span class="han">'+p.gan+'</span><span class="sub">'+EL[g.el].o+' · '+g.yy+'</span><span class="st">'+g.st+'</span></button>'
+      + '<span class="han">'+p.gan+'</span><span class="sub">'+EL[g.el].o+' · '+g.yy+'</span><span class="sj">'+g.st+'</span></button>'
       + '<button class="hj '+elClass(j.el)+'" data-t="'+p.ji+'|'+p.key+'|ji">'
-      + '<span class="han">'+p.ji+'</span><span class="sub">'+EL[j.el].o+' · '+j.yy+'</span><span class="st">'+j.st+'</span></button>'
+      + '<span class="han">'+p.ji+'</span><span class="sub">'+EL[j.el].o+' · '+j.yy+'</span><span class="sj">'+j.st+'</span></button>'
       + '</div>';
   }).join("");
   box.addEventListener("click", function(e){
