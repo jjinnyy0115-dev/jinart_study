@@ -1,0 +1,18 @@
+{
+  "name": "지니 사주 노트",
+  "short_name": "사주공부",
+  "description": "지니 님의 사주 원국과 단계별 사주 공부 노트 (Step 1~10)",
+  "lang": "ko",
+  "dir": "ltr",
+  "start_url": "/jinart_study/saju/",
+  "scope": "/jinart_study/saju/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBF8F3",
+  "theme_color": "#1E2F45",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
