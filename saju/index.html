@@ -44,9 +44,9 @@ header{
 .hd-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .hd-title{font-size:19px;font-weight:800;letter-spacing:-.45px;color:var(--navy);line-height:1.15}
 .hd-title span{display:block;font-size:9px;font-weight:700;letter-spacing:2.4px;color:var(--brass);margin-top:3px}
-.hd-mark{width:34px;height:34px;border-radius:50%;background:linear-gradient(150deg,var(--navy),var(--navy-2));
-  display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(30,47,69,.2);flex:0 0 auto}
-.hd-mark svg{width:22px;height:22px}
+.hd-mark{width:36px;height:36px;border-radius:11px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 3px 9px rgba(30,47,69,.22);flex:0 0 auto}
+.hd-mark img{width:100%;height:100%;object-fit:cover;display:block}
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:#F2EBDF;padding:4px;border-radius:14px;margin-top:10px}
 .tabs button{height:38px;border-radius:11px;font-size:14px;font-weight:700;color:#9C9184;letter-spacing:-.2px;transition:.16s}
 .tabs button.on{background:var(--navy);color:#fff;box-shadow:0 3px 9px rgba(30,47,69,.22)}
@@ -66,24 +66,23 @@ section.on{display:block;animation:fade .2s ease}
 .lead{font-size:14px;color:var(--ink-2);letter-spacing:-.2px}
 
 /* ---------- 원국 ---------- */
-.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:4px}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:2px}
 .pl{display:flex;flex-direction:column;align-items:center;gap:5px}
-.pl-lab{font-size:10.5px;font-weight:700;color:var(--muted);letter-spacing:.2px}
+.pl-lab{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.1px;line-height:1.35;text-align:center;height:28px;overflow:hidden}
 .pl-lab b{color:var(--navy)}
 .hj{
-  width:100%;aspect-ratio:1/1;border-radius:14px;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:1px;border:1.5px solid transparent;
-  transition:transform .12s,box-shadow .16s;position:relative;
+  width:100%;height:84px;border-radius:14px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:2px;border:1.5px solid transparent;
+  transition:transform .12s,box-shadow .16s;position:relative;padding:0 2px;overflow:hidden;
 }
 .hj:active{transform:scale(.95)}
-.hj .han{font-size:31px;font-weight:600;line-height:1;letter-spacing:0}
-.hj .sub{font-size:9.5px;font-weight:700;letter-spacing:-.1px;opacity:.85}
-.hj .st{font-size:9px;font-weight:700;opacity:.72;letter-spacing:-.2px}
-.pl.mine .hj{box-shadow:0 0 0 2px rgba(168,126,70,.55), 0 4px 12px rgba(168,126,70,.14)}
+.hj .han{font-size:27px;font-weight:600;line-height:1.05;letter-spacing:0}
+.hj .sub{font-size:9px;font-weight:700;letter-spacing:-.2px;opacity:.85;white-space:nowrap}
+.hj .st{font-size:8.5px;font-weight:700;opacity:.75;letter-spacing:-.3px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.pl.mine .hj{box-shadow:0 0 0 2px rgba(168,126,70,.5), 0 4px 12px rgba(168,126,70,.12)}
+.pl.mine .pl-lab{color:var(--brass)}
 .pl.mine .pl-lab b{color:var(--brass)}
-.badge-나{position:absolute;top:-7px;left:50%;transform:translateX(-50%);
-  background:var(--brass);color:#fff;font-size:8.5px;font-weight:800;letter-spacing:.4px;
-  padding:1px 6px;border-radius:999px;white-space:nowrap}
+.pl.mine .pl-lab em{font-style:normal;font-weight:800;color:#fff;background:var(--brass);border-radius:5px;padding:0 4px;margin-left:2px;font-size:9px}
 .e-mok{background:#EAF4EF;border-color:#CBE3D8;color:#1F6B4E}
 .e-hwa{background:#FBEBE8;border-color:#F2CFC9;color:#A5352D}
 .e-to{background:#F8F0E0;border-color:#EBD9B6;color:#8E6726}
@@ -311,14 +310,7 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
 <header>
   <div class="hd-top">
     <div class="hd-title">지니 사주 노트<span>SAJU NOTE · 辛丑</span></div>
-    <div class="hd-mark">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="9.4" fill="#F7F0E2"/>
-        <path d="M12 2.6a9.4 9.4 0 0 1 0 18.8 4.7 4.7 0 0 1 0-9.4 4.7 4.7 0 0 0 0-9.4z" fill="#C8443C"/>
-        <circle cx="12" cy="7.3" r="1.5" fill="#C8443C"/>
-        <circle cx="12" cy="16.7" r="1.5" fill="#1E2F45"/>
-      </svg>
-    </div>
+    <div class="hd-mark"><img src="./icon-192.png" alt=""></div>
   </div>
   <div class="tabs" id="tabs">
     <button data-v="chart" class="on">내 원국</button>
@@ -358,7 +350,7 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
     </div>
 
     <div class="card tight">
-      <div class="sec-h"><div class="sec-t">내 원국의 세 가지 특징</div></div>
+      <div class="sec-h"><div class="sec-t">내 원국 네 가지 포인트</div></div>
       <div class="relrow"><div class="k">신강</div><div class="a">비겁 4 + 인성 2 = 8글자 중 6개가 나를 받쳐요. 혼자 열고 밀고 나가는 힘.</div></div>
       <div class="relrow"><div class="k">충 2쌍</div><div class="a">寅申冲·丑未冲 — 멈춰 있기보다 옮기고 바꾸는 삶. 이사·이동·변화가 잦은 게 자연스러워요.</div></div>
       <div class="relrow"><div class="k">火·水 0</div><div class="a">표현(火)과 흐름(水)이 비어 있어요. 사람 만나기·따뜻한 조명·말과 콘텐츠로 채우면 운이 트입니다.</div></div>
@@ -540,7 +532,7 @@ const CHAR = {
     mean:"또 하나의 나. 자기 기준과 취향이 분명하고, 남에게 기대기보다 혼자 해내는 힘. 시주에 있어서 ‘끝까지 내 방식으로 마무리하는’ 성향을 보태요." },
   "未|시|ji":{ el:"토", yy:"음", st:"편인", name:"未(음토) · 편인",
     mean:"여름 끝의 마른 흙. 마무리와 저장의 자리예요. 丑과 마주 보는 충이라 말년·자녀 쪽에 변화가 생기기 쉽고, 그만큼 뒷정리를 잘하는 힘이 됩니다." },
-  "辛|일|gan":{ el:"금", yy:"음", st:"일간 · 나", name:"辛(음금) · 일간, 나 자신",
+  "辛|일|gan":{ el:"금", yy:"음", st:"일간", name:"辛(음금) · 일간, 나 자신",
     mean:"큰 쇠를 다듬어 만든 보석·바늘·가위. 손끝이 예민하고 눈이 높아 디테일에 강해요. 아이라인처럼 정교한 일에 맞는 결이고, 자존심이 세며 쉽게 굽히지 않습니다." },
   "丑|일|ji":{ el:"토", yy:"음", st:"편인", name:"丑(음토) · 편인",
     mean:"한겨울 축축한 흙이자 金을 품은 창고(금고). 겉은 조용한데 속에 오래 쌓아 두는 인내가 있어요. 배우자 자리에서는 표현보다 함께 쌓아가는 방식을 좋아한다는 뜻." },
@@ -871,9 +863,8 @@ function elClass(k){ return { "목":"e-mok","화":"e-hwa","토":"e-to","금":"e-
   box.innerHTML = PILLARS.map(function(p){
     const g = CHAR[p.gan+"|"+p.key+"|gan"], j = CHAR[p.ji+"|"+p.key+"|ji"];
     return '<div class="pl'+(p.mine?' mine':'')+'">'
-      + '<div class="pl-lab"><b>'+p.label+'</b><br>'+p.meaning+'</div>'
+      + '<div class="pl-lab"><b>'+p.label+'</b>'+(p.mine?'<em>나</em>':'')+'<br>'+p.meaning+'</div>'
       + '<button class="hj '+elClass(g.el)+'" data-t="'+p.gan+'|'+p.key+'|gan">'
-      + (p.mine?'<span class="badge-나">나</span>':'')
       + '<span class="han">'+p.gan+'</span><span class="sub">'+EL[g.el].o+' · '+g.yy+'</span><span class="st">'+g.st+'</span></button>'
       + '<button class="hj '+elClass(j.el)+'" data-t="'+p.ji+'|'+p.key+'|ji">'
       + '<span class="han">'+p.ji+'</span><span class="sub">'+EL[j.el].o+' · '+j.yy+'</span><span class="st">'+j.st+'</span></button>'
