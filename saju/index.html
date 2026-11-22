@@ -82,7 +82,6 @@ section.on{display:block;animation:fade .2s ease}
 .pl.mine .hj{box-shadow:0 0 0 2px rgba(168,126,70,.5), 0 4px 12px rgba(168,126,70,.12)}
 .pl.mine .pl-lab{color:var(--brass)}
 .pl.mine .pl-lab b{color:var(--brass)}
-.pl.mine .pl-lab em{font-style:normal;font-weight:800;color:#fff;background:var(--brass);border-radius:5px;padding:0 4px;margin-left:2px;font-size:9px}
 .e-mok{background:#EAF4EF;border-color:#CBE3D8;color:#1F6B4E}
 .e-hwa{background:#FBEBE8;border-color:#F2CFC9;color:#A5352D}
 .e-to{background:#F8F0E0;border-color:#EBD9B6;color:#8E6726}
@@ -176,8 +175,8 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
 .st .chk{font-size:14px;color:#CFC3B0}
 
 /* ---------- 스텝 상세 ---------- */
-.detail{position:fixed;inset:0;z-index:60;background:var(--bg);display:none;
-  overflow-y:auto;-webkit-overflow-scrolling:touch}
+.detail{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:60;background:var(--bg);display:none;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;box-shadow:0 0 60px rgba(30,47,69,.10)}
 .detail.on{display:block}
 .dh{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;
   padding:calc(9px + env(safe-area-inset-top)) 14px 9px;
@@ -468,6 +467,13 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
     </div>
 
     <div class="steps" id="steplist"></div>
+
+    <div class="card tight" style="margin-top:12px">
+      <div class="sec-h"><div class="sec-t">아이폰 홈 화면에 앱으로 두기</div></div>
+      <div class="relrow"><div class="k">1</div><div class="a">Safari에서 이 페이지를 연 뒤 아래 <b>공유(□↑)</b> 버튼</div></div>
+      <div class="relrow"><div class="k">2</div><div class="a"><b>홈 화면에 추가</b> 선택 → 이름은 ‘사주공부’</div></div>
+      <div class="relrow" style="margin-bottom:0"><div class="k">3</div><div class="a">홈의 태극 아이콘으로 열면 주소창 없는 앱 화면, 오프라인에서도 열려요</div></div>
+    </div>
 
     <div class="card tight" style="margin-top:12px">
       <div class="sec-h"><div class="sec-t">진도 저장</div><div class="sec-s">이 기기에만</div></div>
@@ -863,7 +869,7 @@ function elClass(k){ return { "목":"e-mok","화":"e-hwa","토":"e-to","금":"e-
   box.innerHTML = PILLARS.map(function(p){
     const g = CHAR[p.gan+"|"+p.key+"|gan"], j = CHAR[p.ji+"|"+p.key+"|ji"];
     return '<div class="pl'+(p.mine?' mine':'')+'">'
-      + '<div class="pl-lab"><b>'+p.label+'</b>'+(p.mine?'<em>나</em>':'')+'<br>'+p.meaning+'</div>'
+      + '<div class="pl-lab"><b>'+p.label+'</b><br>'+p.meaning+'</div>'
       + '<button class="hj '+elClass(g.el)+'" data-t="'+p.gan+'|'+p.key+'|gan">'
       + '<span class="han">'+p.gan+'</span><span class="sub">'+EL[g.el].o+' · '+g.yy+'</span><span class="st">'+g.st+'</span></button>'
       + '<button class="hj '+elClass(j.el)+'" data-t="'+p.ji+'|'+p.key+'|ji">'
@@ -955,11 +961,11 @@ function drawFive(sel){
     if(isSaeng){
       if(f === sel && t === saengOut){ p.style.stroke = "#2E8B67"; p.style.strokeWidth = "3.6"; p.style.strokeDasharray = "none"; p.setAttribute("marker-end","url(#mkSaengOn)"); }
       else if(t === sel && f === saengIn){ p.style.stroke = "#2F5F8A"; p.style.strokeWidth = "3.6"; p.style.strokeDasharray = "none"; p.setAttribute("marker-end","url(#mkSaengOn)"); }
-      else { p.style.opacity = ".18"; p.setAttribute("marker-end","url(#mkSaeng)"); }
+      else { p.style.opacity = ".22"; p.setAttribute("marker-end","url(#mkSaeng)"); }
     } else {
       if(f === sel && t === geukOut){ p.style.stroke = "#B5503F"; p.style.strokeWidth = "2.4"; p.style.strokeDasharray = "none"; p.setAttribute("marker-end","url(#mkGeukOn)"); }
       else if(t === sel && f === geukIn){ p.style.stroke = "#8E6726"; p.style.strokeWidth = "2.4"; p.style.strokeDasharray = "none"; p.setAttribute("marker-end","url(#mkGeukOn)"); }
-      else { p.style.opacity = ".16"; p.setAttribute("marker-end","url(#mkGeuk)"); }
+      else { p.style.opacity = ".22"; p.setAttribute("marker-end","url(#mkGeuk)"); }
     }
   });
 
@@ -1024,7 +1030,7 @@ function renderList(){
     : "Step " + next.id + " " + next.title + "부터 이어서 하면 됩니다";
   const tb = document.getElementById("todaybtn");
   tb.querySelector(".num").textContent = next.id;
-  tb.querySelector("b").textContent = "오늘의 차례 · " + next.title;
+  tb.querySelector("b").textContent = "오늘의 차례 · " + next.title.split(" — ")[0];
   tb.querySelector("span").textContent = next.sub.replace(/^Day \d+ · /, "");
   tb.onclick = function(){ openStep(next.id); };
 
