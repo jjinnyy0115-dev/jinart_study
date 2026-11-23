@@ -134,7 +134,7 @@
     font-family:var(--serif);font-size:clamp(1.18rem,4.7vw,1.7rem);line-height:1.35;
     color:var(--ink);margin-top:16px;font-style:italic;letter-spacing:.005em;
   }
-  .hero .lede{margin-top:18px;max-width:38ch;color:var(--ink-soft);font-size:15.5px;line-height:1.85}
+  .hero .lede{margin-top:18px;max-width:42ch;color:var(--ink-soft);font-size:15.5px;line-height:1.85}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
   .chips li{
     font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);
@@ -146,6 +146,7 @@
   .hero-art svg{width:100%;height:auto}
   .hero-art .stroke{fill:none;stroke:var(--accent);stroke-width:1.1;stroke-linecap:round}
   .hero-art .stroke-2{fill:none;stroke:var(--line-2);stroke-width:1}
+  .hero-art .lash{stroke-width:1.4}
   @media (min-width:760px){
     .hero{padding:74px 0 20px}
     .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
@@ -394,11 +395,13 @@
       </div>
       <div class="hero-art" aria-hidden="true">
         <svg viewBox="0 0 360 190">
-          <path class="stroke" d="M18 112C70 44 150 26 216 40c34 7 62 24 78 40"/>
-          <path class="stroke" d="M18 112c46 44 148 62 222 40 22-7 40-17 52-28"/>
-          <path class="stroke-2" d="M96 118c14 12 34 18 54 18s40-6 54-18"/>
-          <path class="stroke" d="M258 66l10-22M280 78l16-18M300 94l20-12M232 56l4-24"/>
-          <circle cx="300" cy="52" r="2.4" fill="#A87E60"/>
+          <path class="stroke" d="M16 112C72 48 158 24 232 42c30 7 56 24 76 46"/>
+          <path class="stroke" d="M16 112c50 40 136 58 218 46 34-5 60-18 74-32"/>
+          <path class="stroke-2" d="M132 120c18 16 44 24 72 22"/>
+          <path class="stroke lash" d="M266 64c9-13 14-21 17-30"/>
+          <path class="stroke lash" d="M288 78c11-12 18-20 22-28"/>
+          <path class="stroke lash" d="M306 96c12-9 20-15 25-21"/>
+          <circle cx="238" cy="130" r="2.2" fill="#A87E60" stroke="none"/>
         </svg>
       </div>
     </div>
