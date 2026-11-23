@@ -963,11 +963,11 @@ function drawFive(sel){
     if(isSaeng){
       if(f === sel && t === saengOut){ p.style.stroke = "#2E8B67"; p.style.strokeWidth = "3.6"; p.style.strokeDasharray = "none"; p.setAttribute("marker-end","url(#mkSaengOn)"); }
       else if(t === sel && f === saengIn){ p.style.stroke = "#2F5F8A"; p.style.strokeWidth = "3.6"; p.style.strokeDasharray = "none"; p.setAttribute("marker-end","url(#mkSaengOn)"); }
-      else { p.style.opacity = ".22"; p.setAttribute("marker-end","url(#mkSaeng)"); }
+      else { p.style.opacity = ".34"; p.setAttribute("marker-end","url(#mkSaeng)"); }
     } else {
       if(f === sel && t === geukOut){ p.style.stroke = "#B5503F"; p.style.strokeWidth = "2.4"; p.style.strokeDasharray = "none"; p.setAttribute("marker-end","url(#mkGeukOn)"); }
       else if(t === sel && f === geukIn){ p.style.stroke = "#8E6726"; p.style.strokeWidth = "2.4"; p.style.strokeDasharray = "none"; p.setAttribute("marker-end","url(#mkGeukOn)"); }
-      else { p.style.opacity = ".22"; p.setAttribute("marker-end","url(#mkGeuk)"); }
+      else { p.style.opacity = ".28"; p.setAttribute("marker-end","url(#mkGeuk)"); }
     }
   });
 
@@ -1026,7 +1026,9 @@ function renderList(){
   ring.setAttribute("stroke-dasharray", C.toFixed(1));
   ring.setAttribute("stroke-dashoffset", (C * (1 - n/10)).toFixed(1));
   const next = STEPS.filter(function(s){ return !S.done[s.id]; })[0] || STEPS[9];
-  document.getElementById("progline").textContent = n >= 10 ? "10단계 모두 완료!" : "Day 1~5 기본 학습 완료";
+  document.getElementById("progline").textContent = n >= 10
+    ? "10단계 모두 완료!"
+    : (n <= 5 ? "Day 1~5 기본 학습 완료" : "10단계 중 " + n + "단계 완료");
   document.getElementById("progsub").textContent = n >= 10
     ? "이제 원국과 오행 그림으로 복습해 보세요"
     : "Step " + next.id + " " + next.title + "부터 이어서 하면 됩니다";
