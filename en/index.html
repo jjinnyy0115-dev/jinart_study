@@ -265,6 +265,23 @@
     border-left:1px solid var(--line-2);padding-left:13px;
   }
 
+  /* studio photo + work gallery */
+  .studio-shot{margin:26px 0 0;max-width:420px}
+  .studio-shot img{width:100%;height:auto;border-radius:14px;background:var(--bg-2)}
+  .studio-shot figcaption{margin-top:10px;font-size:12px;line-height:1.7;color:var(--muted)}
+  .shots{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 10px}
+  .shot{margin:0}
+  .shot img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:12px;background:var(--bg-2)}
+  .shot figcaption{margin-top:8px}
+  .shot .st{display:block;font-size:13.5px;line-height:1.4;color:var(--ink)}
+  .shot .sc{display:block;font-size:11.5px;line-height:1.55;color:var(--muted);margin-top:2px}
+  @media (min-width:760px){
+    .studio-shot{margin-top:30px;max-width:380px}
+    .shots{grid-template-columns:repeat(3,1fr);gap:22px 18px}
+    .shot .st{font-size:14.5px}
+    .shot .sc{font-size:12.5px}
+  }
+
   /* steps */
   .steps{display:grid;gap:0;counter-reset:step}
   .step{padding:26px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:34px 1fr;gap:14px}
@@ -354,7 +371,7 @@
     .reveal{opacity:1!important;transform:none!important}
     .sec{padding:34px 0;break-inside:avoid}
     .hero{padding:24px 0 0}
-    .svc,.card,.step,.map-frame,.link-card{break-inside:avoid}
+    .svc,.card,.step,.map-frame,.link-card,.shot,.studio-shot{break-inside:avoid}
     footer{padding:20px 0}
   }
 
@@ -442,6 +459,10 @@
         <p class="pull reveal" data-i18n="studioPull">One specialist, one guest, one room.</p>
         <div class="reveal">
           <p data-i18n="studioText">Jinart Beauty is a small private studio run by a single specialist. There is no queue and no shared room: every appointment is yours alone, from the first design consultation to the moment you check the result in the mirror.</p>
+          <figure class="studio-shot">
+            <img src="images/studio-jeonpo.jpg" width="900" height="1200" alt="Private studio lounge in Busan Jeonpo" data-i18n-alt="studioAlt" loading="lazy" decoding="async">
+            <figcaption data-i18n="studioCap">The 1:1 studio lounge — one guest at a time.</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -515,6 +536,43 @@
         </div>
       </div>
       <p class="note" data-i18n="svcNote">Event price applies with eye-area photo consent and cash / bank transfer payment. Prices are in Korean won (KRW).</p>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="sec" id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-label" data-i18n="workLabel">Work</p>
+        <h2 data-i18n="workTitle">Recent work.</h2>
+        <p class="intro" data-i18n="workIntro">Photographed in the studio. Results differ with skin, healing and the design we agree on.</p>
+      </div>
+      <div class="shots reveal">
+        <figure class="shot">
+          <img src="images/eyeliner-mucosal.jpg" width="900" height="1125" alt="Mucosal eyeliner result" data-i18n-alt="g1t" loading="lazy" decoding="async">
+          <figcaption><span class="st" data-i18n="g1t">Mucosal eyeliner</span><span class="sc" data-i18n="g1d">One clean line for a crisp, defined look.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="images/eyeliner-mucosal-natural.jpg" width="900" height="1125" alt="Natural mucosal eyeliner result" data-i18n-alt="g2t" loading="lazy" decoding="async">
+          <figcaption><span class="st" data-i18n="g2t">Natural mucosal line</span><span class="sc" data-i18n="g2d">Thin pigment worked between the lashes.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="images/eyeliner-design-cover.jpg" width="900" height="1125" alt="Designed eyeliner covering old laser marks" data-i18n-alt="g3t" loading="lazy" decoding="async">
+          <figcaption><span class="st" data-i18n="g3t">Designed eyeliner</span><span class="sc" data-i18n="g3d">Covers old laser scars and faded lines.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="images/eyeliner-design-personal.jpg" width="900" height="1125" alt="Personal designed eyeliner result" data-i18n-alt="g4t" loading="lazy" decoding="async">
+          <figcaption><span class="st" data-i18n="g4t">Personal design</span><span class="sc" data-i18n="g4d">A line shaped to your own eye.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="images/lash-perm.jpg" width="900" height="1125" alt="Lash perm result" data-i18n-alt="g5t" loading="lazy" decoding="async">
+          <figcaption><span class="st" data-i18n="g5t">Lash perm</span><span class="sc" data-i18n="g5d">Hydrated, nourished curl — no extensions.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="images/beauty-mark.jpg" width="824" height="1030" alt="Beauty mark result" data-i18n-alt="g6t" loading="lazy" decoding="async">
+          <figcaption><span class="st" data-i18n="g6t">Beauty mark</span><span class="sc" data-i18n="g6d">A small, precisely placed mole.</span></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -631,6 +689,8 @@
       studioTitle: "Ten years, one pair of eyes at a time.",
       studioPull: "One specialist, one guest, one room.",
       studioText: "Jinart Beauty is a small private studio run by a single specialist. There is no queue and no shared room: every appointment is yours alone, from the first design consultation to the moment you check the result in the mirror.",
+      studioCap: "The 1:1 studio lounge — one guest at a time.",
+      studioAlt: "Private studio lounge in Busan Jeonpo",
       whyLabel: "Why Jinart", whyTitle: "What you can expect.",
       w1t: "Ten years on eyeliner", w1d: "Ten years of hands-on eyeliner and lash work — line weight, angle and healing handled with a practiced hand.",
       w2t: "One guest at a time", w2d: "Your consultation, procedure and aftercare all happen in the same private room, without another client waiting.",
@@ -647,6 +707,14 @@
       s5n: "Eyebrow Permanent Makeup", s5d: "Designed to match your brow shape and skin tone.", s5p: "KRW 250,000",
       s6n: "1:1 Eyeliner / Brow Consultation", s6d: "A face-to-face design and colour consultation before you book.", s6p: "Free",
       svcNote: "Event price applies with eye-area photo consent and cash / bank transfer payment. Prices are in Korean won (KRW).",
+      workLabel: "Work", workTitle: "Recent work.",
+      workIntro: "Photographed in the studio. Results differ with skin, healing and the design we agree on.",
+      g1t: "Mucosal eyeliner", g1d: "One clean line for a crisp, defined look.",
+      g2t: "Natural mucosal line", g2d: "Thin pigment worked between the lashes.",
+      g3t: "Designed eyeliner", g3d: "Covers old laser scars and faded lines.",
+      g4t: "Personal design", g4d: "A line shaped to your own eye.",
+      g5t: "Lash perm", g5d: "Hydrated, nourished curl — no extensions.",
+      g6t: "Beauty mark", g6d: "A small, precisely placed mole.",
       bookLabel: "How to Book", bookTitle: "Three steps.",
       b1t: "Send a message", b1d: "Instagram DM or KakaoTalk. Include your preferred date, the service you want, and a photo of your bare eyes — especially if you have had permanent makeup before.",
       b2t: "Confirm your slot", b2d: "We reply with the available time and the deposit, and settle any design questions before you come in.",
@@ -682,6 +750,8 @@
       studioTitle: "十年，只专注一双眼睛。",
       studioPull: "一位老师，一位客人，一间房。",
       studioText: "Jinart Beauty 是一间由一位老师独自经营的小型私密工作室。没有排队，也没有公共空间——从第一次设计沟通，到最后在镜子前确认效果，这段时间只属于你。",
+      studioCap: "一对一工作室的休息区，一次只接待一位客人。",
+      studioAlt: "釜山田浦 私密工作室的休息区",
       whyLabel: "为什么选 Jinart", whyTitle: "你可以期待这些。",
       w1t: "十年只练眼妆", w1d: "十年的美瞳线与睫毛实操经验，线条粗细、角度与恢复过程都处理得稳妥。",
       w2t: "一次只服务一位", w2d: "沟通、操作与术后护理都在同一间私密房间里完成，不会有其他客人在旁边等待。",
@@ -698,6 +768,14 @@
       s5n: "半永久纹眉", s5d: "根据你的眉形与肤色设计。", s5p: "KRW 250,000",
       s6n: "1对1 眼线 / 眉毛咨询", s6d: "预约前的一对一设计与颜色咨询。", s6p: "免费",
       svcNote: "活动价适用于同意眼部拍照及现金/银行转账付款。所有价格均为韩元(KRW)。",
+      workLabel: "作品", workTitle: "近期施术",
+      workIntro: "工作室实拍。效果会因肤质、恢复过程与设计而不同。",
+      g1t: "美瞳线 · 内眼线", g1d: "一条线，眼神清晰明亮。",
+      g2t: "自然内眼线", g2d: "在睫毛之间细细上色。",
+      g3t: "设计眼线", g3d: "完美遮盖激光旧痕。",
+      g4t: "专属设计眼线", g4d: "依你的眼型设计。",
+      g5t: "睫毛烫", g5d: "水润饱满的卷翘。",
+      g6t: "福痣 · 美人痣", g6d: "耳内也可，位置自选。",
       bookLabel: "预约方式", bookTitle: "三步完成。",
       b1t: "发消息给我们", b1d: "Instagram 私信或 KakaoTalk，告诉我们希望的日期、想做的项目，以及素眼照片（做过半永久请务必附上）。",
       b2t: "确认时间", b2d: "我们会回复可预约的时间与定金金额，并在到店前确认设计细节。",
@@ -733,6 +811,8 @@
       studioTitle: "10年間、目のまわりだけを。",
       studioPull: "施術者はひとり、お客様もひとり、部屋もひとつ。",
       studioText: "Jinart Beauty は、施術者が一人で切り盛りする小さなプライベートサロンです。待合スペースも相席もなく、最初のデザインカウンセリングから鏡の前で仕上がりを確認する瞬間まで、その時間はあなただけのものです。",
+      studioCap: "1対1サロンのラウンジ。お一人ずつご案内します。",
+      studioAlt: "釜山田浦のプライベートサロンのラウンジ",
       whyLabel: "Jinartが選ばれる理由", whyTitle: "ここで受けられること。",
       w1t: "アイライン一筋、10年", w1d: "10年間アイラインとまつ毛の施術を続けてきたので、ラインの太さや角度、治り方まで手慣れた対応ができます。",
       w2t: "お一人ずつご案内", w2d: "カウンセリング・施術・アフターケアまで同じプライベートルームで。ほかのお客様が待つことはありません。",
@@ -749,6 +829,14 @@
       s5n: "眉毛アートメイク", s5d: "眉の形と肌の色に合わせてデザインします。", s5p: "KRW 250,000",
       s6n: "1:1 アイライン／眉カウンセリング", s6d: "ご予約前のデザインとカラーのご相談。", s6p: "無料",
       svcNote: "イベント価格は目元の撮影同意および現金・口座振込でのお支払い基準です。価格は韓国ウォン(KRW)表記です。",
+      workLabel: "施術例", workTitle: "最近の施術",
+      workIntro: "サロンで撮影した写真です。仕上がりは肌質や治り方、デザインによって異なります。",
+      g1t: "粘膜アイライン", g1d: "一本のラインでくっきりと。",
+      g2t: "ナチュラル粘膜ライン", g2d: "まつ毛の間へ細く入れて。",
+      g3t: "デザインアイライン", g3d: "レーザーの薄い跡をカバー。",
+      g4t: "パーソナルデザイン", g4d: "目元に合わせて設計。",
+      g5t: "まつ毛パーマ", g5d: "うるおいのあるカール。",
+      g6t: "ほくろ・福ほくろ", g6d: "耳の内側など、位置はご相談。",
       bookLabel: "ご予約の流れ", bookTitle: "3ステップ。",
       b1t: "メッセージを送る", b1d: "Instagram DM か KakaoTalk に、ご希望の日時・メニュー・すっぴんの目元の写真（アートメイク経験がある方は必ず）をお送りください。",
       b2t: "日時を確定", b2d: "空いているお時間と手付金をご案内します。ご来店前にデザインのご相談も済ませておきましょう。",
@@ -784,6 +872,8 @@
       studioTitle: "10년, 눈매만 봐 왔습니다.",
       studioPull: "원장 한 사람, 손님 한 분, 방 하나.",
       studioText: "지나트뷰티는 원장 한 사람이 운영하는 작은 프라이빗 스튜디오입니다. 대기석도, 같은 시간의 다른 손님도 없습니다. 첫 디자인 상담부터 거울 앞에서 결과를 확인하는 순간까지, 그 시간은 한 분만을 위한 것입니다.",
+      studioCap: "1:1 프라이빗 스튜디오 라운지. 한 번에 한 분만 모십니다.",
+      studioAlt: "부산 전포 프라이빗 스튜디오 라운지",
       whyLabel: "지나트뷰티의 강점", whyTitle: "이런 것들을 약속합니다.",
       w1t: "아이라인 하나, 10년", w1d: "10년 동안 쌓인 아이라인·속눈썹 시술 노하우로 라인의 굵기와 각도, 회복 과정까지 손에 익은 대로 다룹니다.",
       w2t: "한 번에 한 분", w2d: "상담·시술·사후 안내를 같은 프라이빗 룸에서 진행하고, 옆에서 기다리는 손님은 없습니다.",
@@ -799,6 +889,14 @@
       s5n: "눈썹 반영구", s5d: "눈썹 모양과 피부 톤에 맞춰 디자인합니다.", s5p: "개별 견적",
       s6n: "1:1 아이라인 · 눈썹 상담", s6d: "예약 전 디자인과 컬러를 함께 정하는 상담입니다.", s6p: "무료",
       svcNote: "반영구 시술은 짧은 상담 후 디자인에 따라 개별 견적을 드립니다. 가격은 원화(KRW) 기준입니다.",
+      workLabel: "시술 사진", workTitle: "실제 시술 사진",
+      workIntro: "스튜디오에서 촬영한 사진입니다. 피부와 회복 과정, 디자인에 따라 결과는 달라집니다.",
+      g1t: "점막 아이라인", g1d: "한 줄이 만드는 선명한 또렷함",
+      g2t: "내추럴 점막 라인", g2d: "속눈썹 사이사이 얇게",
+      g3t: "디자인 아이라인", g3d: "레이저 잔흔 완벽 커버업",
+      g4t: "퍼스널 디자인 아이라인", g4d: "내 눈매에 맞춘 디자인",
+      g5t: "속눈썹펌", g5d: "수분 영양 가득한 화려한 컬",
+      g6t: "복점 · 미인점", g6d: "귀 안쪽까지, 원하는 위치에",
       bookLabel: "예약 방법", bookTitle: "세 단계면 됩니다.",
       b1t: "메시지 보내기", b1d: "인스타그램 DM이나 카카오톡으로 원하는 날짜, 시술 종류, 맨눈 사진(반영구 경험이 있다면 꼭)을 보내 주세요.",
       b2t: "시간 확정", b2d: "가능한 시간과 예약금을 안내드리고, 방문 전에 디자인을 먼저 맞춰 둡니다.",
@@ -825,6 +923,7 @@
   var tabs  = Array.prototype.slice.call(document.querySelectorAll('#langs button'));
   var langOnly = Array.prototype.slice.call(document.querySelectorAll('[data-lang-only]'));
   var priceNodes = Array.prototype.slice.call(document.querySelectorAll('.svc .price'));
+  var altNodes = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-alt]'));
   var metaDesc = document.querySelector('meta[name="description"]');
 
   function apply(lang){
@@ -843,6 +942,10 @@
     priceNodes.forEach(function(p){
       if(p.classList.contains('free')) return;
       p.classList.toggle('quote', !/[0-9]/.test(p.textContent || ''));
+    });
+    altNodes.forEach(function(n){
+      var a = d[n.getAttribute('data-i18n-alt')];
+      if(typeof a === 'string') n.setAttribute('alt', a);
     });
     document.documentElement.lang = langMap[lang];
     document.title = d.metaTitle;
