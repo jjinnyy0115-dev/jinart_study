@@ -1152,7 +1152,9 @@ function renderScore(id){
   const perfect = sc.c === sc.t;
   area.innerHTML = '<div class="scorebox"><div class="s">'
     + (perfect ? "전부 맞았어요 · 이 단계 완료!" : sc.t + "문항 중 " + sc.c + "개 정답")
-    + '<br><span style="font-size:11px;color:#8E8579;font-weight:600">틀린 문항의 해설을 다시 읽으면 오래 남아요</span></div>'
+    + '<br><span style="font-size:11px;color:#8E8579;font-weight:600">'
+    + (perfect ? "다음 단계로 넘어가도 좋아요" : "틀린 문항의 해설을 다시 읽으면 오래 남아요")
+    + '</span></div>'
     + '<button class="r" id="retry">다시 풀기</button></div>';
   const rt = document.getElementById("retry");
   if(rt) rt.onclick = function(){
