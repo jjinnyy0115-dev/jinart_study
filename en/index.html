@@ -142,9 +142,7 @@
     background:rgba(255,255,255,.45);
   }
   .hero-cta{display:flex;flex-direction:column;gap:10px;margin-top:30px}
-  .hero-art{
-    position:absolute;right:-120px;top:8px;width:300px;opacity:.5;pointer-events:none;
-  }
+  .hero-art{display:none}
   .hero-art svg{width:100%;height:auto}
   .hero-art .stroke{fill:none;stroke:var(--accent);stroke-width:1.1;stroke-linecap:round}
   .hero-art .stroke-2{fill:none;stroke:var(--line-2);stroke-width:1}
@@ -154,7 +152,7 @@
     .hero .lede{font-size:16px}
     .hero-cta{flex-direction:row;gap:12px}
     .hero-cta .btn{min-width:196px}
-    .hero-art{position:relative;right:auto;top:auto;width:100%;max-width:380px;margin-left:auto;opacity:.85}
+    .hero-art{display:block;position:relative;right:auto;top:auto;width:100%;max-width:380px;margin-left:auto;opacity:.85}
   }
 
   /* ---------- buttons ---------- */
