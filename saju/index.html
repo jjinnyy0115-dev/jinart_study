@@ -225,7 +225,7 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
   font-size:17px;font-weight:700;line-height:1.1;border:1.5px solid transparent;transition:.15s}
 .mj-x i.kr{font-size:.54em;opacity:.8;margin-left:1px}
 .mj-x.hi{box-shadow:0 0 0 2px rgba(168,126,70,.55);border-color:#E3CFA8}
-.mj-x.dim{opacity:.28}
+.mj-x.dim{opacity:.42}
 .mj-cap{font-size:10.5px;color:#8E6726;font-weight:800;letter-spacing:-.2px;margin-top:7px;
   text-align:center;line-height:1.45}
 .tipbox{background:var(--navy-soft);border:1px solid #DCE5EF;border-radius:14px;padding:12px 13px;
@@ -1064,15 +1064,15 @@ const JUHI = {
   4:  { hi:"all",       cap:"시·일·월·년 네 기둥 = 사주팔자 8글자" },
   5:  { hi:["庚","申","辛","辛"], cap:"표시한 4글자 = 비겁(나와 같은 오행)" },
   6:  { hi:["庚","申","辛","辛"], cap:"표시한 4글자 = 비겁 · 나의 힘" },
-  7:  { hi:[],          cap:"표면에 식상은 0개 — 숨은 글자 癸(계) · 壬(임)" },
+  7:  { hi:"none",      cap:"표면에 식상은 0개 — 숨은 글자 癸(계) · 壬(임)" },
   8:  { hi:["甲","寅"], cap:"표시한 2글자 = 재성(정재)" },
-  9:  { hi:[],          cap:"표면에 관성은 0개 — 숨은 글자 丙(병) · 丁(정)" },
+  9:  { hi:"none",      cap:"표면에 관성은 0개 — 숨은 글자 丙(병) · 丁(정)" },
   10: { hi:["丑","未"], cap:"표시한 2글자 = 인성(편인) · 비겁 4와 합쳐 신강" }
 };
 function juChart(id){
   const cfg = JUHI[id] || {};
   const hi = cfg.hi;
-  const dim = (hi !== null && hi !== undefined);
+  const dim = (hi !== null && hi !== undefined && hi !== "none");
   function cls(ch, role){
     if(!dim) return "mj-x";
     let on = false;
