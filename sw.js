@@ -1,5 +1,5 @@
 /* 지나트 외국어 — 오프라인 캐시 (간단 버전) */
-const CACHE = "jinart-foreign-v2";
+const CACHE = "jinart-foreign-v3";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", (event) => {

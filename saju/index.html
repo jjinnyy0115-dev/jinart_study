@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>지니 사주 노트</title>
-<meta name="description" content="지니 님의 사주 원국(甲申·庚寅·辛丑·辛未)과 단계별 사주 공부 노트 — 오행·천간·지지·십성 Step 1~10">
+<meta name="description" content="지니 님의 사주 원국(甲申·庚寅·辛丑·辛未 / 갑신·경인·신축·신미)과 단계별 사주 공부 노트 — 오행·천간·지지·십성 Step 1~10">
 <meta name="theme-color" content="#1E2F45">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -90,7 +90,9 @@ section.on{display:block;animation:fade .2s ease}
 
 .obars{display:grid;gap:7px;margin-top:2px}
 .obar{display:flex;align-items:center;gap:9px}
-.obar .o{width:20px;font-size:13px;font-weight:800;text-align:center;flex:0 0 auto}
+.obar .o{width:32px;text-align:center;flex:0 0 auto;line-height:1.05}
+.obar .o b{display:block;font-size:14px;font-weight:800;line-height:1.1}
+.obar .o i{display:block;font-style:normal;font-size:8.5px;font-weight:700;opacity:.7;line-height:1.2}
 .obar .track{flex:1;height:8px;border-radius:99px;background:#F2ECE2;overflow:hidden}
 .obar .fill{height:100%;border-radius:99px}
 .obar .n{font-size:11.5px;font-weight:700;color:var(--ink-2);width:34px;text-align:right;flex:0 0 auto}
@@ -215,6 +217,17 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
 .mine p{margin:0 0 8px;font-size:13.3px;color:#4A3D2C;letter-spacing:-.2px;line-height:1.7}
 .mine p:last-child{margin-bottom:0}
 .mine b{color:#7A5518;font-weight:800}
+.myju{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:9px}
+.mj-col{display:flex;flex-direction:column;gap:3px;min-width:0}
+.mj-lb{font-size:9px;font-weight:800;color:#B08B55;text-align:center;letter-spacing:.2px}
+.mj-col.me .mj-lb{color:#8E6726}
+.mj-x{display:flex;align-items:center;justify-content:center;border-radius:9px;padding:5px 1px;
+  font-size:17px;font-weight:700;line-height:1.1;border:1.5px solid transparent;transition:.15s}
+.mj-x i.kr{font-size:.54em;opacity:.8;margin-left:1px}
+.mj-x.hi{box-shadow:0 0 0 2px rgba(168,126,70,.55);border-color:#E3CFA8}
+.mj-x.dim{opacity:.28}
+.mj-cap{font-size:10.5px;color:#8E6726;font-weight:800;letter-spacing:-.2px;margin-top:7px;
+  text-align:center;line-height:1.45}
 .tipbox{background:var(--navy-soft);border:1px solid #DCE5EF;border-radius:14px;padding:12px 13px;
   font-size:12.5px;color:#2C4258;letter-spacing:-.2px;line-height:1.62;margin-top:10px}
 .tipbox b{color:var(--navy);font-weight:800}
@@ -225,6 +238,7 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
 .oc{border-radius:12px;padding:8px 2px;text-align:center;border:1.5px solid transparent}
 .oc .h{font-size:20px;font-weight:600;line-height:1.1}
 .oc .l{font-size:9px;font-weight:700;opacity:.8;margin-top:1px}
+i.kr{font-style:normal;font-size:.56em;font-weight:800;opacity:.68;margin-left:1px;letter-spacing:0}
 .grid10{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
 .gh{grid-row:1}
 .yl{font-size:9px;font-weight:800;color:var(--muted);text-align:center;margin:0 0 4px;letter-spacing:.6px}
@@ -232,6 +246,17 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
 .season{border-radius:12px;padding:7px 4px;text-align:center}
 .season .s{font-size:9.5px;font-weight:800;opacity:.9;letter-spacing:.2px}
 .season .g{font-size:15px;font-weight:600;margin-top:3px;letter-spacing:1px}
+.season .r{font-size:8.5px;font-weight:800;opacity:.7;margin-top:1px;letter-spacing:.4px}
+.zods{display:grid;grid-template-columns:1fr 1fr;gap:4px 5px;margin-top:10px}
+.zd{display:flex;align-items:baseline;gap:5px;background:#FAF7F1;border-radius:8px;padding:3px 7px}
+.zd b{font-size:12.5px;font-weight:700;color:#4B443C;flex:0 0 36px;letter-spacing:0}
+.zd b i.kr{font-size:8.5px;opacity:.7}
+.zd span{font-size:9.6px;color:#8E8579;letter-spacing:-.2px;white-space:nowrap}
+.saenggeuk{display:grid;gap:1px;margin-top:11px;font-size:10.6px;color:#8E8579;letter-spacing:-.2px;line-height:1.95}
+.saenggeuk div{display:flex;align-items:baseline;gap:5px}
+.saenggeuk .lb{flex:0 0 22px;font-weight:800;color:#A87E46;letter-spacing:0}
+.saenggeuk .sq{flex:1;min-width:0;text-align:left}
+.jj .hn{display:block;font-size:11px;color:#8E6726;font-weight:800;margin-top:1px;letter-spacing:-.2px}
 .pillars-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
 .pm{border:1px solid var(--line);border-radius:11px;overflow:hidden;text-align:center;background:#fff}
 .pm .t{font-size:9.5px;font-weight:800;color:#fff;background:var(--navy);padding:3px 0}
@@ -243,7 +268,9 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
 .relrow .a{font-size:12px;color:var(--ink-2);letter-spacing:-.2px;line-height:1.6;min-width:0}
 .arw{display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 0}
 .arw .a,.arw .b{font-size:22px;font-weight:600;width:44px;height:44px;border-radius:13px;
-  display:flex;align-items:center;justify-content:center;border:1.5px solid transparent}
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;line-height:1.02;
+  border:1.5px solid transparent}
+.arw .a i.kr,.arw .b i.kr{display:block;margin:1px 0 0;font-size:8.5px;opacity:.85}
 .arw .mid{font-size:11px;font-weight:800;color:var(--brass);letter-spacing:0;white-space:nowrap}
 .bars2{display:grid;gap:6px;margin-top:4px}
 .bar2 .lb{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:var(--ink-2);margin-bottom:3px}
@@ -310,7 +337,7 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
 
 <header>
   <div class="hd-top">
-    <div class="hd-title">지니 사주 노트<span>SAJU NOTE · 辛丑</span></div>
+    <div class="hd-title">지니 사주 노트<span>SAJU NOTE · 辛丑 신축</span></div>
     <div class="hd-mark"><img src="./icon-192.png" alt=""></div>
   </div>
   <div class="tabs" id="tabs">
@@ -326,7 +353,7 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
     <div class="card">
       <div class="sec-h">
         <div class="sec-t">내 사주 원국</div>
-        <div class="sec-s">甲申 · 庚寅 · 辛丑 · 辛未</div>
+        <div class="sec-s">갑신 · 경인 · 신축 · 신미</div>
       </div>
       <div class="pillars" id="pillars"></div>
       <div class="hint">글자를 탭하면 한자·음양·오행·십성·의미가 열려요.</div>
@@ -335,17 +362,17 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
     <div class="card">
       <div class="sec-h"><div class="sec-t">오행 개수</div><div class="sec-s">8글자 기준</div></div>
       <div class="obars" id="obars"></div>
-      <div class="hint">金 4개로 가장 강하고, 火와 水는 0개 — 이 비어 있음이 내 사주의 숙제이자 방향이에요.</div>
+      <div class="hint">金(금) 4개로 가장 강하고, 火(화)와 水(수)는 0개 — 이 비어 있음이 내 사주의 숙제이자 방향이에요.</div>
     </div>
 
     <div class="card">
-      <div class="sec-h"><div class="sec-t">나, 辛丑</div><div class="sec-s">일주 = 나</div></div>
+      <div class="sec-h"><div class="sec-t">나, 辛丑(신축)</div><div class="sec-s">일주 = 나</div></div>
       <div class="dg">
-        <div class="dg-badge"><b>辛</b><i>음금</i></div>
+        <div class="dg-badge"><b>辛</b><i>신·음금</i></div>
         <div class="dg-body">
-          <div class="dg-t">보석 같은 가위, 辛丑 일주</div>
+          <div class="dg-t">보석 같은 가위, 辛丑(신축) 일주</div>
           <span class="tag">섬세한 손끝</span><span class="tag">미적 감각</span><span class="tag">깔끔·정확</span><span class="tag">속으로 삭이는 인내</span>
-          <div class="dg-p">辛은 큰 쇠(庚)를 다듬어 만든 <b>보석·바늘·가위</b>의 금이에요. 손끝이 예민하고 눈이 높아서, 사람의 얼굴에 1mm 선을 그리는 일 — 아이라인 — 에 딱 맞는 결입니다. 아래 丑은 金을 품은 겨울 창고라, 겉은 조용해도 속에 쌓아 두는 힘이 강해요.</div>
+          <div class="dg-p">辛(신)은 큰 쇠 庚(경)을 다듬어 만든 <b>보석·바늘·가위</b>의 금이에요. 손끝이 예민하고 눈이 높아서, 사람의 얼굴에 1mm 선을 그리는 일 — 아이라인 — 에 딱 맞는 결입니다. 아래 丑(축)은 金(금)을 품은 겨울 창고라, 겉은 조용해도 속에 쌓아 두는 힘이 강해요.</div>
         </div>
       </div>
     </div>
@@ -353,9 +380,9 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
     <div class="card tight">
       <div class="sec-h"><div class="sec-t">내 원국 네 가지 포인트</div></div>
       <div class="relrow"><div class="k">신강</div><div class="a">비겁 4 + 인성 2 = 8글자 중 6개가 나를 받쳐요. 혼자 열고 밀고 나가는 힘.</div></div>
-      <div class="relrow"><div class="k">충 2쌍</div><div class="a">寅申冲·丑未冲 — 멈춰 있기보다 옮기고 바꾸는 삶. 이사·이동·변화가 잦은 게 자연스러워요.</div></div>
-      <div class="relrow"><div class="k">火·水 0</div><div class="a">표현(火)과 흐름(水)이 비어 있어요. 사람 만나기·따뜻한 조명·말과 콘텐츠로 채우면 운이 트입니다.</div></div>
-      <div class="relrow" style="margin-bottom:0"><div class="k">지장간</div><div class="a">표면엔 없지만 申속 壬(상관)·丑속 癸(식신)·寅속 丙(정관)·未속 丁(편관)이 숨어 있어요.</div></div>
+      <div class="relrow"><div class="k">충 2쌍</div><div class="a">寅申冲(인신충)·丑未冲(축미충) — 멈춰 있기보다 옮기고 바꾸는 삶. 이사·이동·변화가 잦은 게 자연스러워요.</div></div>
+      <div class="relrow"><div class="k">화·수 0</div><div class="a">표현(火·화)과 흐름(水·수)이 비어 있어요. 사람 만나기·따뜻한 조명·말과 콘텐츠로 채우면 운이 트입니다.</div></div>
+      <div class="relrow" style="margin-bottom:0"><div class="k">지장간</div><div class="a">표면엔 없지만 申(신)속 壬(임)·상관, 丑(축)속 癸(계)·식신, 寅(인)속 丙(병)·정관, 未(미)속 丁(정)·편관이 숨어 있어요.</div></div>
     </div>
 
     <div class="card tight">
@@ -406,23 +433,28 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
           <g id="nodes">
             <g class="node" data-el="목">
               <circle class="c" cx="160" cy="52" r="27" fill="#EAF4EF" stroke="#9CCDB6" stroke-width="1.6"/>
-              <text x="160" y="57" text-anchor="middle" font-size="19" font-weight="700" fill="#1F6B4E">木</text>
+              <text x="160" y="53" text-anchor="middle" font-size="18" font-weight="700" fill="#1F6B4E">木</text>
+              <text class="eum" x="160" y="66" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1F6B4E" opacity=".72">목</text>
             </g>
             <g class="node" data-el="화">
               <circle class="c" cx="253.2" cy="119.7" r="27" fill="#FBEBE8" stroke="#EBB3AB" stroke-width="1.6"/>
-              <text x="253.2" y="124.7" text-anchor="middle" font-size="19" font-weight="700" fill="#A5352D">火</text>
+              <text x="253.2" y="120.7" text-anchor="middle" font-size="18" font-weight="700" fill="#A5352D">火</text>
+              <text class="eum" x="253.2" y="133.7" text-anchor="middle" font-size="8.5" font-weight="700" fill="#A5352D" opacity=".72">화</text>
             </g>
             <g class="node" data-el="토">
               <circle class="c" cx="217.6" cy="229.3" r="27" fill="#F8F0E0" stroke="#E2C994" stroke-width="1.6"/>
-              <text x="217.6" y="234.3" text-anchor="middle" font-size="19" font-weight="700" fill="#8E6726">土</text>
+              <text x="217.6" y="230.3" text-anchor="middle" font-size="18" font-weight="700" fill="#8E6726">土</text>
+              <text class="eum" x="217.6" y="243.3" text-anchor="middle" font-size="8.5" font-weight="700" fill="#8E6726" opacity=".72">토</text>
             </g>
             <g class="node" data-el="금">
               <circle class="c" cx="102.4" cy="229.3" r="27" fill="#EFF2F5" stroke="#B9C5D1" stroke-width="1.6"/>
-              <text x="102.4" y="234.3" text-anchor="middle" font-size="19" font-weight="700" fill="#4E5D6B">金</text>
+              <text x="102.4" y="230.3" text-anchor="middle" font-size="18" font-weight="700" fill="#4E5D6B">金</text>
+              <text class="eum" x="102.4" y="243.3" text-anchor="middle" font-size="8.5" font-weight="700" fill="#4E5D6B" opacity=".72">금</text>
             </g>
             <g class="node" data-el="수">
               <circle class="c" cx="66.8" cy="119.7" r="27" fill="#E9F0F7" stroke="#A9C4DB" stroke-width="1.6"/>
-              <text x="66.8" y="124.7" text-anchor="middle" font-size="19" font-weight="700" fill="#224B70">水</text>
+              <text x="66.8" y="120.7" text-anchor="middle" font-size="18" font-weight="700" fill="#224B70">水</text>
+              <text class="eum" x="66.8" y="133.7" text-anchor="middle" font-size="8.5" font-weight="700" fill="#224B70" opacity=".72">수</text>
             </g>
           </g>
         </svg>
@@ -438,7 +470,7 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
     </div>
 
     <div class="card tight">
-      <div class="sec-h"><div class="sec-t" id="f-title">金 · 쇠와 보석</div><div class="sec-s" id="f-sub">나(辛)와 같은 결</div></div>
+      <div class="sec-h"><div class="sec-t" id="f-title">金(금) · 쇠와 보석</div><div class="sec-s" id="f-sub">나, 辛(신)와 같은 결</div></div>
       <div class="legend" id="legend"></div>
       <div class="tipbox" id="f-note"></div>
     </div>
@@ -512,16 +544,25 @@ svg#five text{font-family:inherit;pointer-events:none;user-select:none}
    ========================================================= */
 const ME = { han:"辛", el:"금", yinyang:"음", ju:"辛丑" };
 
+/* 한자 → 한글 음 (모든 한자 옆 표기에 사용) */
+const EUM = {
+  "甲":"갑","乙":"을","丙":"병","丁":"정","戊":"무","己":"기","庚":"경","辛":"신","壬":"임","癸":"계",
+  "子":"자","丑":"축","寅":"인","卯":"묘","辰":"진","巳":"사","午":"오","未":"미","申":"신","酉":"유","戌":"술","亥":"해",
+  "木":"목","火":"화","土":"토","金":"금","水":"수"
+};
+function kr(ch){ return ch + (EUM[ch] ? '<i class="kr">' + EUM[ch] + '</i>' : ""); }
+function krAll(str){ return String(str).split(" ").map(kr).join(" "); }
+
 const EL = {
-  "목":{ o:"木", name:"나무", color:"#2E8B67", bg:"#EAF4EF", bd:"#CBE3D8", fg:"#1F6B4E",
+  "목":{ o:"木", eum:"목", name:"나무", color:"#2E8B67", bg:"#EAF4EF", bd:"#CBE3D8", fg:"#1F6B4E",
          key:"뻗고 자라는 힘", season:"봄", num:"3·8" },
-  "화":{ o:"火", name:"불", color:"#C8443C", bg:"#FBEBE8", bd:"#F2CFC9", fg:"#A5352D",
+  "화":{ o:"火", eum:"화", name:"불", color:"#C8443C", bg:"#FBEBE8", bd:"#F2CFC9", fg:"#A5352D",
          key:"피어오르는 열", season:"여름", num:"2·7" },
-  "토":{ o:"土", name:"흙", color:"#B98A3E", bg:"#F8F0E0", bd:"#EBD9B6", fg:"#8E6726",
+  "토":{ o:"土", eum:"토", name:"흙", color:"#B98A3E", bg:"#F8F0E0", bd:"#EBD9B6", fg:"#8E6726",
          key:"가운데·저장", season:"환절기", num:"5·10" },
-  "금":{ o:"金", name:"쇠·보석", color:"#6F7F8D", bg:"#EFF2F5", bd:"#D9E0E7", fg:"#4E5D6B",
+  "금":{ o:"金", eum:"금", name:"쇠·보석", color:"#6F7F8D", bg:"#EFF2F5", bd:"#D9E0E7", fg:"#4E5D6B",
          key:"단단하게 맺음", season:"가을", num:"4·9" },
-  "수":{ o:"水", name:"물", color:"#2F5F8A", bg:"#E9F0F7", bd:"#CBDCEB", fg:"#224B70",
+  "수":{ o:"水", eum:"수", name:"물", color:"#2F5F8A", bg:"#E9F0F7", bd:"#CBDCEB", fg:"#224B70",
          key:"흐르고 스밈", season:"겨울", num:"1·6" }
 };
 const SAENG = { "목":"화", "화":"토", "토":"금", "금":"수", "수":"목" };
@@ -536,29 +577,29 @@ const PILLARS = [
 ];
 
 const CHAR = {
-  "辛|시|gan":{ el:"금", yy:"음", st:"비견", name:"辛(음금) · 비견",
+  "辛|시|gan":{ el:"금", yy:"음", st:"비견", name:"辛(신) · 음금 · 비견",
     mean:"또 하나의 나. 자기 기준과 취향이 분명하고, 남에게 기대기보다 혼자 해내는 힘. 시주에 있어서 ‘끝까지 내 방식으로 마무리하는’ 성향을 보태요." },
-  "未|시|ji":{ el:"토", yy:"음", st:"편인", name:"未(음토) · 편인",
-    mean:"여름 끝의 마른 흙. 마무리와 저장의 자리예요. 丑과 마주 보는 충이라 말년·자녀 쪽에 변화가 생기기 쉽고, 그만큼 뒷정리를 잘하는 힘이 됩니다." },
-  "辛|일|gan":{ el:"금", yy:"음", st:"일간", name:"辛(음금) · 일간, 나 자신",
+  "未|시|ji":{ el:"토", yy:"음", st:"편인", name:"未(미) · 음토 · 편인",
+    mean:"여름 끝의 마른 흙. 마무리와 저장의 자리예요. 丑(축)과 마주 보는 충이라 말년·자녀 쪽에 변화가 생기기 쉽고, 그만큼 뒷정리를 잘하는 힘이 됩니다." },
+  "辛|일|gan":{ el:"금", yy:"음", st:"일간", name:"辛(신) · 음금 · 일간, 나 자신",
     mean:"큰 쇠를 다듬어 만든 보석·바늘·가위. 손끝이 예민하고 눈이 높아 디테일에 강해요. 아이라인처럼 정교한 일에 맞는 결이고, 자존심이 세며 쉽게 굽히지 않습니다." },
-  "丑|일|ji":{ el:"토", yy:"음", st:"편인", name:"丑(음토) · 편인",
-    mean:"한겨울 축축한 흙이자 金을 품은 창고(금고). 겉은 조용한데 속에 오래 쌓아 두는 인내가 있어요. 배우자 자리에서는 표현보다 함께 쌓아가는 방식을 좋아한다는 뜻." },
-  "庚|월|gan":{ el:"금", yy:"양", st:"겁재", name:"庚(양금) · 겁재",
+  "丑|일|ji":{ el:"토", yy:"음", st:"편인", name:"丑(축) · 음토 · 편인",
+    mean:"한겨울 축축한 흙이자 金(금)을 품은 창고(금고). 겉은 조용한데 속에 오래 쌓아 두는 인내가 있어요. 배우자 자리에서는 표현보다 함께 쌓아가는 방식을 좋아한다는 뜻." },
+  "庚|월|gan":{ el:"금", yy:"양", st:"겁재", name:"庚(경) · 양금 · 겁재",
     mean:"큰 쇠. 밀고 나가는 추진력과 강한 자존심. 나와 같은 편이자 라이벌이라, 경쟁이 있으면 오히려 힘이 나는 사람이에요." },
-  "寅|월|ji":{ el:"목", yy:"양", st:"정재", name:"寅(양목) · 정재",
-    mean:"봄이 시작되는 큰 나무. 사회·일의 무대이자 돈이 자라는 자리예요. 寅은 ‘시작하는 힘’이라 새 일을 벌이는 데 강합니다." },
-  "甲|년|gan":{ el:"목", yy:"양", st:"정재", name:"甲(양목) · 정재",
-    mean:"하늘로 곧게 자라는 큰 나무. 뿌리내려 꾸준히 쌓는 재물·명예. 남들 앞에서 믿음을 주는 자리이고, 내 사주에서 火 다음으로 아쉬운 ‘자라는 힘’을 맡아요." },
-  "申|년|ji":{ el:"금", yy:"양", st:"겁재", name:"申(양금) · 겁재",
+  "寅|월|ji":{ el:"목", yy:"양", st:"정재", name:"寅(인) · 양목 · 정재",
+    mean:"봄이 시작되는 큰 나무. 사회·일의 무대이자 돈이 자라는 자리예요. 寅(인)은 ‘시작하는 힘’이라 새 일을 벌이는 데 강합니다." },
+  "甲|년|gan":{ el:"목", yy:"양", st:"정재", name:"甲(갑) · 양목 · 정재",
+    mean:"하늘로 곧게 자라는 큰 나무. 뿌리내려 꾸준히 쌓는 재물·명예. 남들 앞에서 믿음을 주는 자리이고, 내 사주에서 火(화) 다음으로 아쉬운 ‘자라는 힘’을 맡아요." },
+  "申|년|ji":{ el:"금", yy:"양", st:"겁재", name:"申(신) · 양금 · 겁재",
     mean:"가을의 단단한 쇠, 여덟 글자 중 가장 활동적인 글자. 역마(이동·왕래·영업) 기운이라 집에 붙어 있기보다 움직일 때 돈이 붙는 결이에요." }
 };
 
 const JJ = [
-  { p:"申", h:"庚 壬 戊", m:"겁재 · 상관 · 정인", d:"말과 재주(壬)가 숨어 있어요" },
-  { p:"寅", h:"甲 丙 戊", m:"정재 · 정관 · 정인", d:"반듯한 명예(丙)가 숨어 있어요" },
-  { p:"丑", h:"己 癸 辛", m:"편인 · 식신 · 비견", d:"손재주와 표현(癸)이 숨어 있어요" },
-  { p:"未", h:"己 丁 乙", m:"편인 · 편관 · 편재", d:"강한 추진력(丁)이 숨어 있어요" }
+  { p:"申", h:"庚 壬 戊", m:"겁재 · 상관 · 정인", d:"말과 재주 壬(임)이 숨어 있어요" },
+  { p:"寅", h:"甲 丙 戊", m:"정재 · 정관 · 정인", d:"반듯한 명예 丙(병)이 숨어 있어요" },
+  { p:"丑", h:"己 癸 辛", m:"편인 · 식신 · 비견", d:"손재주와 표현 癸(계)가 숨어 있어요" },
+  { p:"未", h:"己 丁 乙", m:"편인 · 편관 · 편재", d:"강한 추진력 丁(정)이 숨어 있어요" }
 ];
 
 /* ---------- 커리큘럼 ---------- */
@@ -578,60 +619,60 @@ const STEPS = [
       </div>
     </div>
     <div class="row5">
-      <div class="oc e-mok"><div class="h">木</div><div class="l">봄·뻗음</div></div>
-      <div class="oc e-hwa"><div class="h">火</div><div class="l">여름·열</div></div>
-      <div class="oc e-to"><div class="h">土</div><div class="l">중심·저장</div></div>
-      <div class="oc e-geum"><div class="h">金</div><div class="l">가을·맺음</div></div>
-      <div class="oc e-su"><div class="h">水</div><div class="l">겨울·흐름</div></div>
+      <div class="oc e-mok"><div class="h">木<i class="kr">목</i></div><div class="l">봄·뻗음</div></div>
+      <div class="oc e-hwa"><div class="h">火<i class="kr">화</i></div><div class="l">여름·열</div></div>
+      <div class="oc e-to"><div class="h">土<i class="kr">토</i></div><div class="l">중심·저장</div></div>
+      <div class="oc e-geum"><div class="h">金<i class="kr">금</i></div><div class="l">가을·맺음</div></div>
+      <div class="oc e-su"><div class="h">水<i class="kr">수</i></div><div class="l">겨울·흐름</div></div>
     </div>
-    <div style="margin-top:11px;font-size:11px;color:#8E8579;text-align:center;letter-spacing:-.2px">
-      木→火→土→金→水→木 <b style="color:#2E8B67">상생</b> &nbsp;·&nbsp;
-      木→土→水→火→金→木 <b style="color:#B5503F">상극</b>
+    <div class="saenggeuk">
+      <div><span class="lb">상생</span><span class="sq">木(목) → 火(화) → 土(토) → 金(금) → 水(수) → 木(목)</span></div>
+      <div><span class="lb">상극</span><span class="sq">木(목) → 土(토) → 水(수) → 火(화) → 金(금) → 木(목)</span></div>
     </div>`,
   desc:[
     "사주의 첫 글자는 <b>음양(陰陽)</b>입니다. 세상 모든 것은 두 결로 나뉘어요. 양은 밝고 앞으로 뻗는 힘, 음은 어둡고 안으로 모으는 힘. 좋고 나쁨이 아니라 <b>역할이 다른 두 결</b>입니다.",
     "다음이 <b>오행(五行)</b>. 목(木)·화(火)·토(土)·금(金)·수(水) 다섯 가지 결이고, 각각 계절 하나를 맡습니다 — 봄·여름·환절기·가을·겨울. 나무는 뻗고, 불은 피어오르고, 흙은 가운데서 품고, 쇠는 단단하게 맺고, 물은 흘러 스며요.",
-    "<b>상생</b>은 낳고 키우는 순환입니다. 나무가 불을 피우고(木生火), 불이 재가 되어 흙이 되고(火生土), 흙이 쇠를 품고(土生金), 쇠에 물이 맺히고(金生水), 물이 나무를 키워요(水生木). <b>상극</b>은 누르는 관계예요. 나무뿌리가 흙을 파고, 흙이 물을 막고, 물이 불을 끄고, 불이 쇠를 녹이고, 쇠가 나무를 벱니다."
+    "<b>상생(相生)</b>은 낳고 키우는 순환입니다. 나무가 불을 피우고(木生火·목생화), 불이 재가 되어 흙이 되고(火生土·화생토), 흙이 쇠를 품고(土生金·토생금), 쇠에 물이 맺히고(金生水·금생수), 물이 나무를 키워요(水生木·수생목). <b>상극(相剋)</b>은 누르는 관계예요. 나무뿌리가 흙을 파고, 흙이 물을 막고, 물이 불을 끄고, 불이 쇠를 녹이고, 쇠가 나무를 벱니다."
   ],
-  mine:"내 원국은 <b>金 4 · 土 2 · 木 2 · 火 0 · 水 0</b>. 쇠가 넷이라 ‘맺고 다듬는 힘’이 유난히 강해요 — 손기술, 정리, 정확함. 반대로 <b>火(표현·열정)와 水(흐름·유연함)가 0</b>이라, 속으로만 삭이기 쉽고 밖으로 드러내는 일이 숙제입니다. 조명·따뜻한 색·사람 만나는 일·말로 하는 홍보가 火를 채우고, 물처럼 흐르는 여유(쉬기·이동)가 水를 채워요.",
+  mine:"내 원국은 <b>金(금) 4 · 土(토) 2 · 木(목) 2 · 火(화) 0 · 水(수) 0</b>. 쇠가 넷이라 ‘맺고 다듬는 힘’이 유난히 강해요 — 손기술, 정리, 정확함. 반대로 <b>火(화·표현·열정)와 水(수·흐름·유연함)가 0</b>이라, 속으로만 삭이기 쉽고 밖으로 드러내는 일이 숙제입니다. 조명·따뜻한 색·사람 만나는 일·말로 하는 홍보가 火(화)를 채우고, 물처럼 흐르는 여유(쉬기·이동)가 水(수)를 채워요.",
   quiz:[
     { q:"상생(相生)은 서로 누르는 관계다.", opts:["O","X"], a:1,
       why:"<b>X</b>. 상생은 낳고 키우는 순환, 누르는 것은 <b>상극(相剋)</b>입니다." },
-    { q:"木(나무)이 생하는(낳는) 오행은?", opts:["火","土","金","水"], a:0,
-      why:"<b>火</b>. 木生火 — 나무가 타서 불을 피웁니다." },
-    { q:"내 원국에서 0개인 오행 두 가지는?", opts:["木 · 土","火 · 水","金 · 水","木 · 火"], a:1,
-      why:"<b>火 · 水</b>. 金 4개, 土 2개, 木 2개는 있고 火와 水는 한 글자도 없습니다." }
+    { q:"木(목)이 생하는(낳는) 오행은?", opts:["火(화)","土(토)","金(금)","水(수)"], a:0,
+      why:"<b>火(화)</b>. 木生火(목생화) — 나무가 타서 불을 피웁니다." },
+    { q:"내 원국에서 0개인 오행 두 가지는?", opts:["木(목) · 土(토)","火(화) · 水(수)","金(금) · 水(수)","木(목) · 火(화)"], a:1,
+      why:"<b>火(화) · 水(수)</b>. 金(금) 4개, 土(토) 2개, 木(목) 2개는 있고 火(화)와 水(수)는 한 글자도 없습니다." }
   ]
 },
 {
   id:2, title:"천간 10자", sub:"Day 2 · 하늘의 기운, 갑을병정무기경신임계",
   art:`<div class="yl">양(陽)</div>
     <div class="grid10" style="margin-bottom:5px">
-      <div class="oc e-mok"><div class="h">甲</div><div class="l">양목</div></div>
-      <div class="oc e-hwa"><div class="h">丙</div><div class="l">양화</div></div>
-      <div class="oc e-to"><div class="h">戊</div><div class="l">양토</div></div>
-      <div class="oc e-geum"><div class="h">庚</div><div class="l">양금</div></div>
-      <div class="oc e-su"><div class="h">壬</div><div class="l">양수</div></div>
+      <div class="oc e-mok"><div class="h">甲<i class="kr">갑</i></div><div class="l">양목</div></div>
+      <div class="oc e-hwa"><div class="h">丙<i class="kr">병</i></div><div class="l">양화</div></div>
+      <div class="oc e-to"><div class="h">戊<i class="kr">무</i></div><div class="l">양토</div></div>
+      <div class="oc e-geum"><div class="h">庚<i class="kr">경</i></div><div class="l">양금</div></div>
+      <div class="oc e-su"><div class="h">壬<i class="kr">임</i></div><div class="l">양수</div></div>
     </div>
     <div class="yl">음(陰)</div>
     <div class="grid10">
-      <div class="oc e-mok"><div class="h">乙</div><div class="l">음목</div></div>
-      <div class="oc e-hwa"><div class="h">丁</div><div class="l">음화</div></div>
-      <div class="oc e-to"><div class="h">己</div><div class="l">음토</div></div>
-      <div class="oc e-geum"><div class="h">辛</div><div class="l">음금</div></div>
-      <div class="oc e-su"><div class="h">癸</div><div class="l">음수</div></div>
+      <div class="oc e-mok"><div class="h">乙<i class="kr">을</i></div><div class="l">음목</div></div>
+      <div class="oc e-hwa"><div class="h">丁<i class="kr">정</i></div><div class="l">음화</div></div>
+      <div class="oc e-to"><div class="h">己<i class="kr">기</i></div><div class="l">음토</div></div>
+      <div class="oc e-geum"><div class="h">辛<i class="kr">신</i></div><div class="l">음금</div></div>
+      <div class="oc e-su"><div class="h">癸<i class="kr">계</i></div><div class="l">음수</div></div>
     </div>`,
   desc:[
     "<b>천간(天干)</b>은 하늘의 기운 10가지입니다. 오행마다 양·음 한 쌍씩 있어요: 갑을(목) 병정(화) 무기(토) 경신(금) 임계(수).",
-    "같은 나무라도 <b>甲은 하늘로 곧게 뻗는 큰 나무</b>, <b>乙은 담장을 타고 오르는 덩굴</b>이에요. 같은 쇠라도 <b>庚은 큰 쇠(도끼·구조물)</b>, <b>辛은 다듬어진 보석·바늘</b>입니다. 그래서 10글자는 성격이 다 다릅니다.",
+    "같은 나무라도 <b>甲(갑)은 하늘로 곧게 뻗는 큰 나무</b>, <b>乙(을)은 담장을 타고 오르는 덩굴</b>이에요. 같은 쇠라도 <b>庚(경)은 큰 쇠(도끼·구조물)</b>, <b>辛(신)은 다듬어진 보석·바늘</b>입니다. 그래서 10글자는 성격이 다 다릅니다.",
     "천간은 <b>겉으로 드러난 기운</b> — 남이 보는 성격과 재능이에요. 반대로 지지(다음 단계)는 실제 삶의 무대가 됩니다. 사주는 ‘천간이 위, 지지가 아래’로 한 칸을 이뤄요."
   ],
-  mine:"내 천간은 <b>甲 · 庚 · 辛 · 辛</b>. 나를 뜻하는 <b>일간이 辛</b>입니다. 辛은 쇠를 다듬어 만든 보석이고, 그중에서도 <b>가위·바늘</b> 쪽 — 손끝이 예민하고 눈이 높아요. 그래서 사람 얼굴에 1mm 선을 긋는 아이라인 작업이 사주와 결이 맞습니다. 甲·庚이 함께 있으면 큰 나무와 큰 쇠가 부딪는 <b>갑경충</b>이라, 부드럽게 굽히기보다 정면으로 부딪는 추진력이 생겨요.",
+  mine:"내 천간은 <b>甲(갑) · 庚(경) · 辛(신) · 辛(신)</b>. 나를 뜻하는 <b>일간이 辛(신)</b>입니다. 辛(신)은 쇠를 다듬어 만든 보석이고, 그중에서도 <b>가위·바늘</b> 쪽 — 손끝이 예민하고 눈이 높아요. 그래서 사람 얼굴에 1mm 선을 긋는 아이라인 작업이 사주와 결이 맞습니다. 甲(갑)·庚(경)이 함께 있으면 큰 나무와 큰 쇠가 부딪는 <b>갑경충</b>이라, 부드럽게 굽히기보다 정면으로 부딪는 추진력이 생겨요.",
   quiz:[
     { q:"辛(신)의 오행과 음양은?", opts:["양금","음금","양수","음목"], a:1,
-      why:"<b>음금</b>. 庚이 양금(큰 쇠), 辛이 음금(보석·바늘)입니다." },
-    { q:"다음 중 양(陽)의 천간이 아닌 것은?", opts:["甲","丙","辛","壬"], a:2,
-      why:"<b>辛</b>. 양은 甲·丙·戊·庚·壬, 음은 乙·丁·己·辛·癸입니다." },
+      why:"<b>음금</b>. 庚(경)이 양금(큰 쇠), 辛(신)이 음금(보석·바늘)입니다." },
+    { q:"다음 중 양(陽)의 천간이 아닌 것은?", opts:["甲(갑)","丙(병)","辛(신)","壬(임)"], a:2,
+      why:"<b>辛(신)</b>. 양은 甲(갑)·丙(병)·戊(무)·庚(경)·壬(임), 음은 乙(을)·丁(정)·己(기)·辛(신)·癸(계)입니다." },
     { q:"천간과 지지 중 ‘겉으로 드러난 성격·재능’에 가까운 것은?", opts:["천간","지지"], a:0,
       why:"<b>천간</b>. 위 칸 천간은 겉으로 보이는 기운, 아래 칸 지지는 삶의 무대·현실입니다." }
   ]
@@ -639,38 +680,47 @@ const STEPS = [
 {
   id:3, title:"지지 12자", sub:"Day 3 · 땅의 기운, 계절과 시간",
   art:`<div class="seasons" style="margin-bottom:5px">
-      <div class="season e-mok"><div class="s">봄</div><div class="g">寅 卯 辰</div></div>
-      <div class="season e-hwa"><div class="s">여름</div><div class="g">巳 午 未</div></div>
-      <div class="season e-geum"><div class="s">가을</div><div class="g">申 酉 戌</div></div>
-      <div class="season e-su"><div class="s">겨울</div><div class="g">亥 子 丑</div></div>
+      <div class="season e-mok"><div class="s">봄</div><div class="g">寅 卯 辰</div><div class="r">인·묘·진</div></div>
+      <div class="season e-hwa"><div class="s">여름</div><div class="g">巳 午 未</div><div class="r">사·오·미</div></div>
+      <div class="season e-geum"><div class="s">가을</div><div class="g">申 酉 戌</div><div class="r">신·유·술</div></div>
+      <div class="season e-su"><div class="s">겨울</div><div class="g">亥 子 丑</div><div class="r">해·자·축</div></div>
     </div>
-    <div style="font-size:11px;color:#8E8579;line-height:1.7;letter-spacing:-.2px;margin-top:9px">
-      子 쥐 23~01 · 丑 소 01~03 · 寅 호랑이 03~05 · 卯 토끼 05~07<br>
-      辰 용 07~09 · 巳 뱀 09~11 · 午 말 11~13 · 未 양 13~15<br>
-      申 원숭이 15~17 · 酉 닭 17~19 · 戌 개 19~21 · 亥 돼지 21~23
+    <div class="zods">
+      <div class="zd"><b>子<i class="kr">자</i></b><span>쥐 · 23~01</span></div>
+      <div class="zd"><b>丑<i class="kr">축</i></b><span>소 · 01~03</span></div>
+      <div class="zd"><b>寅<i class="kr">인</i></b><span>호랑이 · 03~05</span></div>
+      <div class="zd"><b>卯<i class="kr">묘</i></b><span>토끼 · 05~07</span></div>
+      <div class="zd"><b>辰<i class="kr">진</i></b><span>용 · 07~09</span></div>
+      <div class="zd"><b>巳<i class="kr">사</i></b><span>뱀 · 09~11</span></div>
+      <div class="zd"><b>午<i class="kr">오</i></b><span>말 · 11~13</span></div>
+      <div class="zd"><b>未<i class="kr">미</i></b><span>양 · 13~15</span></div>
+      <div class="zd"><b>申<i class="kr">신</i></b><span>원숭이 · 15~17</span></div>
+      <div class="zd"><b>酉<i class="kr">유</i></b><span>닭 · 17~19</span></div>
+      <div class="zd"><b>戌<i class="kr">술</i></b><span>개 · 19~21</span></div>
+      <div class="zd"><b>亥<i class="kr">해</i></b><span>돼지 · 21~23</span></div>
     </div>`,
   desc:[
     "<b>지지(地支)</b>는 땅의 기운 12가지이고, 우리에게는 <b>띠</b>로 익숙합니다. 자축인묘진사오미신유술해 — 쥐·소·호랑이·토끼·용·뱀·말·양·원숭이·닭·개·돼지.",
-    "지지는 <b>계절과 시간의 흐름</b>을 담고 있어요. 寅卯辰이 봄, 巳午未가 여름, 申酉戌이 가을, 亥子丑이 겨울. 하루로 보면 子시가 밤 11시~새벽 1시, 午시가 낮 11시~1시입니다.",
+    "지지는 <b>계절과 시간의 흐름</b>을 담고 있어요. 寅卯辰(인묘진)이 봄, 巳午未(사오미)가 여름, 申酉戌(신유술)이 가을, 亥子丑(해자축)이 겨울. 하루로 보면 子(자)시가 밤 11시~새벽 1시, 午(오)시가 낮 11시~1시입니다.",
     "천간이 성격이라면 지지는 <b>무대</b>예요. 내가 어느 계절·어느 방향에서 힘을 받는지, 삶이 어디서 흔들리는지를 지지가 말해 줍니다. 지지 안에는 천간 2~3개가 숨어 있는데 이걸 <b>지장간</b>이라고 해요."
   ],
-  mine:"내 지지는 <b>未 · 丑 · 寅 · 申</b>. 눈여겨볼 건 두 쌍의 <b>충(冲)</b>입니다. 월지 寅과 년지 申이 마주 보고(寅申冲), 일지 丑과 시지 未가 마주 봐요(丑未冲). 충은 나쁜 기운이 아니라 <b>부딪쳐서 움직이는 힘</b> — 한자리에 머무는 것보다 옮기고 바꾸는 삶이 자연스럽다는 뜻입니다. 이사·새 매장·새 일이 자꾸 생기는 게 이상한 게 아니에요.",
+  mine:"내 지지는 <b>未(미) · 丑(축) · 寅(인) · 申(신)</b>. 눈여겨볼 건 두 쌍의 <b>충(冲)</b>입니다. 월지 寅(인)과 년지 申(신)이 마주 보고(寅申冲·인신충), 일지 丑(축)과 시지 未(미)가 마주 봐요(丑未冲·축미충). 충은 나쁜 기운이 아니라 <b>부딪쳐서 움직이는 힘</b> — 한자리에 머무는 것보다 옮기고 바꾸는 삶이 자연스럽다는 뜻입니다. 이사·새 매장·새 일이 자꾸 생기는 게 이상한 게 아니에요.",
   quiz:[
-    { q:"12지지 중 ‘소’에 해당하는 글자는?", opts:["丑","未","酉","戌"], a:0,
-      why:"<b>丑</b>. 丑은 소, 未는 양, 酉는 닭, 戌은 개입니다." },
+    { q:"12지지 중 ‘소’에 해당하는 글자는?", opts:["丑(축)","未(미)","酉(유)","戌(술)"], a:0,
+      why:"<b>丑(축)</b>. 丑(축)은 소, 未(미)는 양, 酉(유)는 닭, 戌(술)은 개입니다." },
     { q:"寅(인)이 속한 계절은?", opts:["봄","여름","가을","겨울"], a:0,
-      why:"<b>봄</b>. 寅卯辰이 봄이고, 寅은 봄이 시작되는 첫 글자입니다." },
-    { q:"내 사주에 있는 두 쌍의 충(冲)은?", opts:["寅申冲 · 丑未冲","子午冲 · 卯酉冲","辰戌冲 · 巳亥冲","寅申冲 · 子午冲"], a:0,
-      why:"<b>寅申冲 · 丑未冲</b>. 년지 申과 월지 寅, 일지 丑과 시지 未가 각각 마주 봅니다." }
+      why:"<b>봄</b>. 寅卯辰(인묘진)이 봄이고, 寅(인)은 봄이 시작되는 첫 글자입니다." },
+    { q:"내 사주에 있는 두 쌍의 충(冲)은?", opts:["寅申冲(인신충) · 丑未冲(축미충)","子午冲(자오충) · 卯酉冲(묘유충)","辰戌冲(진술충) · 巳亥冲(사해충)","寅申冲(인신충) · 子午冲(자오충)"], a:0,
+      why:"<b>寅申冲(인신충) · 丑未冲(축미충)</b>. 년지 申(신)과 월지 寅(인), 일지 丑(축)과 시지 未(미)가 각각 마주 봅니다." }
   ]
 },
 {
   id:4, title:"4기둥과 일간", sub:"Day 4 · 여덟 글자 읽는 순서",
   art:`<div class="pillars-mini">
-      <div class="pm"><div class="t">시</div><div class="a">辛</div><div class="b">未</div><div class="u">자녀·결과</div></div>
-      <div class="pm" style="box-shadow:0 0 0 2px #A87E46 inset"><div class="t" style="background:#A87E46">일</div><div class="a">辛</div><div class="b">丑</div><div class="u">나·배우자</div></div>
-      <div class="pm"><div class="t">월</div><div class="a">庚</div><div class="b">寅</div><div class="u">사회·일</div></div>
-      <div class="pm"><div class="t">년</div><div class="a">甲</div><div class="b">申</div><div class="u">환경·초년</div></div>
+      <div class="pm"><div class="t">시</div><div class="a">辛<i class="kr">신</i></div><div class="b">未<i class="kr">미</i></div><div class="u">자녀·결과</div></div>
+      <div class="pm" style="box-shadow:0 0 0 2px #A87E46 inset"><div class="t" style="background:#A87E46">일</div><div class="a">辛<i class="kr">신</i></div><div class="b">丑<i class="kr">축</i></div><div class="u">나·배우자</div></div>
+      <div class="pm"><div class="t">월</div><div class="a">庚<i class="kr">경</i></div><div class="b">寅<i class="kr">인</i></div><div class="u">사회·일</div></div>
+      <div class="pm"><div class="t">년</div><div class="a">甲<i class="kr">갑</i></div><div class="b">申<i class="kr">신</i></div><div class="u">환경·초년</div></div>
     </div>
     <div style="margin-top:11px;font-size:11.5px;color:#6E6152;line-height:1.7;letter-spacing:-.2px">
       위 칸 = <b>천간</b>(겉으로 보이는 기운)<br>
@@ -681,12 +731,12 @@ const STEPS = [
     "네 기둥은 사는 구간을 나눕니다. <b>년주</b>는 태어난 환경·집안·초년, <b>월주</b>는 부모·사회·청년, <b>일주</b>는 나와 배우자·중년, <b>시주</b>는 자녀·결과·말년. 그래서 ‘어디에 있느냐’가 그 글자의 역할을 바꿔요.",
     "가장 중요한 글자는 <b>일간(日干)</b> — 일주 위 칸입니다. 이 글자가 <b>‘나’</b>이고, 나머지 일곱 글자는 모두 이 일간과의 관계로 이름이 붙습니다(다음 단계의 십성). 사주 공부는 결국 ‘일간이 무엇을 얼마나 가지고 있나’를 읽는 일이에요."
   ],
-  mine:"내 원국은 <b>甲申 · 庚寅 · 辛丑 · 辛未</b>, 일간은 <b>辛</b>. 위 칸 천간이 甲·庚·辛·辛, 아래 칸 지지가 申·寅·丑·未입니다. 일간 辛이 ‘나’이므로, 나머지 일곱 글자를 辛 기준으로 읽으면 <b>비견 2 · 겁재 2 · 정재 2 · 편인 2</b>가 됩니다. 표면에 식상도 관성도 없어서 ‘말보다 손, 시키는 것보다 내 방식’이 분명한 사람으로 읽혀요.",
+  mine:"내 원국은 <b>甲申(갑신) · 庚寅(경인) · 辛丑(신축) · 辛未(신미)</b>, 일간은 <b>辛(신)</b>. 위 칸 천간이 甲(갑)·庚(경)·辛(신)·辛(신), 아래 칸 지지가 申(신)·寅(인)·丑(축)·未(미)입니다. 일간 辛(신)이 ‘나’이므로, 나머지 일곱 글자를 辛(신) 기준으로 읽으면 <b>비견 2 · 겁재 2 · 정재 2 · 편인 2</b>가 됩니다. 표면에 식상도 관성도 없어서 ‘말보다 손, 시키는 것보다 내 방식’이 분명한 사람으로 읽혀요.",
   quiz:[
     { q:"‘나’를 뜻하는 글자는?", opts:["년간","월지","일간","시간"], a:2,
       why:"<b>일간</b>. 일주 위 칸의 천간이 나 자신이고, 모든 십성은 이 글자를 기준으로 정합니다." },
-    { q:"내 일간은?", opts:["甲","庚","辛","未"], a:2,
-      why:"<b>辛</b>. 년 甲申 · 월 庚寅 · <b>일 辛丑</b> · 시 辛未 — 일주의 천간이 辛(음금)입니다." },
+    { q:"내 일간은?", opts:["甲(갑)","庚(경)","辛(신)","未(미)"], a:2,
+      why:"<b>辛(신)</b>. 년 甲申(갑신) · 월 庚寅(경인) · <b>일 辛丑(신축)</b> · 시 辛未(신미) — 일주의 천간이 辛(신·음금)입니다." },
     { q:"시주(時柱)가 주로 보는 것은?", opts:["집안·초년","부모·사회","자녀·결과·말년","배우자·중년"], a:2,
       why:"<b>자녀·결과·말년</b>. 년=환경·초년, 월=사회·청년, 일=나·배우자, 시=자녀·결과입니다." }
   ]
@@ -703,7 +753,7 @@ const STEPS = [
     "다섯 그룹은 다시 둘로 갈립니다. <b>음양이 같으면</b> 비견·식신·편재·편관·편인, <b>음양이 다르면</b> 겁재·상관·정재·정관·정인. 그래서 5그룹 × 2 = <b>십성(十星) 10개</b>예요.",
     "기억할 것은 이게 ‘길한 별/흉한 별’이 아니라는 점입니다. 비겁이 많으면 힘이 세지만 고집이 되고, 재성이 많으면 돈복이 있지만 몸이 고단해요. <b>많고 적음의 균형</b>으로 읽습니다."
   ],
-  mine:"내 여덟 글자를 辛 기준으로 세면 <b>비겁 4 (庚·申·辛·辛) · 편인 2 (丑·未) · 정재 2 (甲·寅)</b>이고, <b>식상과 관성은 표면에 0</b>입니다. 하지만 지장간에 申속 壬(상관)·丑속 癸(식신)·寅속 丙(정관)·未속 丁(편관)이 숨어 있어요. 겉으로는 조용한데 필요할 때만 재주와 추진력이 튀어나오는 구조 — 그래서 ‘말 잘하는 사람’보다 ‘결과로 보여 주는 사람’에 가깝습니다.",
+  mine:"내 여덟 글자를 辛(신) 기준으로 세면 <b>비겁 4 — 庚(경)·申(신)·辛(신)·辛(신), 편인 2 — 丑(축)·未(미), 정재 2 — 甲(갑)·寅(인)</b>이고, <b>식상과 관성은 표면에 0</b>입니다. 하지만 지장간에 申(신)속 壬(임)·상관, 丑(축)속 癸(계)·식신, 寅(인)속 丙(병)·정관, 未(미)속 丁(정)·편관이 숨어 있어요. 겉으로는 조용한데 필요할 때만 재주와 추진력이 튀어나오는 구조 — 그래서 ‘말 잘하는 사람’보다 ‘결과로 보여 주는 사람’에 가깝습니다.",
   quiz:[
     { q:"‘나를 생하는 것(공부·보호·도움)’에 해당하는 십성은?", opts:["비겁","식상","재성","인성"], a:3,
       why:"<b>인성</b>. 나를 낳아 주는 오행이라 배움·후원·휴식을 뜻합니다." },
@@ -716,11 +766,11 @@ const STEPS = [
 {
   id:6, title:"비겁 — 비견과 겁재", sub:"Day 6 · 내 힘의 크기",
   art:`<div class="arw">
-      <div class="a e-geum">辛</div><div class="mid">나와 같은 오행<br>음양 같음</div><div class="b e-geum">辛</div>
+      <div class="a e-geum">辛<i class="kr">신</i></div><div class="mid">나와 같은 오행<br>음양 같음</div><div class="b e-geum">辛<i class="kr">신</i></div>
     </div>
     <div style="text-align:center;font-size:11.5px;color:#8E8579;letter-spacing:-.2px;margin-bottom:10px">비견(比肩) — 어깨를 나란히 한 또 하나의 나</div>
     <div class="arw" style="border-top:1px solid #F1E9DC;padding-top:12px">
-      <div class="a e-geum">辛</div><div class="mid">나와 같은 오행<br>음양 다름</div><div class="b e-geum" style="background:#E3E8EE">庚</div>
+      <div class="a e-geum">辛<i class="kr">신</i></div><div class="mid">나와 같은 오행<br>음양 다름</div><div class="b e-geum" style="background:#E3E8EE">庚<i class="kr">경</i></div>
     </div>
     <div style="text-align:center;font-size:11.5px;color:#8E8579;letter-spacing:-.2px">겁재(劫財) — 힘으로 겨루는 라이벌</div>`,
   desc:[
@@ -728,12 +778,12 @@ const STEPS = [
     "둘을 합쳐 <b>비겁</b>이라고 하고, 뜻은 하나예요. <b>나의 힘</b>. 자기 주관, 자존심, 추진력, 남에게 지지 않으려는 마음. 비겁이 적으면 남의 눈치를 보기 쉽고, 많으면 내 뜻대로 밀고 나갑니다.",
     "많을 때의 그림자도 분명해요. 고집이 세지고, 남 도움을 못 받고 혼자 다 짊어지며, 동업·보증·지출에서 돈이 새기 쉬워요. 그래서 비겁이 강한 사주는 <b>‘혼자 하는 대신, 돈 관리 규칙을 정해 두는 것’</b>이 핵심입니다."
   ],
-  mine:"내 비겁은 <b>4개</b>(庚·申·辛·辛)로 여덟 글자 중 절반. 여기에 인성까지 더하면 6개가 나를 받쳐서 <b>확실한 신강</b>이에요. 그래서 남 밑에서 시키는 일을 하는 것보다 <b>내 이름으로 가게를 여는 쪽</b>이 사주에 맞습니다 — 실제로 혼자 샵을 연 게 이 힘의 근거예요. 대신 ‘내가 다 한다’가 습관이 되면 몸이 먼저 지치니, 사람을 쓰고 일을 넘기는 연습이 재물을 지키는 길입니다. 겁재가 둘이라 동업·보증·지인 거래는 특히 조심하세요.",
+  mine:"내 비겁은 <b>4개</b> — 庚(경)·申(신)·辛(신)·辛(신). 여덟 글자 중 절반. 여기에 인성까지 더하면 6개가 나를 받쳐서 <b>확실한 신강</b>이에요. 그래서 남 밑에서 시키는 일을 하는 것보다 <b>내 이름으로 가게를 여는 쪽</b>이 사주에 맞습니다 — 실제로 혼자 샵을 연 게 이 힘의 근거예요. 대신 ‘내가 다 한다’가 습관이 되면 몸이 먼저 지치니, 사람을 쓰고 일을 넘기는 연습이 재물을 지키는 길입니다. 겁재가 둘이라 동업·보증·지인 거래는 특히 조심하세요.",
   quiz:[
     { q:"비견과 겁재를 가르는 차이는?", opts:["오행이 같은가 다른가","음양이 같은가 다른가","위 칸인가 아래 칸인가","계절이 같은가"], a:1,
       why:"<b>음양이 같은가 다른가</b>. 둘 다 나와 같은 오행이고, 음양이 같으면 비견·다르면 겁재입니다." },
     { q:"내 사주의 비겁은 몇 개?", opts:["2개","3개","4개","6개"], a:2,
-      why:"<b>4개</b>. 庚·申·辛·辛 — 여덟 글자 중 넷입니다." },
+      why:"<b>4개</b>. 庚(경)·申(신)·辛(신)·辛(신) — 여덟 글자 중 넷입니다." },
     { q:"비겁이 너무 많을 때 나타나기 쉬운 것은?", opts:["남의 눈치를 봄","고집·지출·경쟁 부담","말재주가 줄어듦","공부가 어려워짐"], a:1,
       why:"<b>고집·지출·경쟁 부담</b>. 힘이 센 만큼 부딪히고, 돈이 새는 자리가 생깁니다." }
   ]
@@ -741,79 +791,79 @@ const STEPS = [
 {
   id:7, title:"식상 — 식신과 상관", sub:"Day 7 · 내가 낳는 재능과 말",
   art:`<div class="arw">
-      <div class="a e-geum">辛</div><div class="mid">金이 生한다 →</div><div class="b e-su">水</div>
+      <div class="a e-geum">辛<i class="kr">신</i></div><div class="mid">金(금)이 生(생)한다 →</div><div class="b e-su">水<i class="kr">수</i></div>
     </div>
     <div class="row5" style="grid-template-columns:1fr 1fr;gap:7px">
-      <div class="oc e-su" style="padding:10px 6px"><div class="h" style="font-size:15px">癸 · 식신</div><div class="l">음양 같음 · 편안한 재능</div></div>
-      <div class="oc e-su" style="padding:10px 6px"><div class="h" style="font-size:15px">壬 · 상관</div><div class="l">음양 다름 · 재치·비판</div></div>
+      <div class="oc e-su" style="padding:10px 6px"><div class="h" style="font-size:15px">癸(계) · 식신</div><div class="l">음양 같음 · 편안한 재능</div></div>
+      <div class="oc e-su" style="padding:10px 6px"><div class="h" style="font-size:15px">壬(임) · 상관</div><div class="l">음양 다름 · 재치·비판</div></div>
     </div>`,
   desc:[
-    "식상은 <b>내가 생하는(낳는) 오행</b>입니다. 辛(금)에게는 <b>水</b>. 내 안의 것이 밖으로 나오는 통로라서 말·표현·재능·손기술·콘텐츠가 여기에 해당해요.",
+    "식상은 <b>내가 생하는(낳는) 오행</b>입니다. 辛(신)에게는 <b>水(수)</b>. 내 안의 것이 밖으로 나오는 통로라서 말·표현·재능·손기술·콘텐츠가 여기에 해당해요.",
     "<b>식신</b>은 음양이 같아 편안하게 나오는 재능. 먹고사는 기술, 차분한 표현, 꾸준한 콘텐츠. <b>상관</b>은 음양이 달라 톡 튀어나오는 재능. 재치, 비판, 끼, 남의 시선을 끄는 힘입니다. 상관이 강하면 말로 사람을 웃기거나 찌르기도 해요.",
     "식상은 <b>재성을 낳는 어머니</b>입니다. 내 재능이 밖으로 나가야 돈이 만들어져요. 식상이 약한데 재성만 있으면 ‘벌고 싶은데 방법이 막힌’ 상태가 됩니다."
   ],
-  mine:"내 표면 8글자에 식상은 <b>0개</b>. 그런데 지장간을 보면 <b>丑속 癸(식신)</b>과 <b>申속 壬(상관)</b>이 숨어 있어요. 재능이 없는 게 아니라 <b>드러내는 걸 안 하는</b> 구조입니다. 이게 샵 운영에서는 손기술로 나타나고(癸), 손님이 물으면 정확하게 설명해 주는 방식으로 나와요. 블로그·릴스·새소식처럼 <b>밖으로 꺼내는 통로</b>를 일부러 만들어 두면, 숨어 있던 식상이 재성(매출)으로 이어집니다 — 홍보가 사주적으로도 필요한 이유예요.",
+  mine:"내 표면 8글자에 식상은 <b>0개</b>. 그런데 지장간을 보면 <b>丑(축)속 癸(계)·식신</b>과 <b>申(신)속 壬(임)·상관</b>이 숨어 있어요. 재능이 없는 게 아니라 <b>드러내는 걸 안 하는</b> 구조입니다. 이게 샵 운영에서는 손기술로 나타나고(癸·계), 손님이 물으면 정확하게 설명해 주는 방식으로 나와요. 블로그·릴스·새소식처럼 <b>밖으로 꺼내는 통로</b>를 일부러 만들어 두면, 숨어 있던 식상이 재성(매출)으로 이어집니다 — 홍보가 사주적으로도 필요한 이유예요.",
   quiz:[
     { q:"식상은 일간과 어떤 관계?", opts:["나를 생하는 오행","내가 생하는 오행","나를 극하는 오행","나와 같은 오행"], a:1,
       why:"<b>내가 생하는 오행</b>. 내 안의 것이 밖으로 나오는 통로입니다." },
     { q:"‘재치·비판·끼’에 가까운 쪽은?", opts:["식신","상관","정관","편인"], a:1,
       why:"<b>상관</b>. 식신은 편안한 재능, 상관은 튀어나오는 재주와 말입니다." },
     { q:"내 사주의 식상은?", opts:["표면에 2개","표면에 0개, 지장간에 숨어 있음","아예 없음","지장간에 3개"], a:1,
-      why:"<b>표면에 0개, 지장간에 숨어 있음</b>. 丑속 癸(식신)·申속 壬(상관)이 그 글자입니다." }
+      why:"<b>표면에 0개, 지장간에 숨어 있음</b>. 丑(축)속 癸(계)·식신, 申(신)속 壬(임)·상관이 그 글자입니다." }
   ]
 },
 {
   id:8, title:"재성 — 편재와 정재", sub:"Day 8 · 내가 다루는 돈",
   art:`<div class="arw">
-      <div class="a e-geum">辛</div><div class="mid">金이 克한다 →</div><div class="b e-mok">木</div>
+      <div class="a e-geum">辛<i class="kr">신</i></div><div class="mid">金(금)이 克(극)한다 →</div><div class="b e-mok">木<i class="kr">목</i></div>
     </div>
     <div class="row5" style="grid-template-columns:1fr 1fr;gap:7px">
-      <div class="oc e-mok" style="padding:10px 6px"><div class="h" style="font-size:15px">乙 · 편재</div><div class="l">음양 같음 · 기회·유동</div></div>
-      <div class="oc e-mok" style="padding:10px 6px"><div class="h" style="font-size:15px">甲 · 정재</div><div class="l">음양 다름 · 안정·성실</div></div>
+      <div class="oc e-mok" style="padding:10px 6px"><div class="h" style="font-size:15px">乙(을) · 편재</div><div class="l">음양 같음 · 기회·유동</div></div>
+      <div class="oc e-mok" style="padding:10px 6px"><div class="h" style="font-size:15px">甲(갑) · 정재</div><div class="l">음양 다름 · 안정·성실</div></div>
     </div>`,
   desc:[
-    "재성은 <b>내가 극하는(다루는) 오행</b>. 辛에게는 <b>木</b>입니다. 내가 손에 쥐는 것 — 돈, 결과, 성과, 그리고 남자에게는 아내·여자 사람.",
+    "재성은 <b>내가 극하는(다루는) 오행</b>. 辛(신)에게는 <b>木(목)</b>입니다. 내가 손에 쥐는 것 — 돈, 결과, 성과, 그리고 남자에게는 아내·여자 사람.",
     "<b>정재</b>는 음양이 달라 반듯하게 다루는 재물. 월급, 계약, 정찰제, 단골이 만드는 안정적인 돈이에요. <b>편재</b>는 음양이 같아 유동적으로 다루는 재물. 큰 기회, 부동산, 사업, 한 번에 크게 버는 쪽입니다.",
     "재성은 ‘벌었다’보다 <b>‘지켰다’</b>가 어려운 글자예요. 비겁이 강하면 재성을 빼앗기 쉬워서, 벌어도 새는 자리가 생깁니다. 그래서 재성은 <b>통장·계약·정산 규칙</b>과 함께 봐야 합니다."
   ],
-  mine:"내 재성은 <b>甲·寅 정재 2개</b>, 둘 다 정재예요. 편재처럼 한탕을 노리는 구조가 아니라 <b>꾸준히 쌓아 올리는 재물</b> — 단골, 예약, 정찰제, 재방문이 나에게 맞습니다. 실제로 예약제·정찰제로 가는 게 사주와도 맞아요. 다만 재성을 낳아 주는 식상이 약해서, <b>가만히 있으면 돈이 안 자랍니다.</b> 홍보·기록·설명을 꾸준히 보태는 만큼 재성이 커지는 구조로 보세요. 겁재가 둘이니 지인 거래·동업·보증은 특히 조심.",
+  mine:"내 재성은 <b>甲(갑)·寅(인) 정재 2개</b>, 둘 다 정재예요. 편재처럼 한탕을 노리는 구조가 아니라 <b>꾸준히 쌓아 올리는 재물</b> — 단골, 예약, 정찰제, 재방문이 나에게 맞습니다. 실제로 예약제·정찰제로 가는 게 사주와도 맞아요. 다만 재성을 낳아 주는 식상이 약해서, <b>가만히 있으면 돈이 안 자랍니다.</b> 홍보·기록·설명을 꾸준히 보태는 만큼 재성이 커지는 구조로 보세요. 겁재가 둘이니 지인 거래·동업·보증은 특히 조심.",
   quiz:[
     { q:"재성은 일간과 어떤 관계?", opts:["내가 극하는 오행","내가 생하는 오행","나를 극하는 오행","나와 같은 오행"], a:0,
       why:"<b>내가 극하는 오행</b>. 내가 다루고 손에 쥐는 대상입니다." },
     { q:"‘기회·유동·큰돈’에 가까운 쪽은?", opts:["정재","편재","정관","식신"], a:1,
       why:"<b>편재</b>. 정재는 성실하게 쌓는 안정적 재물입니다." },
     { q:"내 사주의 재성 구성은?", opts:["편재 2개","정재 2개","정재 1·편재 1","재성 없음"], a:1,
-      why:"<b>정재 2개</b>. 년간 甲과 월지 寅이 모두 정재입니다." }
+      why:"<b>정재 2개</b>. 년간 甲(갑)과 월지 寅(인)이 모두 정재입니다." }
   ]
 },
 {
   id:9, title:"관성 — 정관과 편관", sub:"Day 9 · 나를 다스리는 규칙",
   art:`<div class="arw">
-      <div class="a e-hwa">丙</div><div class="mid">火가 金을 克한다 →</div><div class="b e-geum">辛</div>
+      <div class="a e-hwa">丙<i class="kr">병</i></div><div class="mid">火(화)가 金(금)을 克(극)한다 →</div><div class="b e-geum">辛<i class="kr">신</i></div>
     </div>
     <div class="row5" style="grid-template-columns:1fr 1fr;gap:7px">
-      <div class="oc e-hwa" style="padding:10px 6px"><div class="h" style="font-size:15px">丙 · 정관</div><div class="l">음양 다름 · 질서·명예</div></div>
-      <div class="oc e-hwa" style="padding:10px 6px"><div class="h" style="font-size:15px">丁 · 편관</div><div class="l">음양 같음 · 압박·추진</div></div>
+      <div class="oc e-hwa" style="padding:10px 6px"><div class="h" style="font-size:15px">丙(병) · 정관</div><div class="l">음양 다름 · 질서·명예</div></div>
+      <div class="oc e-hwa" style="padding:10px 6px"><div class="h" style="font-size:15px">丁(정) · 편관</div><div class="l">음양 같음 · 압박·추진</div></div>
     </div>`,
   desc:[
-    "관성은 <b>나를 극하는 오행</b>. 辛에게는 <b>火</b>입니다. 나를 다스리는 것 — 규칙, 책임, 명예, 직장, 그리고 여자 사주에서는 <b>남자·결혼</b>을 뜻합니다.",
-    "<b>정관</b>은 바른 규칙. 공무원·직장·계약·신뢰, 그리고 반듯한 배우자. <b>편관(七殺)</b>은 강한 압박과 경쟁. 조직에서 밀어붙이는 힘, 큰일을 해내는 추진력이지만 스트레스도 큽니다.",
+    "관성은 <b>나를 극하는 오행</b>. 辛(신)에게는 <b>火(화)</b>입니다. 나를 다스리는 것 — 규칙, 책임, 명예, 직장, 그리고 여자 사주에서는 <b>남자·결혼</b>을 뜻합니다.",
+    "<b>정관</b>은 바른 규칙. 공무원·직장·계약·신뢰, 그리고 반듯한 배우자. <b>편관(七殺·칠살)</b>은 강한 압박과 경쟁. 조직에서 밀어붙이는 힘, 큰일을 해내는 추진력이지만 스트레스도 큽니다.",
     "관성은 ‘나를 조이는 힘’이라 없으면 자유롭지만 흐트러지기 쉽고, 많으면 짓눌립니다. 관성이 없거나 약한 사주는 <b>스스로 규칙을 만들어야</b> 흔들리지 않아요."
   ],
-  mine:"내 표면에 관성은 <b>0개</b>, 대신 지장간에 <b>寅속 丙(정관)</b>과 <b>未속 丁(편관)</b>이 숨어 있어요. 관성이 드러나지 않으면 ‘정해진 틀에 묶이는 삶’이 답답해집니다 — 직장보다 <b>내 사업</b>이 맞는 이유이기도 해요. 그런데 관성은 규칙이니까, 내 사주에서는 <b>내가 만든 규칙</b>(예약 시간, 정산 루틴, 마감)이 그 자리를 채워야 해요. 규칙 없이 자유만 있으면 오히려 불안해집니다. 그리고 火가 관성인데 내 사주에 火가 0 — 사람 만나고 따뜻한 자리를 만드는 일이 명예·관계운을 올리는 통로예요.",
+  mine:"내 표면에 관성은 <b>0개</b>, 대신 지장간에 <b>寅(인)속 丙(병)·정관</b>과 <b>未(미)속 丁(정)·편관</b>이 숨어 있어요. 관성이 드러나지 않으면 ‘정해진 틀에 묶이는 삶’이 답답해집니다 — 직장보다 <b>내 사업</b>이 맞는 이유이기도 해요. 그런데 관성은 규칙이니까, 내 사주에서는 <b>내가 만든 규칙</b>(예약 시간, 정산 루틴, 마감)이 그 자리를 채워야 해요. 규칙 없이 자유만 있으면 오히려 불안해집니다. 그리고 火(화)가 관성인데 내 사주에 火(화)가 0 — 사람 만나고 따뜻한 자리를 만드는 일이 명예·관계운을 올리는 통로예요.",
   quiz:[
     { q:"여성 사주에서 관성(官星)은 주로 무엇을 뜻하나?", opts:["재물","남자·결혼·직장·규칙","자녀","형제"], a:1,
       why:"<b>남자·결혼·직장·규칙</b>. 나를 다스리는 관계라서 그렇게 읽습니다." },
     { q:"‘강한 압박·경쟁·추진력’에 가까운 쪽은?", opts:["정관","편관","정재","정인"], a:1,
-      why:"<b>편관</b>(七殺). 정관은 반듯한 질서·신뢰입니다." },
+      why:"<b>편관</b>(七殺·칠살). 정관은 반듯한 질서·신뢰입니다." },
     { q:"내 사주의 관성은?", opts:["정관 1개","편관 2개","표면 0, 지장간에 숨어 있음","정관 2개"], a:2,
-      why:"<b>표면 0, 지장간에 숨어 있음</b>. 寅속 丙(정관)·未속 丁(편관)입니다." }
+      why:"<b>표면 0, 지장간에 숨어 있음</b>. 寅(인)속 丙(병)·정관, 未(미)속 丁(정)·편관입니다." }
   ]
 },
 {
   id:10, title:"인성 & 신강·신약", sub:"Day 10 · 나를 받치는 힘",
   art:`<div class="arw">
-      <div class="a e-to">土</div><div class="mid">土가 金을 生한다 →</div><div class="b e-geum">辛</div>
+      <div class="a e-to">土<i class="kr">토</i></div><div class="mid">土(토)가 金(금)을 生(생)한다 →</div><div class="b e-geum">辛<i class="kr">신</i></div>
     </div>
     <div class="bars2">
       <div class="bar2"><div class="lb"><span>나를 돕는 글자 (비겁 4 + 인성 2)</span><span>6 / 8</span></div>
@@ -825,17 +875,17 @@ const STEPS = [
       나를 돕는 힘이 6 &gt; 내보내는 힘 2 → <b style="color:#8E6726">신강(身强)</b>
     </div>`,
   desc:[
-    "인성은 <b>나를 생하는 오행</b>. 辛에게는 <b>土</b>입니다. 나를 낳아 주고 받쳐 주는 것 — 공부, 어머니, 스승, 보호, 휴식, 정보, 자격증.",
+    "인성은 <b>나를 생하는 오행</b>. 辛(신)에게는 <b>土(토)</b>입니다. 나를 낳아 주고 받쳐 주는 것 — 공부, 어머니, 스승, 보호, 휴식, 정보, 자격증.",
     "<b>정인</b>은 차분한 배움과 후원. 학교·책·정식 교육. <b>편인</b>은 직관과 기술, 비정형 공부 — 사주·타로·전문 기술·손기술처럼 ‘몸으로 익히는’ 쪽입니다. 편인이 강한 사람은 설명을 듣기보다 감으로 먼저 잡아요.",
     "마지막으로 <b>신강·신약</b>. 나를 돕는 글자(비겁+인성)가 많으면 <b>신강</b> — 스스로 서는 힘이 세고, 적으면 <b>신약</b> — 주변 도움과 환경이 중요합니다. 좋고 나쁨이 아니라 <b>에너지를 쓰는 방향</b>이 달라요. 신강은 밖으로 내보내야 균형이 잡히고, 신약은 채우고 지켜야 합니다."
   ],
-  mine:"내 인성은 <b>丑·未 편인 2개</b>이고, 비겁 4개와 합치면 여덟 글자 중 <b>6개가 나를 돕는 글자</b> — 확실한 <b>신강</b>입니다. 그래서 버티는 힘, 혼자 시작하는 힘이 강해요. 하지만 신강은 <b>안으로만 모으면 무거워집니다.</b> 내보내는 글자가 2개뿐이라, 일하고 표현하고 사람을 만나는 쪽으로 에너지를 쓰지 않으면 몸과 마음에 쌓여요. 편인 2개는 <b>직관과 기술 습득이 빠르다</b>는 뜻이라 사주 공부 자체가 편인을 쓰는 일이고, 아이라인 같은 정교한 기술도 여기에 걸립니다. 오늘처럼 하루 한 스텝씩 쌓는 방식이 이 사주에 가장 잘 맞아요.",
+  mine:"내 인성은 <b>丑(축)·未(미) 편인 2개</b>이고, 비겁 4개와 합치면 여덟 글자 중 <b>6개가 나를 돕는 글자</b> — 확실한 <b>신강</b>입니다. 그래서 버티는 힘, 혼자 시작하는 힘이 강해요. 하지만 신강은 <b>안으로만 모으면 무거워집니다.</b> 내보내는 글자가 2개뿐이라, 일하고 표현하고 사람을 만나는 쪽으로 에너지를 쓰지 않으면 몸과 마음에 쌓여요. 편인 2개는 <b>직관과 기술 습득이 빠르다</b>는 뜻이라 사주 공부 자체가 편인을 쓰는 일이고, 아이라인 같은 정교한 기술도 여기에 걸립니다. 오늘처럼 하루 한 스텝씩 쌓는 방식이 이 사주에 가장 잘 맞아요.",
   quiz:[
     { q:"인성은 일간과 어떤 관계?", opts:["나를 생하는 오행","내가 생하는 오행","내가 극하는 오행","나를 극하는 오행"], a:0,
       why:"<b>나를 생하는 오행</b>. 공부·보호·후원·휴식을 뜻합니다." },
     { q:"‘직관·기술·비정형 공부’에 가까운 쪽은?", opts:["정인","편인","정관","식신"], a:1,
       why:"<b>편인</b>. 정인은 책·정식 교육처럼 차분한 배움입니다." },
-    { q:"내 사주가 신강인 이유는?", opts:["재성이 4개라서","비겁 4 + 인성 2 = 6개가 나를 돕기 때문","火가 0이라서","일간이 음금이라서"], a:1,
+    { q:"내 사주가 신강인 이유는?", opts:["재성이 4개라서","비겁 4 + 인성 2 = 6개가 나를 돕기 때문","火(화)가 0이라서","일간이 음금이라서"], a:1,
       why:"<b>비겁 4 + 인성 2</b>. 나를 돕는 글자가 8개 중 6개로 압도적입니다." }
   ]
 }
@@ -873,9 +923,9 @@ function elClass(k){ return { "목":"e-mok","화":"e-hwa","토":"e-to","금":"e-
     return '<div class="pl'+(p.mine?' is-me':'')+'">'
       + '<div class="pl-lab"><b>'+p.label+'</b><br>'+p.meaning+'</div>'
       + '<button class="hj '+elClass(g.el)+'" data-t="'+p.gan+'|'+p.key+'|gan">'
-      + '<span class="han">'+p.gan+'</span><span class="sub">'+EL[g.el].o+' · '+g.yy+'</span><span class="sj">'+g.st+'</span></button>'
+      + '<span class="han">'+kr(p.gan)+'</span><span class="sub">'+EL[g.el].o+' '+EL[g.el].eum+' · '+g.yy+'</span><span class="sj">'+g.st+'</span></button>'
       + '<button class="hj '+elClass(j.el)+'" data-t="'+p.ji+'|'+p.key+'|ji">'
-      + '<span class="han">'+p.ji+'</span><span class="sub">'+EL[j.el].o+' · '+j.yy+'</span><span class="sj">'+j.st+'</span></button>'
+      + '<span class="han">'+kr(p.ji)+'</span><span class="sub">'+EL[j.el].o+' '+EL[j.el].eum+' · '+j.yy+'</span><span class="sj">'+j.st+'</span></button>'
       + '</div>';
   }).join("");
   box.addEventListener("click", function(e){
@@ -893,7 +943,7 @@ function elClass(k){ return { "목":"e-mok","화":"e-hwa","토":"e-to","금":"e-
   const order = ["목","화","토","금","수"];
   document.getElementById("obars").innerHTML = order.map(function(k){
     const c = cnt[k], w = c ? (c/4*100) : 0;
-    return '<div class="obar"><div class="o" style="color:'+EL[k].color+'">'+EL[k].o+'</div>'
+    return '<div class="obar"><div class="o" style="color:'+EL[k].color+'"><b>'+EL[k].o+'</b><i>'+EL[k].eum+'</i></div>'
       + '<div class="track"><div class="fill" style="width:'+w+'%;background:'+EL[k].color+'"></div></div>'
       + '<div class="n">'+(c?c+"개":"0개")+'</div></div>';
   }).join("");
@@ -901,8 +951,8 @@ function elClass(k){ return { "목":"e-mok","화":"e-hwa","토":"e-to","금":"e-
 
 (function buildJJ(){
   document.getElementById("jjbox").innerHTML = JJ.map(function(x){
-    return '<div><b>'+x.p+'속</b> <span style="display:inline;font-size:11.5px;color:#8E6726;font-weight:700">'
-      + x.h+'</span><span>'+x.m+'</span><span style="color:#A87E46">'+x.d+'</span></div>';
+    return '<div><b>'+kr(x.p)+'속</b><span class="hn">'+krAll(x.h)+'</span>'
+      + '<span>'+x.m+'</span><span style="color:#A87E46">'+x.d+'</span></div>';
   }).join("");
 })();
 
@@ -918,18 +968,18 @@ function openSheet(key){
   const lvlName = lvl === "gan" ? "천간(위 칸)" : "지지(아래 칸)";
   document.getElementById("sheetbody").innerHTML =
     '<div class="sh-top">'
-    + '<div class="sh-han '+elClass(c.el)+'"><b>'+han+'</b><i>'+EL[c.el].o+'</i></div>'
+    + '<div class="sh-han '+elClass(c.el)+'"><b>'+kr(han)+'</b><i>'+EL[c.el].eum+' · '+c.yy+'</i></div>'
     + '<div class="sh-tt"><b>'+c.name+'</b><span>'+posName+' · '+lvlName+'</span></div>'
     + '</div>'
     + '<div class="sh-row">'
-    + '<span class="tag">오행 '+EL[c.el].o+' '+EL[c.el].name+'</span>'
+    + '<span class="tag">오행 '+EL[c.el].o+'('+EL[c.el].eum+') '+EL[c.el].name+'</span>'
     + '<span class="tag">음양 '+c.yy+'</span>'
     + '<span class="tag">십성 '+c.st+'</span>'
     + (lvl === "ji" ? '<span class="tag">'+EL[c.el].season+'</span>' : '')
     + '</div>'
     + '<p class="sh-m">'+c.mean+'</p>'
-    + (lvl === "ji" ? '<div class="tipbox"><b>'+han+'</b> 지지 안에 숨은 지장간: '
-        + (JJ.filter(function(x){ return x.p === han; })[0] || {h:"—",m:""}).h
+    + (lvl === "ji" ? '<div class="tipbox"><b>'+kr(han)+'</b> 지지 안에 숨은 지장간: '
+        + krAll((JJ.filter(function(x){ return x.p === han; })[0] || {h:"—",m:""}).h)
         + ' <span style="color:#8E8579">· '
         + (JJ.filter(function(x){ return x.p === han; })[0] || {h:"",m:""}).m + '</span></div>' : '')
     + '<button class="sh-x" onclick="closeSheet()">닫기</button>';
@@ -944,11 +994,11 @@ sbg.addEventListener("click", closeSheet);
    ========================================================= */
 let curEl = "금";
 const FNOTE = {
-  "목":{ t:"木 · 나무", s:"봄·성장", note:"<b>木</b>은 뻗어 오르는 힘. 내 사주에서는 <b>정재</b>라서 ‘자라나는 돈·결과’를 맡습니다. 甲·寅 두 글자로 2개 있어요." },
-  "화":{ t:"火 · 불", s:"여름·표현", note:"<b>火</b>는 피어오르는 열과 드러남. 내 사주에서는 <b>관성</b>(정관·편관)인데 <b>0개</b> — 사람 만나기, 따뜻한 조명, 말로 알리는 일로 채워야 하는 자리입니다." },
-  "토":{ t:"土 · 흙", s:"환절기·저장", note:"<b>土</b>는 가운데서 품는 힘. 내 사주에서는 <b>인성</b>(편인)으로 2개, 丑·未. 배움과 기술, 휴식과 보호를 맡아요." },
-  "금":{ t:"金 · 쇠와 보석", s:"가을·맺음", note:"<b>金</b>은 나(辛)와 같은 결이고 <b>비겁</b>. 내 사주에서 <b>4개로 가장 강한</b> 축 — 추진력이자 자존심, 그리고 돈이 새는 자리입니다." },
-  "수":{ t:"水 · 물", s:"겨울·흐름", note:"<b>水</b>는 흐르고 스미는 힘. 내 사주에서는 <b>식상</b>(식신·상관)인데 표면에 <b>0개</b>, 지장간에만 숨어 있어요. 말·콘텐츠·손기술로 꺼내 쓸 통로가 필요합니다." }
+  "목":{ t:"木(목) · 나무", s:"봄·성장", note:"<b>木(목)</b>은 뻗어 오르는 힘. 내 사주에서는 <b>정재</b>라서 ‘자라나는 돈·결과’를 맡습니다. 甲(갑)·寅(인) 두 글자로 2개 있어요." },
+  "화":{ t:"火(화) · 불", s:"여름·표현", note:"<b>火(화)</b>는 피어오르는 열과 드러남. 내 사주에서는 <b>관성</b>(정관·편관)인데 <b>0개</b> — 사람 만나기, 따뜻한 조명, 말로 알리는 일로 채워야 하는 자리입니다." },
+  "토":{ t:"土(토) · 흙", s:"환절기·저장", note:"<b>土(토)</b>는 가운데서 품는 힘. 내 사주에서는 <b>인성</b>(편인)으로 2개, 丑(축)·未(미). 배움과 기술, 휴식과 보호를 맡아요." },
+  "금":{ t:"金(금) · 쇠와 보석", s:"가을·맺음", note:"<b>金(금)</b>은 나 辛(신)와 같은 결이고 <b>비겁</b>. 내 사주에서 <b>4개로 가장 강한</b> 축 — 추진력이자 자존심, 그리고 돈이 새는 자리입니다." },
+  "수":{ t:"水(수) · 물", s:"겨울·흐름", note:"<b>水(수)</b>는 흐르고 스미는 힘. 내 사주에서는 <b>식상</b>(식신·상관)인데 표면에 <b>0개</b>, 지장간에만 숨어 있어요. 말·콘텐츠·손기술로 꺼내 쓸 통로가 필요합니다." }
 };
 function drawFive(sel){
   curEl = sel;
@@ -988,13 +1038,13 @@ function drawFive(sel){
   document.getElementById("f-note").innerHTML = f.note;
   document.getElementById("legend").innerHTML =
       '<div class="lg a"><div class="k">내가 생하는 것 · 식상</div><div class="v">'
-      + label[saengOut] + ' ' + EL[saengOut].name + '</div><div class="d">재능·표현이 나가는 곳</div></div>'
+      + label[saengOut] + '(' + EL[saengOut].eum + ') ' + EL[saengOut].name + '</div><div class="d">재능·표현이 나가는 곳</div></div>'
     + '<div class="lg b"><div class="k">나를 생하는 것 · 인성</div><div class="v">'
-      + label[saengIn] + ' ' + EL[saengIn].name + '</div><div class="d">공부·보호·도움</div></div>'
+      + label[saengIn] + '(' + EL[saengIn].eum + ') ' + EL[saengIn].name + '</div><div class="d">공부·보호·도움</div></div>'
     + '<div class="lg c"><div class="k">내가 극하는 것 · 재성</div><div class="v">'
-      + label[geukOut] + ' ' + EL[geukOut].name + '</div><div class="d">돈·결과·현실</div></div>'
+      + label[geukOut] + '(' + EL[geukOut].eum + ') ' + EL[geukOut].name + '</div><div class="d">돈·결과·현실</div></div>'
     + '<div class="lg d"><div class="k">나를 극하는 것 · 관성</div><div class="v">'
-      + label[geukIn] + ' ' + EL[geukIn].name + '</div><div class="d">규칙·명예·책임</div></div>';
+      + label[geukIn] + '(' + EL[geukIn].eum + ') ' + EL[geukIn].name + '</div><div class="d">규칙·명예·책임</div></div>';
 }
 document.querySelectorAll("svg#five .node").forEach(function(g){
   g.addEventListener("click", function(){ drawFive(g.getAttribute("data-el")); });
@@ -1003,6 +1053,46 @@ document.querySelectorAll("#ofchips .ofchip").forEach(function(b){
   b.addEventListener("click", function(){ drawFive(b.getAttribute("data-el")); });
 });
 drawFive("금");
+
+/* =========================================================
+   단계별 ‘내 원국’ 미니 표 (내 사주에 대입 카드 상단)
+   ========================================================= */
+const JUHI = {
+  1:  { hi:null,        cap:"색 = 오행 · 금 4 · 토 2 · 목 2 · 화 0 · 수 0" },
+  2:  { hi:"gan",       cap:"표시한 위 4글자 = 천간(겉으로 보이는 기운)" },
+  3:  { hi:"ji",        cap:"표시한 아래 4글자 = 지지(삶의 무대)" },
+  4:  { hi:"all",       cap:"시·일·월·년 네 기둥 = 사주팔자 8글자" },
+  5:  { hi:["庚","申","辛","辛"], cap:"표시한 4글자 = 비겁(나와 같은 오행)" },
+  6:  { hi:["庚","申","辛","辛"], cap:"표시한 4글자 = 비겁 · 나의 힘" },
+  7:  { hi:[],          cap:"표면에 식상은 0개 — 숨은 글자 癸(계) · 壬(임)" },
+  8:  { hi:["甲","寅"], cap:"표시한 2글자 = 재성(정재)" },
+  9:  { hi:[],          cap:"표면에 관성은 0개 — 숨은 글자 丙(병) · 丁(정)" },
+  10: { hi:["丑","未"], cap:"표시한 2글자 = 인성(편인) · 비겁 4와 합쳐 신강" }
+};
+function juChart(id){
+  const cfg = JUHI[id] || {};
+  const hi = cfg.hi;
+  const dim = (hi !== null && hi !== undefined);
+  function cls(ch, role){
+    if(!dim) return "mj-x";
+    let on = false;
+    if(hi === "all") on = true;
+    else if(hi === "gan") on = (role === "gan");
+    else if(hi === "ji") on = (role === "ji");
+    else if(Array.isArray(hi)) on = hi.indexOf(ch) !== -1;
+    return "mj-x " + (on ? "hi" : "dim");
+  }
+  const cols = PILLARS.map(function(p){
+    const g = CHAR[p.gan+"|"+p.key+"|gan"], j = CHAR[p.ji+"|"+p.key+"|ji"];
+    return '<div class="mj-col'+(p.mine?' me':'')+'">'
+      + '<div class="mj-lb">'+p.key+'</div>'
+      + '<div class="'+cls(p.gan,"gan")+' '+elClass(g.el)+'">'+kr(p.gan)+'</div>'
+      + '<div class="'+cls(p.ji,"ji")+' '+elClass(j.el)+'">'+kr(p.ji)+'</div>'
+      + '</div>';
+  }).join("");
+  return '<div class="myju">'+cols+'</div>'
+    + (cfg.cap ? '<div class="mj-cap">'+cfg.cap+'</div>' : '');
+}
 
 /* =========================================================
    단계 목록
@@ -1073,9 +1163,10 @@ function openStep(id){
     + '<div class="art">' + st.art + '</div></div>'
     + '<div class="blk"><div class="blk-h"><div class="ic">2</div><div class="t">쉬운 설명</div></div>'
     + '<div class="guide">' + st.desc.map(function(p){ return "<p>" + p + "</p>"; }).join("") + '</div></div>'
-    + '<div class="blk"><div class="blk-h"><div class="ic">3</div><div class="t">내 사주에 대입</div><div class="s">辛丑</div></div>'
-    + '<div class="mine"><div class="mine-h"><span class="b">辛</span><span class="t">내 원국 · 甲申 庚寅 辛丑 辛未</span></div>'
-    + '<p>' + st.mine + '</p></div></div>'
+    + '<div class="blk"><div class="blk-h"><div class="ic">3</div><div class="t">내 사주에 대입</div><div class="s">辛丑 신축</div></div>'
+    + '<div class="mine"><div class="mine-h"><span class="b">'+kr("辛")+'</span><span class="t">내 원국 · 일간 辛(신) · 음금</span></div>'
+    + juChart(st.id)
+    + '<p style="margin-top:9px">' + st.mine + '</p></div></div>'
     + '<div class="blk" id="quizblk"><div class="blk-h"><div class="ic">4</div><div class="t">미니 퀴즈</div><div class="s">' + st.quiz.length + '문항</div></div>'
     + '<div id="qwrap">' + st.quiz.map(function(q, qi){
         const picked = ans[qi];

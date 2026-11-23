@@ -1,5 +1,5 @@
 /* 지니 사주 노트 — 오프라인 캐시 (saju 스코프 전용) */
-const CACHE = "jinart-saju-v1";
+const CACHE = "jinart-saju-v2";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", (event) => {
