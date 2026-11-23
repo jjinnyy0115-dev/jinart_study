@@ -242,7 +242,8 @@
   .svc .d{grid-column:1;margin-top:6px;color:var(--ink-soft);font-size:13.5px;line-height:1.7;max-width:42ch}
   .svc .price{
     grid-column:2;grid-row:1 / span 2;align-self:center;
-    font-family:var(--serif);font-size:1.3rem;letter-spacing:.01em;white-space:nowrap;color:var(--ink);
+    font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:.03em;
+    font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink);
     text-align:right;
   }
   .svc .price.quote{font-family:var(--sans);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
@@ -250,7 +251,7 @@
   @media (max-width:759px){
     .svc{column-gap:12px}
     .svc h3{grid-column:1;grid-row:1}
-    .svc .price{grid-column:2;grid-row:1;align-self:start;font-size:1.12rem;padding-top:2px}
+    .svc .price{grid-column:2;grid-row:1;align-self:start;font-size:14.5px;padding-top:6px}
     .svc .price.quote,.svc .price.free{font-size:11px;padding-top:6px}
     .svc .d{grid-column:1 / -1;grid-row:2;max-width:none}
   }
