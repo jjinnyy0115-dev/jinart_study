@@ -21,8 +21,10 @@
 <script>
   var q = new URLSearchParams(location.search);
   var f = document.getElementById('f');
-  var lang = q.get('lang');
-  if (lang) f.src = 'en/?lang=' + encodeURIComponent(lang);
+  var qs = [];
+  if (q.get('lang')) qs.push('lang=' + encodeURIComponent(q.get('lang')));
+  if (q.get('v')) qs.push('v=' + encodeURIComponent(q.get('v')));
+  if (qs.length) f.src = 'en/?' + qs.join('&');
   if (q.get('h')) f.style.height = q.get('h') + 'px';
 </script>
 </body>
