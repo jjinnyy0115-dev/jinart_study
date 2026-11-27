@@ -1,0 +1,16 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>capture view</title>
+<style>html,body{margin:0;padding:0;background:#FBF8F4;overflow:hidden;width:390px}
+#box{position:absolute;left:0;top:0;width:390px;height:993px;overflow:hidden}
+iframe{position:absolute;left:0;width:390px;height:7200px;border:0}</style></head>
+<body>
+<div id="box"><iframe id="f" src="c-ko.html" title="view"></iframe></div>
+<script>
+var q=new URLSearchParams(location.search);
+var lang=q.get('lang')||'ko';
+var y=parseInt(q.get('y')||'0',10);
+var f=document.getElementById('f');
+f.src='c-'+lang+'.html';
+f.onload=function(){ f.style.top=(-y)+'px'; };
+f.style.top=(-y)+'px';
+</script>
+</body></html>
