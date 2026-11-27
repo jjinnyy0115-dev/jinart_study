@@ -9,11 +9,12 @@ html,body{margin:0;padding:0;background:#dcd6cd;font:0/0 a}
 <script>
 var q=new URLSearchParams(location.search);
 var lang=q.get('lang')||'ko';
+var ver=q.get('v');
 var ys=(q.get('y')||'0').split(',').map(function(v){return parseInt(v,10)||0});
 var row=document.getElementById('row');
 ys.forEach(function(y){
   var c=document.createElement('div'); c.className='cell';
-  var f=document.createElement('iframe'); f.src='c-'+lang+'.html'; f.style.top=(-y)+'px'; f.title='slice';
+  var f=document.createElement('iframe'); f.src='c-'+lang+'.html'+(ver?'?v='+ver:''); f.style.top=(-y)+'px'; f.title='slice';
   c.appendChild(f); row.appendChild(c);
 });
 </script></body></html>
