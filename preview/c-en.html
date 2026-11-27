@@ -1114,7 +1114,7 @@
     var p = new URLSearchParams(location.search).get('lang');
     var s = localStorage.getItem('jinart.lang');
     if(p && I18N[p]) initial = p;
-    else if(s && I18N[s]) initial = s;
+    
   }catch(e){}
   apply(initial);
 
