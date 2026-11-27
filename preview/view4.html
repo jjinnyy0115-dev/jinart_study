@@ -1,0 +1,19 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>capture grid</title>
+<style>
+html,body{margin:0;padding:0;background:#dcd6cd;font:0/0 a}
+.row{display:flex;gap:6px;padding:0}
+.cell{position:relative;width:390px;height:993px;overflow:hidden;background:#FBF8F4;flex:none}
+.cell iframe{position:absolute;left:0;width:390px;height:7200px;border:0}
+</style></head>
+<body><div class="row" id="row"></div>
+<script>
+var q=new URLSearchParams(location.search);
+var lang=q.get('lang')||'ko';
+var ys=(q.get('y')||'0').split(',').map(function(v){return parseInt(v,10)||0});
+var row=document.getElementById('row');
+ys.forEach(function(y){
+  var c=document.createElement('div'); c.className='cell';
+  var f=document.createElement('iframe'); f.src='c-'+lang+'.html'; f.style.top=(-y)+'px'; f.title='slice';
+  c.appendChild(f); row.appendChild(c);
+});
+</script></body></html>
