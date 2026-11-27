@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.className += " has-js";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>지나트뷰티 | 부산 전포동 아이라인·반영구·속눈썹 1:1 스튜디오</title>
 <meta name="description" content="부산 전포동 아이라인·반영구·속눈썹 1:1 프라이빗 스튜디오, 지나트뷰티. 10년 경력 대표원장이 눈매에 맞춰 디자인합니다. 매일 10:00–22:00 100% 예약제, 전포역 6번 출구 도보 5분.">
@@ -222,7 +223,7 @@
   .hero-media .badge-float{display:none}
   @media (min-width:820px){
     .hero{padding:62px 0 0}
-    .hero-grid{grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+    .hero-grid{grid-template-columns:1fr .9fr;gap:56px;align-items:center}
     .hero h1{font-size:clamp(3.4rem,5.6vw,4.9rem)}
     .hero .latin{font-size:.3em}
     .hero .lede{font-size:15.5px}
@@ -421,12 +422,18 @@
   @media (max-width:819px){html{scrollbar-width:none}html::-webkit-scrollbar{width:0;height:0}}
 
   /* reveal */
-  .reveal{opacity:0;transform:translateY(12px);transition:opacity .65s ease, transform .65s cubic-bezier(.2,.7,.3,1)}
-  .reveal.in{opacity:1;transform:none}
+  .has-js .reveal{opacity:0;transform:translateY(12px);transition:opacity .65s ease, transform .65s cubic-bezier(.2,.7,.3,1)}
+  .has-js .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
-    .reveal{opacity:1;transform:none;transition:none}
+    .has-js .reveal{opacity:1;transform:none;transition:none}
     .dock{transition:none}
+  }
+  @media print{
+    .has-js .reveal{opacity:1!important;transform:none!important;transition:none!important}
+    .site-head{position:static}
+    .dock{display:none!important}
+    .sec{break-inside:avoid}
   }
 
   /* CJK tuning */
@@ -1138,6 +1145,7 @@
       });
     }, {rootMargin:'0px 0px -6% 0px', threshold:0.06});
     rev.forEach(function(el, i){ el.style.transitionDelay = (i % 3) * 60 + 'ms'; io.observe(el); });
+    setTimeout(function(){ rev.forEach(function(el){ el.classList.add('in'); }); }, 2600);
   } else {
     rev.forEach(function(el){ el.classList.add('in'); });
   }
